@@ -1,6 +1,8 @@
 # bizcoq2021
 BMETE91AM58
 
+##Telepítés
+
 Mindenféle szoftverek, manualok, modulok, stb. elérhetősége alapvetően itt:
 
 > https://coq.inria.fr/
@@ -11,5 +13,7 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 
+## Tartalom
 
+Első óra leírása: [itt]().
 
