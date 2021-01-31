@@ -42,7 +42,7 @@ fun P : nat -> Prop => nat_ind
        P 0 -> (forall n : nat, P n -> P (S n)) -> forall n : nat, P n  *)
 ```
 
-Hát, nem a "Hello, world!", de épp az, amire számítani lehetett :D
+Hát, nem a "Hello, world!", de épp az, amire számítani lehetett :sweat_smile:
 
 Megjegyzés: később meg fogjuk beszélni, hogy A->B->C pont azt jelenti, mint (A/\B)->C. Amikor (A/\B)->C -ból A->B->C -t csinálunk, at *curryingnek* nevezik és jól ismert technika az abszrakt algebrában. Ugyanez A->B->C -ból (A/\B)->C irányba az *uncurrying*. Amúgy az A->B->C kifejezés az A->(B->C) zárójelezés, azaz -> jobbra asszociált. 
 
