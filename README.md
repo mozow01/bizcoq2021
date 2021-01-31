@@ -23,3 +23,4 @@ Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 
 LaTeX konverter: https://jsfiddle.net/8ndx694g/.
 
+Github markup: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet.
