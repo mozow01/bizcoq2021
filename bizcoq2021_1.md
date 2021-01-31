@@ -75,12 +75,36 @@ A Coq automatikusan generálja az indukciós szabályát (de majd megpróbáljuk
 Print Boole_ind.
 ```
 
-```
-(*
+```coq
+(*Message:
 fun P : Boole -> Prop => Boole_rect P
      : forall P : Boole -> Prop, P igaz -> P hamis -> forall b : Boole, P b *)
 ```
 
-Gondoljuk végig, hogy ezt mit jelent!
+Gondoljuk végig, hogy ezt mit jelent! Most definiáljuk a Boole műveleteket és tételekt igazolunk rájuk vonatkozóan:
 
+```coq
+Definition Boole_Or (b1: Boole) (b2: Boole) : Boole := 
+  match b1 with 
+    | igaz => match b2 with | igaz => igaz | hamis => igaz end
+    | hamis => match b2 with | igaz => igaz | hamis => hamis end
+  end.
+
+Notation "x 'vagy' y" := (Boole_Or x y) (at level 20) : type_scope.
+
+Definition Boole_And (b1 : Boole) (b2: Boole) : Boole := 
+  match b1 with 
+    | igaz => match b2 with | igaz => igaz | hamis => hamis end
+    | hamis => match b2 with | igaz => hamis | hamis => hamis end end.
+
+Notation "x 'es' y" := (Boole_And x y) (at level 20) : type_scope.
+
+Definition Boole_Not (b : Boole) : Boole := 
+  match b with 
+    | igaz => hamis 
+    | hamis => igaz
+  end.
+
+Notation "'nem' x" := (Boole_Not x) (at level 20) : type_scope.
+```
 
