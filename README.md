@@ -11,8 +11,6 @@ _Win_: [Get Coq](https://coq.inria.fr/download) fül alatt a Win verzió letölt
 
 _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra rákeresve. Akinek nem Ubuntuja van, az meg úgy is olyan okos, hogy annak magától is menni fog. CoqIDE szintén megtalálható, amennyiben az Emacs nem szimpi.
 
-Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
-
 ## Tartalom
 
 Első óra leírása: [itt](bizcoq2021_1.md).
