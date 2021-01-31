@@ -47,3 +47,11 @@ Hát, nem a "Hello, world!", de épp az, amire számítani lehetett :sweat_smile
 Megjegyzés: később meg fogjuk beszélni, hogy A->B->C pont azt jelenti, amit (A/\B)->C. Amikor (A/\B)->C -ból A->B->C -t csinálunk, azt *curryingnek* nevezik és ez egy jól ismert technika az abszrakt algebrában. Ugyanez A->B->C -ból (A/\B)->C irányba az *uncurrying*. Amúgy az A->B->C kifejezés az A->(B->C) zárójelezést rövidíti, azaz -> jobbra asszociált. 
 
 ## Beetetés: Boole-típus
+
+Ismerős a kétértékű logika. De mi nem ezt fogjuk játszani. Ennek ellenére érdemes megnézni, mert az egyik legegyszerűbb induktví típus.
+
+```coq
+Inductive Boole : Set :=
+  | igaz : Boole
+  | hamis : Boole.
+```
