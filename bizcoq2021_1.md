@@ -33,7 +33,7 @@ A nat típusnál maradva, létezik a nat_ind szabály, melyet a
 Print nat_ind.
 ```
 
-írathatunk ki és kapjuk (lényegében) a következő szabályt:
+paranccsal írathatunk ki és kapjuk (lényegében) a következő szabályt:
 
 ```coq
 (*Message:
@@ -41,6 +41,8 @@ fun P : nat -> Prop => nat_ind
      : forall P : nat -> Prop,
        P 0 -> (forall n : nat, P n -> P (S n)) -> forall n : nat, P n  *)
 ```
+
+Hát, nem a "Hello, world!", de épp az, amire számítani lehetett :D
 
 Megjegyzés: később meg fogjuk beszélni, hogy A->B->C pont azt jelenti, mint (A/\B)->C. Amikor (A/\B)->C -ból A->B->C -t csinálunk, at *curryingnek* nevezik és jól ismert technika az abszrakt algebrában. Ugyanez A->B->C -ból (A/\B)->C irányba az *uncurrying*. Amúgy az A->B->C kifejezés az A->(B->C) zárójelezés, azaz -> jobbra asszociált. 
 
