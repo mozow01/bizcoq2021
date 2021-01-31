@@ -15,5 +15,5 @@ Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 
 ## Tartalom
 
-Első óra leírása: [itt]().
+Első óra leírása: [itt]( bizcoq2021/bizcoq2021_1.md ).
 
