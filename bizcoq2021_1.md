@@ -27,7 +27,7 @@ Ezzel meg is érkezünk a típuselmélet világába.
 >> 1. *T* összes lakója egységes, véges sok konstrukciós szabály segítségével gyártódik le,
 >> 2. *T* összes lakójára vonatkozóan egységes tulajdonságokat fogalmazhatunk meg vagy ezek felett függvényeket definiálhatunk *T* indukciós ill. rekurziós szabályának segítségével ([olvasmány](https://www.cs.cmu.edu/~fp/papers/mfps89.pdf) p. 4.).
 
-A nat típusnál maradva, létezik a nat_ind szabály, amelyet a
+A nat típusnál maradva, létezik ennek is az indukciós szabálya, amelyet a
 
 ```coq
 Print nat_ind.
@@ -42,9 +42,22 @@ fun P : nat -> Prop => nat_ind
        P 0 -> (forall n : nat, P n -> P (S n)) -> forall n : nat, P n  *)
 ```
 
-Hát, nem a "Hello, world!", de épp az, amire számítani lehetett :sweat_smile:
+Hát, nem a "Hello, world!", de épp az, amire számítani lehetett :sweat_smile: Ez a teljes indukció sémája.
 
 Megjegyzés: később meg fogjuk beszélni, hogy A->B->C pont azt jelenti, amit (A/\B)->C. Amikor (A/\B)->C -ból A->B->C -t csinálunk, azt *curryingnek* nevezik és ez egy jól ismert technika az abszrakt algebrában. Ugyanez A->B->C -ból (A/\B)->C irányba az *uncurrying*. Amúgy az A->B->C kifejezés az A->(B->C) zárójelezést rövidíti, azaz -> jobbra asszociált. 
+
+A nat, a természetes számok halmaza, egy induktív adattípus, és a konstrukciós szabályai, voltaképpen az (induktív) definíciója:
+
+```coq
+Print nat.
+```
+
+```
+(*Message:
+Inductive nat : Set :=  
+     | O : nat 
+     | S : nat -> nat. *)
+```
 
 ## Beetetés: Boole-típus
 
