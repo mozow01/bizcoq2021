@@ -4,7 +4,7 @@
 
 Amit most tanulni fogunk, azt az induktív konstrukciók kalkulusa egy szoftveres implementációjának is nevezik. 
 
-Ha arra vagyunk kíváncsiak, hogy mi az a fő gondolat, az induktív konstrukciók mögött, akkor a legalkalmasabb példa ennek szemügyrevételére a teljes indukció:
+Ha arra vagyunk kíváncsiak, hogy mi a fő gondolat az induktív konstrukciók mögött, akkor a legalkalmasabb példa erre a teljes indukció sémája:
 
 > <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BP(0)%5Cqquad%20(%5Cforall%20n%3A%5Cmathrm%7Bnat%7D)(P(n)%5Cto%20P(n%2B1))%7D%7B(%5Cforall%20n%3A%5Cmathrm%7Bnat%7D)P(n)%7D">
 
@@ -27,7 +27,7 @@ Ezzel meg is érkezünk a típuselmélet világába.
 >> 1. *T* összes lakója egységes, véges sok konstrukciós szabály segítségével gyártódik le,
 >> 2. *T* összes lakójára vonatkozóan egységes tulajdonságokat fogalmazhatunk meg vagy ezek felett függvényeket definiálhatunk *T* indukciós ill. rekurziós szabályának segítségével ([olvasmány](https://www.cs.cmu.edu/~fp/papers/mfps89.pdf) p. 4.).
 
-A nat típusnál maradva, létezik a nat_ind szabály, melyet a
+A nat típusnál maradva, létezik a nat_ind szabály, amelyet a
 
 ```coq
 Print nat_ind.
