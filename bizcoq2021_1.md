@@ -68,3 +68,19 @@ Inductive Boole : Set :=
   | igaz : Boole
   | hamis : Boole.
 ```
+
+A Coq automatikusan generálja az indukciós szabályát (de majd megpróbáljuk később mi is legyártani):
+
+```coq
+Print Boole_ind.
+```
+
+```
+(*
+fun P : Boole -> Prop => Boole_rect P
+     : forall P : Boole -> Prop, P igaz -> P hamis -> forall b : Boole, P b *)
+```
+
+Gondoljuk végig, hogy ezt mit jelent!
+
+
