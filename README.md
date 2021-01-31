@@ -17,3 +17,9 @@ Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 
 Első óra leírása: [itt](bizcoq2021_1.md).
 
+## Egybek
+
+Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
+
+LaTeX konverter: https://jsfiddle.net/8ndx694g/.
+
