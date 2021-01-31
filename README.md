@@ -15,7 +15,7 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 Első óra leírása: [itt](bizcoq2021_1.md).
 
-## Egybek
+## Egyebek
 
 Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 
