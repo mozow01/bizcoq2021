@@ -1,7 +1,7 @@
 # bizcoq2021
 BMETE91AM58
 
-##Telepítés
+## Telepítés
 
 Mindenféle szoftverek, manualok, modulok, stb. elérhetősége alapvetően itt:
 
