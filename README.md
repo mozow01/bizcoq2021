@@ -22,3 +22,5 @@ Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 LaTeX konverter: https://jsfiddle.net/8ndx694g/.
 
 Github markup: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet.
+
+Természetes számok kezelése: Adam Chlipala spéci taktikái a [v](CpdtTactics.v) a nat típusban való számolások kezelésére (pl. "crush" taktika) (leírás [net](http://adam.chlipala.net/cpdt/)). Hasonlóképpen kiválóan kezeli a matematikai témákat a [Mathematical Components](https://math-comp.github.io/). 
