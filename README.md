@@ -19,8 +19,10 @@ Első óra leírása: [itt](bizcoq2021_1.md).
 
 Hivatalos cuccok: https://math.bme.hu/~mozow/biz_coq.html.
 
-LaTeX konverter: https://jsfiddle.net/8ndx694g/.
+LaTeX konverter md file-hoz: https://jsfiddle.net/8ndx694g/.
 
-Github markup: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet.
+Github markup puska: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet.
 
 Természetes számok kezelése: Adam Chlipala spéci taktikái ([v](CpdtTactics.v)) a nat típusban való számolások kezelésére (pl. "crush" taktika) (leírás: [net](http://adam.chlipala.net/cpdt/)). Hasonlóképpen kiválóan kezeli a matematikai témákat a [Mathematical Components](https://math-comp.github.io/). 
+
+Leveztésfa készítő csomagok LaTeX-ben ([pdf](levezetesfa.pdf)).
