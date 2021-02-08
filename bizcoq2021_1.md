@@ -185,6 +185,7 @@ Qed.
 Theorem ossz_tree_ll : length (right l l) = length l + length l.
 Proof.
   apply ossz_tree with (t:=l) (s:=l).
-Qed.```
+Qed.
+```
 
 
