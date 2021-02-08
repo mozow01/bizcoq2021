@@ -122,7 +122,7 @@ Igazoljuk a kizárt haramdik elvét és a de Morganból az egyiket!
 
 Persze van bool:
 ```coq
-SearchAbout plus.
+SearchAbout bool.
 ```
 
 ## Természetes számok
