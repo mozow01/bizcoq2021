@@ -81,7 +81,7 @@ fun P : Boole -> Prop => Boole_rect P
      : forall P : Boole -> Prop, P igaz -> P hamis -> forall b : Boole, P b *)
 ```
 
-Gondoljuk végig, hogy ezt mit jelent! Most definiáljuk a Boole műveleteket és tételeket igazolunk rájuk vonatkozóan:
+Gondoljuk végig, hogy ez mit jelent! Most definiáljuk a Boole műveleteket és tételeket igazolunk rájuk vonatkozóan:
 
 ```coq
 Definition Boole_Or (b1: Boole) (b2: Boole) : Boole := 
