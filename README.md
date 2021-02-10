@@ -13,7 +13,9 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 ## Tartalom
 
-Első óra leírása: [itt](bizcoq2021_1.md).
+1. óra leírása: [itt](bizcoq2021_1.md) és a [.v file](bizcoq_1.v).
+
+2. óra leírása: [itt](bizcoq2021_2.md) és a [.v file](bizcoq_2.v).
 
 ## Egyebek
 
