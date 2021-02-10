@@ -171,7 +171,7 @@ SearchAbout bool.
 
 ## Gyakorló házi feladatok
 
-1. Definiáljuk a Boole_imp (ha..., akkor...) és Boole_csa (... akkor és csak akkor, ha ...) függvényeket! Igazoljuk, hogy 
+1. Definiáljuk a ```coq Boole_imp``` (ha..., akkor...) és Boole_csa (... akkor és csak akkor, ha ...) függvényeket! Igazoljuk, hogy 
 
 a) forall x y : Boole, (Boole_imp x y) = ((nem x) vagy y)
 b) forall x y : Boole, Boole_csa (Boole_imp x y) ((nem x) vagy y) = igaz
