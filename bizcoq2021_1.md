@@ -196,5 +196,5 @@ b) ```forall x y : Boole, Boole_csa (Boole_imp x y) ((nem x) vagy y) = igaz```
 
 ```f_2 g``` := ```andb (f_1(g(true))) (f_1(g(false)))``` 
 
-értéket adja vissza. Számítsuk ki ```f_2(fun x : bool => orb x y)``` és ```f_2(fun x : bool => impb (orb (notb x) (notb y)) (notb andb x y) )``` értékét!
+értéket adja vissza, ahol ```f_1``` a 3. feladatbeli függvény. Számítsuk ki ```f_2(fun x : bool => orb x y)``` és ```f_2(fun x : bool => impb (orb (notb x) (notb y)) (notb andb x y) )``` értékét!
 
