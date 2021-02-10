@@ -190,7 +190,7 @@ b) ```forall x y : Boole, Boole_csa (Boole_imp x y) ((nem x) vagy y) = igaz```
      
 értéket adja vissza. Számítsuk ki ```f_1(fun x : bool => orb x (notb x))``` értékét!
 
-4. Definiáljunk egy "```szavak```" induktív típust, ami alkalmas arra, hogy az ```Eval compute in (???)``` parancs esetén a "```Hello world```" kimenetet jeleníti meg. 
+4. Definiáljunk egy "```szavak```" induktív típust, ami alkalmas arra, hogy az ```Eval compute in (???)``` parancs esetén a "```Hello world```" kimenetet jelenítse meg. 
 
 5. Definiáljuk az ```f_2 : (bool -> bool -> bool) -> bool``` függvényt, amely egy ```g : bool -> bool -> bool``` esetén az
 
