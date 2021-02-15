@@ -25,7 +25,7 @@ LaTeX konverter md file-hoz: https://jsfiddle.net/8ndx694g/.
 
 Github markup puska: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet.
 
-Természetes számok kezelése: Adam Chlipala spéci taktikái ([v](CpdtTactics.v)) a nat típusban való számolások kezelésére (pl. "crush" taktika) (leírás: [net](http://adam.chlipala.net/cpdt/)). Hasonlóképpen kiválóan kezeli a matematikai témákat a [Mathematical Components](https://math-comp.github.io/). 
+Természetes számok kezelése: Adam Chlipala spéci taktikái ([v](forrasok/CpdtTactics.v)) a nat típusban való számolások kezelésére (pl. "crush" taktika) (leírás: [net](http://adam.chlipala.net/cpdt/)). Hasonlóképpen kiválóan kezeli a matematikai témákat a [Mathematical Components](https://math-comp.github.io/). 
 
 Leveztésfa készítő csomagok LaTeX-ben ([pdf](latex_sablon/levezetesfa.pdf), [tex](latex_sablon/levezetesfa.tex)).
 
