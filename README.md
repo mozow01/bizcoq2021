@@ -13,9 +13,9 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 ## Tartalom
 
-1. óra leírása: [itt](bizcoq2021_1.md) és a [.v file](bizcoq_1.v).
+1. óra leírása: [itt](eloadas/1_bevezetes/bizcoq2021_1.md) és a [.v file](eloadas/1_bevezetes/bizcoq_1.v).
 
-2. óra leírása: [itt](bizcoq2021_2.md) és a [.v file](bizcoq_2.v).
+2. óra leírása: [itt](eloadas/2_bonyolultabb/bizcoq2021_2.md) és a [.v file](eloadas/2_bonyolultabb/bizcoq_2.v).
 
 ## Egyebek
 
@@ -27,6 +27,6 @@ Github markup puska: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheat
 
 Természetes számok kezelése: Adam Chlipala spéci taktikái ([v](CpdtTactics.v)) a nat típusban való számolások kezelésére (pl. "crush" taktika) (leírás: [net](http://adam.chlipala.net/cpdt/)). Hasonlóképpen kiválóan kezeli a matematikai témákat a [Mathematical Components](https://math-comp.github.io/). 
 
-Leveztésfa készítő csomagok LaTeX-ben ([pdf](levezetesfa.pdf), [tex](levezetesfa.tex)).
+Leveztésfa készítő csomagok LaTeX-ben ([pdf](latex_sablon/levezetesfa.pdf), [tex](latex_sablon/levezetesfa.tex)).
 
 Coq jelölés, taktika és definíció sheat sheet: [pdf](https://www.inf.ed.ac.uk/teaching/courses/tspl/cheatsheet.pdf).
