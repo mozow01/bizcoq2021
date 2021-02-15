@@ -2,7 +2,7 @@
 ## Összefoglaló
 A "típus" a "halmaz" nagytestvére, csak típusból végtelen sok fajta van, típusok végtelen hierachiája. 
 
-Induktív típusok kezdőelemek felhasználásávaé építkezős módon keletkeznek, az építőelemeik a **konstruktorok.** Például a HF-beli szavak típusnak két konstruktora van:
+Induktív típusok kezdőelemek felhasználásával építkezős módon keletkeznek, az építőelemeik a **konstruktorok.** Például a HF-beli szavak típusnak két konstruktora van:
 
 ````coq
 Inductive szavak : Set :=
