@@ -1,0 +1,10 @@
+0. 
+forall P : Boole -> Prop, P igaz -> P hamis -> forall b : Boole, P 
+- szintaktikailag miért nyíl van? nekem jobban tetszene: P igaz \/ P hamis -> forall b : Boole P b 
+1. apply Boole_ind <-> gyakorlatilag esetszétválasztás, hogyan gondolkodik a Coq?
+... hm, a kedves felhasználó szeretné a falu minden lakójára látni ennek a kifejezésnek a helyességét
+... de kedves, emlékeztet, hogy van erre egy szuper szabály (Boole_ind), ez pont jó lesz, gyakorlatilag kész a tétel
+... ja, de a premisszákat azért még igazolni kéne hogy teljesüljenek!
+... két lehetőség van, mindkettőt beírom a szabály mellé kapott sémába, aztán majd ő egyesével igazolja ezeket, nem érdekel hogyan
+.........
+... kész!
