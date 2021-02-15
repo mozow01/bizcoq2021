@@ -13,9 +13,9 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 ## Tartalom
 
-1. óra leírása: [itt](eloadas/1_bevezetes/bizcoq2021_1.md) és a [.v file](eloadas/1_bevezetes/bizcoq_1.v).
+1. óra leírása: [itt](eloadas/1_bevezetes/) és a [.v file](eloadas/1_bevezetes/bizcoq_1.v).
 
-2. óra leírása: [itt](eloadas/2_bonyolultabb/bizcoq2021_2.md) és a [.v file](eloadas/2_bonyolultabb/bizcoq_2.v).
+2. óra leírása: [itt](eloadas/2_bonyolultabb/) és a [.v file](eloadas/2_bonyolultabb/bizcoq_2.v).
 
 ## Egyebek
 
