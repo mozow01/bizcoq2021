@@ -29,4 +29,4 @@ Természetes számok kezelése: Adam Chlipala spéci taktikái ([v](forrasok/Cpd
 
 Leveztésfa készítő csomagok LaTeX-ben ([pdf](latex_sablon/levezetesfa.pdf), [tex](latex_sablon/levezetesfa.tex)).
 
-Coq jelölés, taktika és definíció sheat sheet: [pdf](https://www.inf.ed.ac.uk/teaching/courses/tspl/cheatsheet.pdf).
+Coq jelölés, taktika és definíció Cheat Sheet: [pdf](https://www.inf.ed.ac.uk/teaching/courses/tspl/cheatsheet.pdf).
