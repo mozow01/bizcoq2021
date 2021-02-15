@@ -51,72 +51,108 @@ bool a kételemű típus volt. Példaként nézzünk egy háromelemű típust!
 
 Ez a hárommal való osztás maredékainak halmaza, illetve most tekintsünk erre úgy, hogy ő egy additív jelölésű csoport. Be fogjuk látni, hogy ez a maradékok összeadásával, a megfelelő inverz elemekkel és a 0-van, mint neutrális elemmel valóban csoportot alkot. Ezt a matematikusok kedvéért. A mérnökökkel azt nézzük meg, hogy ebben is (mind minden konstruktív megadású véges típusban) igaz, hogy az egyenlőség algoritmikusan eldönthető.
 
+A Z_3 induktív típus:
 
+````coq
+Inductive Z_3 : Set :=
+  | n : Z_3 
+  | a : Z_3
+  | b : Z_3.
+````
 
+Efelett a műveletek:
 
+````coq
+Definition ope x y :=
+  match x , y with
+  | n , y => y
+  | x , n => x
+  | a , b => n
+  | b , a => n 
+  | a , a => b
+  | b , b => a
+  end.
 
-## Természetes számok
+Definition inve x :=
+  match x with
+  | n => n
+  | a => b
+  | b => a
+  end.
+  ````
+  
+  Most belecsapunk a lecsóba és egy vegyes típust definiálunk egy Record-dal vagy Srtucture-rel:
+  
+  ````coq
+  Structure Group : Type := const_kozos
+{
+  A : Set;
 
-Ez egy elég kemény dió. Sok csomag és taktika van, ami ezzel küzd: omega, crush, Mathematical Components.
+  op : A -> A -> A ;
+  inv : A -> A ;
+  z : A ;
 
-```coq
-SearchAbout plus.
+  op_assoc : forall a b c, op a (op b c) = op (op a b) c;
+  op_z : forall a, op a z = a /\ op z a = a ;
+  op_inverse : forall a, op a (inv a) = z /\ op (inv a) a = z
+}.
+  ````
 
-Theorem n_plus_O : forall n : nat, n + O = n.
+**1.** Z_3 a megfelelő műveletekkel valóban a Group típus lakója.
+
+````coq
+Theorem Z_3_group : Group.
+Proof.
+  apply (const_kozos Z_3 ope inve n).
+  induction a0, b0, c; compute; auto.
+  induction a0; auto. 
+  induction a0; auto.
+Defined.
+````
+
+**2.** Az egyenlőség Z_3-ban (is) eldönthető.
+
+````coq
+Theorem Z_3_eq_dec : forall (x y: Z_3), x = y \/ x <> y.
 Proof. 
-  intros.
-  induction n.
-  unfold plus.
-  reflexivity.
-  simpl.
-  rewrite IHn.
-  reflexivity.
+  induction x, y; auto.
+  right.
+  discriminate.
+  right.
+  discriminate.
+  right.
+  discriminate.
+  right.
+  discriminate.
+  right.
+  discriminate.
+  right.
+  discriminate.
   Show Proof.
-Qed.
-```
+Defined.
+````
 
-## Fák, bokrok, ligetek
+Esetleg érdemes egy pillantást vetni arra, hogy melyik konstrukció igazolja az induktív konstrukciók kalkulusában Z_3 egyenlősége eldönthető:
 
-```coq
-Inductive tree : Set :=
-  | l : tree
-  | n : tree -> tree -> tree.
-
-Fixpoint length (t:tree) : nat :=
-  match t with
-    | l => 1
-    | n t1 t2 => (length t1) + (length t2) end. 
-
-Theorem levelhossz : length(l)=1.
-Proof. 
-  unfold length.
-  reflexivity.
-Qed.
-
-Fixpoint right (t s : tree) : tree :=
-  match t with
-    | l => n l s
-    | n t0 t1 => n t0 (right t1 s) end. 
-
-Eval compute in right (n l l) (n l (n l l)).
-
-Theorem ossz_tree : forall t s : tree, length (right t s) = length t + length s.
-Proof.
-  intros.
-  induction t.
-  simpl.
-  reflexivity.
-  simpl.
-  rewrite IHt2.
-  Require Import Omega.
-  omega.
-Qed.
-
-Theorem ossz_tree_ll : length (right l l) = length l + length l.
-Proof.
-  apply ossz_tree with (t:=l) (s:=l).
-Qed.
-```
-
-
-
+````coq
+Eval compute in Z_3_eq_dec a b.
+````
+````coq
+or_intror
+         (fun H : a = b =>
+          match
+            match
+              H in (_ = y)
+              return match y with
+                     | n => False
+                     | a => True
+                     | b => False
+                     end
+            with
+            | eq_refl => I
+            end return False
+          with
+          end)
+     : a = b \/ a <> b
+````
+HF: Megérteni ezt a programot!
