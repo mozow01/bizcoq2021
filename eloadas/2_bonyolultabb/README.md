@@ -37,7 +37,21 @@ Proof.
 Qed.
 ````
 
-## Véges típusok
+> A ````simpl. intuition. auto. tauto. trivial.```` parancsokkal automatizálni, gyorsítani tudjátok a bizonyításaitokat, definícióitokat. 
+
+> A ````reflexivity```` parancs a **szó szerinti** azonosságokat, a ````discriminate```` parancs a **szó szerinti** különbözőségeket alakítja  belső egyenlőséggé (=) illetve belső különbözőséggé (<>). 
+
+("Szó szerinti azonosság" itt azt jelenti, hogy külső, azaz nyelvi és nem tartalmi egyenlőség. Pl. 1+(1+1) szó szerint egyenlő saját magával, de (1+1)+1-gyel csak tartalmilag. Az más kérdés, hogy a típuselméletben egy külső azonosságra vezethető vissza a kettő.)
+
+## Konkrét véges típusok
+
+bool a kételemű típus volt. Példaként nézzünk egy háromelemű típust!
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cmathbf%7BZ%7D_3%5E%2B%20%5Cequiv%20%5Cmathbf%7BZ%7D%2F3%5Cmathbf%7BZ%7D%2C%5C%3B%5C%3B%5C%3BZ_3%3D%5C%7B0%3B1%3B2%5C%7D">
+
+Ez a hárommal való osztás maredékainak halmaza, illetve most tekintsünk erre úgy, hogy ő egy additív jelölésű csoport. Be fogjuk látni, hogy ez a maradékok összeadásával, a megfelelő inverz elemekkel és a 0-van, mint neutrális elemmel valóban csoportot alkot. Ezt a matematikusok kedvéért. A mérnökökkel azt nézzük meg, hogy ebben is (mind minden konstruktív megadású véges típusban) igaz, hogy az egyenlőség algoritmikusan eldönthető.
+
+
 
 
 
