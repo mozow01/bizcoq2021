@@ -24,7 +24,18 @@ Definition mondat_2 : szavak.
   apply world.
 Defined.
 ````
-Ha indukciós szabályra akarunk hivatkozni, akkor megtehetjük az ````apply Type_ind.```` mellett az ````induction x```` szabállyal is, ahol Type a szóban forgó típus, x a változó, amire indukálni akarunk.   
+Ha indukciós szabályra akarunk hivatkozni, akkor megtehetjük az ````apply Type_ind.```` mellett az ````induction x```` szabállyal is, ahol Type a szóban forgó típus, x a változó, amire indukálni akarunk. (Erre láttunk már példát, de azokat lehet egymás után kiadott indukciós szabályokkal is. Az alábbiakban az ````auto```` taktika egy Coq-ba beépített automatikus bizonyításkeresési eljárás.)
+
+````coq
+Theorem DM_2 : (forall x y : Boole, (nem x) es (nem y) = nem (x vagy y) ).
+Proof. 
+  induction x, y.
+  auto.
+  auto.
+  auto.
+  auto.
+Qed.
+````
 
 ## Véges típusok
 
