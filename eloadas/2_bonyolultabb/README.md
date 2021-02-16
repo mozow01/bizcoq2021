@@ -1,5 +1,6 @@
+#Véges típusok
 
-## Összefoglaló
+## Ismétlés, összefoglalás
 A "típus" a "halmaz" nagytestvére, csak típusból végtelen sok fajta van, típusok végtelen hierachiája. 
 
 Induktív típusok kezdőelemek felhasználásával építkezős módon keletkeznek, az építőelemeik a **konstruktorok.** Például a HF-beli szavak típusnak két konstruktora van:
@@ -156,3 +157,5 @@ or_intror
      : a = b \/ a <> b
 ````
 HF: Megérteni ezt a programot!
+
+## Absztrakt véges típusok
