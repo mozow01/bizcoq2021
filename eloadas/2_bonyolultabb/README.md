@@ -1,4 +1,4 @@
-#Véges típusok
+# Véges típusok
 
 ## Ismétlés, összefoglalás
 A "típus" a "halmaz" nagytestvére, csak típusból végtelen sok fajta van, típusok végtelen hierachiája. 
