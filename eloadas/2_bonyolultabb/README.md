@@ -159,3 +159,21 @@ or_intror
 HF: Megérteni ezt a programot!
 
 ## Absztrakt véges típusok
+
+````coq
+Inductive Fin : nat -> Set :=
+  |fzero : forall {n}, Fin (S n)
+  |fsucc : forall {n}, Fin n -> Fin (S n).
+````
+  
+````coq
+Theorem Fin_0_0_elemű : Fin 0 -> False.
+Proof.
+  intro p.
+  exact match p with 
+          | fzero   => True
+          | fsucc _ => True
+        end.
+  Show Proof.
+Defined.
+````
