@@ -82,7 +82,7 @@ Definition inve x :=
   end.
   ````
   
-  Most belecsapunk a lecsóba és egy vegyes típust definiálunk egy Record-dal vagy Srtucture-rel:
+  Most belecsapunk a lecsóba és egy vegyes típust definiálunk egy Record-dal vagy Structure-rel:
   
   ````coq
   Structure Group : Type := const_kozos
