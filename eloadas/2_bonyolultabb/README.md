@@ -40,6 +40,25 @@ Qed.
 
 ("Szó szerinti azonosság" itt azt jelenti, hogy külső, azaz nyelvi és nem tartalmi egyenlőség. Pl. 1+(1+1) szó szerint egyenlő saját magával, de (1+1)+1-gyel csak tartalmilag. Az más kérdés, hogy a típuselméletben egy külső azonosságra vezethető vissza a kettő.)
 
+Példa program bizonyos szintű helyességbizonyítására (a korábban definiált Boole típus és Boole_And felhasználódik és a Szigma típus is.)
+
+````coq 
+Theorem And_thm : (forall (x y : Boole), { z: Boole | (x es y) = z /\ forall (w: Boole), ( (x es y) = w -> z=w)}).
+(...) 
+
+Definition sig_proj1 (A:Set) (P:A -> Prop) (x : sig P) : A :=
+    match x with exist _ a _ => a end.
+
+Definition sig_proj2 (A:Set) (P:A -> Prop) (x : sig P) : P(sig_proj1 A P x) :=
+    match x with exist _ _ p => p end. 
+
+Definition And_output (x y : Boole) := sig_proj1 Boole (fun z : Boole => ((x es y) = z /\ 
+forall (w: Boole), ( (x es y) = w -> z=w))) (And_thm x y).
+
+Definition And_proof (x y : Boole) := sig_proj2 Boole (fun z : Boole => ((x es y) = z /\ 
+forall (w: Boole), ( (x es y) = w -> z=w))) (And_thm x y).
+````
+
 ## Konkrét véges típusok
 
 bool a kételemű típus volt. Példaként nézzünk egy háromelemű típust!
