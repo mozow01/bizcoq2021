@@ -135,29 +135,25 @@ Proof.
 Defined.
 ````
 
-Esetleg érdemes egy pillantást vetni arra, hogy melyik konstrukció igazolja az induktív konstrukciók kalkulusában Z_3 egyenlősége eldönthető:
+##Őshonos állatfaj a típuselméletben a morfizmus.
+
+Definiáltuk órán az "f függvény **csoportmorfizmus**" tulajdonságot is, amelyről [itt](bizcoq_2.v) a file. 
+
+## Egyszerűbb házi feladatok
+1. Tanulmányozzuk alaposan a 
+
+````coq 
+Theorem Z_3_eq_dec_mod : forall (x y: Z_3), x = y \/ x <> y.
+Proof. 
+  induction x, y.
+  left. 
+  reflexivity. 
+  right. 
+  discriminate.
+````
+
+programrészletet. a) az auto taktika és a taktikák ";" egymás után fűzésével egyszerűsítsük a taktikasort. b) A tanultak alapján igazoljuk, hogy a ````szavak```` típusban az ````x=world```` predikátum eldönthető, azaz igazoljuk, hogy 
 
 ````coq
-Eval compute in Z_3_eq_dec a b.
+Theorem szavak_dec_1 : forall (x : szavak), x= world \/ x<>world.
 ````
-````coq
-or_intror
-         (fun H : a = b =>
-          match
-            match
-              H in (_ = y)
-              return match y with
-                     | n => False
-                     | a => True
-                     | b => False
-                     end
-            with
-            | eq_refl => I
-            end return False
-          with
-          end)
-     : a = b \/ a <> b
-````
-HF: Megérteni ezt a programot!
-
-Definiáltuk órán a **csoportmorfizmus** tulajdonságot is, amelyről [itt](bizcoq_2.v) a file. 
