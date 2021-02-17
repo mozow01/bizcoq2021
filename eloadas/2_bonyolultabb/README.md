@@ -40,7 +40,7 @@ Qed.
 
 ("Szó szerinti azonosság" itt azt jelenti, hogy külső, azaz nyelvi és nem tartalmi egyenlőség. Pl. 1+(1+1) szó szerint egyenlő saját magával, de (1+1)+1-gyel csak tartalmilag. Az más kérdés, hogy a típuselméletben egy külső azonosságra vezethető vissza a kettő.)
 
-Példa program bizonyos szintű helyességbizonyítására (a korábban definiált Boole típus és Boole_And felhasználódik és a Szigma típus is.) Lásd erről a teljes programot [itt](and_cert.v)
+Példa program bizonyos szintű helyességbizonyítására (a korábban definiált Boole típus és Boole_And felhasználódik és a Szigma típus is.) Lásd erről a teljes programot [itt](and_cert.v).
 
 ````coq 
 Theorem And_thm : (forall (x y : Boole), { z: Boole | (x es y) = z /\ forall (w: Boole), ( (x es y) = w -> z=w)}).
