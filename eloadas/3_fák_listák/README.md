@@ -1,3 +1,23 @@
+## Absztrakt véges típusok
+
+````coq
+Inductive Fin : nat -> Set :=
+  |fzero : forall {n}, Fin (S n)
+  |fsucc : forall {n}, Fin n -> Fin (S n).
+````
+  
+````coq
+Theorem Fin_0_0_elemű : Fin 0 -> False.
+Proof.
+  intro p.
+  exact match p with 
+          | fzero   => True
+          | fsucc _ => True
+        end.
+  Show Proof.
+Defined.
+````
+
 ## Természetes számok
 
 Ez egy elég kemény dió. Sok csomag és taktika van, ami ezzel küzd: omega, crush, Mathematical Components.
