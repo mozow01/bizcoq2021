@@ -30,11 +30,7 @@ Ha indukciós szabályra akarunk hivatkozni, akkor megtehetjük az ````apply Typ
 ````coq
 Theorem DM_2 : (forall x y : Boole, (nem x) es (nem y) = nem (x vagy y) ).
 Proof. 
-  induction x, y.
-  auto.
-  auto.
-  auto.
-  auto.
+  induction x, y; auto.
 Qed.
 ````
 
@@ -116,20 +112,7 @@ Defined.
 ````coq
 Theorem Z_3_eq_dec : forall (x y: Z_3), x = y \/ x <> y.
 Proof. 
-  induction x, y; auto.
-  right.
-  discriminate.
-  right.
-  discriminate.
-  right.
-  discriminate.
-  right.
-  discriminate.
-  right.
-  discriminate.
-  right.
-  discriminate.
-  Show Proof.
+  induction x, y; auto; right; discriminate.
 Defined.
 ````
 
