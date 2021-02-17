@@ -162,7 +162,7 @@ Theorem szavak_dec_1 : forall (x : szavak), x= world \/ x<>world.
 
 ## Nehezebb feladatok
 
-3. Igazoljuk, hogy az ````x= Hello```` world predikátum eldönthető a szavak típusban, azaz 
+3. Igazoljuk, hogy az ````x= Hello world```` predikátum eldönthető a szavak típusban, azaz 
 
 ````coq
 Theorem szavak_dec_2 : 
