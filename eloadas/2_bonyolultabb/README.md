@@ -174,4 +174,6 @@ forall (x : szavak), x= Hello world \/ x<>Hello world.
 Theorem szavak_form : 
 forall (x : szavak), x= world \/ (exists (y : szavak), x=Hello y).
 ````
+(Megjegyzés: ````exists```` elvileg azonos a ````sig```` típussal azzal a különbséggel, hogy sig a Type sortra, exists a Set sortra kimondott verzió.)
+
 5. Fogalmazzuk meg az epimorfizmusnak lenni definícióját Coq-ban és igazoljuk Coq-ban, hogy a 2-beli epimorfizmusok valóban azok. 
