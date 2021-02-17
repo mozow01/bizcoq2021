@@ -152,7 +152,7 @@ Proof.
   discriminate.
 ````
 
-programrészletet. a) az auto taktika és a taktikák ";" egymás után fűzésével egyszerűsítsük a taktikasort. b) A tanultak alapján igazoljuk, hogy a korábban már definiált ````szavak```` típusban az ````x=world```` predikátum eldönthető, azaz igazoljuk, hogy 
+programrészletet. a) az auto taktika és a taktikák ";" egymás után fűzésével egyszerűsítsük a taktikasort. b) A tanultak alapján igazoljuk, hogy a korábban már definiált ````szavak```` típusban az ````fun x => x = world```` predikátum eldönthető, azaz igazoljuk, hogy 
 
 ````coq
 Theorem szavak_dec_1 : forall (x : szavak), x= world \/ x<>world.
@@ -162,7 +162,7 @@ Theorem szavak_dec_1 : forall (x : szavak), x= world \/ x<>world.
 
 ## Nehezebb feladatok
 
-3. Igazoljuk, hogy az ````x= Hello world```` predikátum eldönthető a szavak típusban, azaz 
+3. Igazoljuk, hogy az ````fun x => x = Hello world```` predikátum eldönthető a szavak típusban, azaz 
 
 ````coq
 Theorem szavak_dec_2 : 
