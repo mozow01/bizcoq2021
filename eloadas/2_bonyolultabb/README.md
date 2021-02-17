@@ -152,8 +152,26 @@ Proof.
   discriminate.
 ````
 
-programrészletet. a) az auto taktika és a taktikák ";" egymás után fűzésével egyszerűsítsük a taktikasort. b) A tanultak alapján igazoljuk, hogy a ````szavak```` típusban az ````x=world```` predikátum eldönthető, azaz igazoljuk, hogy 
+programrészletet. a) az auto taktika és a taktikák ";" egymás után fűzésével egyszerűsítsük a taktikasort. b) A tanultak alapján igazoljuk, hogy a korábban már definiált ````szavak```` típusban az ````x=world```` predikátum eldönthető, azaz igazoljuk, hogy 
 
 ````coq
 Theorem szavak_dec_1 : forall (x : szavak), x= world \/ x<>world.
 ````
+
+2. Igazoljuk Coq-ban, hogy Z_6={0,1,2,3,5} csoport. Adjuk meg a Z_3-ra és a Z_2-re képező epimorfizmusokat (tehát amik Z_6-on vannak értelmezve és rendre Z_3 ill. Z_2 összes elemét felveszik értékként). Igazoljuk, hogy ezek az epimorfizmusok valóban csoportmorfizmusok.
+
+## Nehezebb feladatok
+
+3. Igazoljuk, hogy az ````x= Hello```` world predikátum eldönthető a szavak típusban, azaz 
+
+````coq
+Theorem szavak_dec_2 : 
+forall (x : szavak), x= Hello world \/ x<>Hello world.
+````
+4. Igazoljuk, az ```exists``` típus (ez az ```ex``` típus Notation-nel nyert olvasható alakja) ````ex_intro```` konstruktorának megfelelő szereposztásban való alkalmazásával, hogy 
+
+````coq 
+Theorem szavak_form : 
+forall (x : szavak), x= world \/ (exists (y : szavak), x=Hello y).
+````
+5. Fogalmazzuk meg az epimorfizmusnak lenni definícióját Coq-ban és igazoljuk Coq-ban, hogy a 2-beli epimorfizmusok valóban azok. 
