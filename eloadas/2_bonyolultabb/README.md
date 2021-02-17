@@ -40,7 +40,7 @@ Qed.
 
 ("Szó szerinti azonosság" itt azt jelenti, hogy külső, azaz nyelvi és nem tartalmi egyenlőség. Pl. 1+(1+1) szó szerint egyenlő saját magával, de (1+1)+1-gyel csak tartalmilag. Az más kérdés, hogy a típuselméletben egy külső azonosságra vezethető vissza a kettő.)
 
-Példa program bizonyos szintű helyességbizonyítására (a korábban definiált Boole típus és Boole_And felhasználódik és a Szigma típus is.)
+Példa program bizonyos szintű helyességbizonyítására (a korábban definiált Boole típus és Boole_And felhasználódik és a Szigma típus is.) Lásd erről a teljes programot [itt](and_cert.v)
 
 ````coq 
 Theorem And_thm : (forall (x y : Boole), { z: Boole | (x es y) = z /\ forall (w: Boole), ( (x es y) = w -> z=w)}).
@@ -135,9 +135,9 @@ Proof.
 Defined.
 ````
 
-##Őshonos állatfaj a típuselméletben a morfizmus.
+## Őshonos állatfaj a típuselméletben a morfizmus.
 
-Definiáltuk órán az "f függvény **csoportmorfizmus**" tulajdonságot is, amelyről [itt](bizcoq_2.v) a file. 
+Definiáltuk órán az "f függvény **csoportmorfizmus**" tulajdonságot, amelyről [itt](bizcoq_2.v) a file. 
 
 ## Egyszerűbb házi feladatok
 1. Tanulmányozzuk alaposan a 
