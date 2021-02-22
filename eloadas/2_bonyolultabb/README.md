@@ -102,7 +102,7 @@ Definition inve x :=
   ````coq
   Structure Group : Type := const_kozos
 {
-  A : Set;
+  A :> Set;
 
   op : A -> A -> A ;
   inv : A -> A ;
