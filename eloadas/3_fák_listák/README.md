@@ -179,9 +179,9 @@ a kimenet O(n) idejű. Az algoritmus tehát LINTIME-beli. *)
 
 1. 
 
-a) Definiáljunk azon fáknak az ````UBTree```` típusát, amikben egy a levelek ````leaf```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
+a) Definiáljunk azon fáknak az ````UBTree```` típusát, amiben a levelek ````leaf0```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
 
-b) Definiáljuk a ````right_UB (t:UBTree) (s:UBTree) : UBTree```` függvényt a fentiekhez hasonlóan, vagyis, azt, ami egy ````t```` fa esetén megkeresi a legjobboldalibb levelet (végül is mindegy, hogy felfelé vagy lefelé nő a fa) és ebből a levélből kinöveszt balra egy levelet és jobbra az ````s```` fát.
+b) Definiáljuk a ````right_UB (t:UBTree) (s:UBTree) : UBTree```` függvényt a fentiekhez hasonlóan, vagyis azt, ami egy ````t```` fa esetén megkeresi a legjobboldalibb levelet (végül is mindegy, hogy felfelé vagy lefelé nő a fa) és ebből a levélből kinöveszt balra egy levelet és jobbra az ````s```` fát.
 
 c) Definiáljuk ````UBTree````-ben is a ````length_UB```` levélhossz függvényt és igazoljuk, hogy 
 
