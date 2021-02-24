@@ -206,6 +206,9 @@ Check bleaf true.
 Check bnode orb (bleaf true) (bnode andb (bleaf false) (bleaf true)).
 
 `````
+a) Definiáljuk rekurzívan egy ````bTree```` típusú fa magasságát és számoljuk ki néhány fára az értékét! (Használjuk a kétváltozós max függvényt!)
+
+b) Definiáljuk rekurzívan egy ````bTree```` típusú fa tükörképét, azaz egy olyan fát, ami az összes node bal és jobb oldali ágát megfordítja!
 
 Most gondoljunk azokra a fákra, amik adott (mondjuk n) magasságúak, de szintén bool fák. Az ilyenek típusát így adhatjuk meg:
 
@@ -223,15 +226,11 @@ Check hnode 0 andb (hleaf true) (hleaf true).
 
 A ````hbTree```` típus tehát *függő típus,* ha n adott természetes szám, akkor hbTree n egy halmaz. 
 
-a) Definiáljuk rekurzívan a feledékeny függvényt, ami egy ````t : (hbTree n)```` fából legyártja a neki pontosan megfelelő ````forgetful t : bTree```` fát, ami tök úgy néz ki, csak nincs megmondva milyen magas!
+c) Definiáljuk rekurzívan a *feledékeny függvényt,* ami egy ````t : (hbTree n)```` fából legyártja a neki pontosan megfelelő ````forgetful t : bTree```` fát, ami tök úgy néz ki, csak nincs megmondva milyen magas!
 
 ````coq
 Fixpoint forgetful (n:nat) (t: hbTree n) : bTree := ????
 ````
-
-b) Definiáljuk rekurzívan egy ````bTree```` típusú fa magasságát és számoljuk ki néhány fára az értékét! (Használjuk a kétváltozós max függvényt!)
-
-c) Definiáljuk rekurzívan egy ````bTree```` típusú fa tükörképét, azaz egy olyan fát, ami az összes node bal és jobb oldali ágát megfordítja!
 
 ## Nehezebb feladatok
 
