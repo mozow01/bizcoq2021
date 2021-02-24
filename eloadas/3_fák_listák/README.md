@@ -41,7 +41,7 @@ fun x : A => M :
                  forall x : A, B
 ````
 
-Ennek a kostruktornak a destruktora az applikáció, vagy függvénykiszámítás:
+Ennek eliminátora vagy destruktora az applikáció, vagy függvénykiszámítás:
 
 Pi kiküszöbölési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20M%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20M%20N%20%3A%20B%5Bx%2FN%5D%20%7D">
 ----- | -----
