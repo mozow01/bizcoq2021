@@ -116,7 +116,9 @@ Qed.
 
 ## Műveleket fákkal 
 
-````coq(* Műveleti jelek halmazának definíciója*)
+````coq
+
+(* Műveleti jelek halmazának definíciója*)
 
 Inductive Operator : Set :=
   | Plus : Operator
@@ -176,9 +178,7 @@ a kimenet O(n) idejű. Az algoritmus tehát LINTIME-beli. *)
 ## Absztrakt szintaxis fák
 
 ````coq
-(*Vegyük észre, hogy a fa minden elemét egyszer érinti az algoritmus!
-Ezért ha a bemenet a szintaxisfa kódja és ennek hossza ''n'', akkor 
-a kimenet O(n) idejű. Az algoritmus tehát LIN-beli. *)
+
 
 (*Na, jó, de ez tök ugyanaz, mint az andb :D *)
 
