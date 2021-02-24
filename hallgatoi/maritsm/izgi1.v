@@ -18,15 +18,27 @@ Definition f_2 (g: bool -> bool -> bool) : bool :=
 Eval compute in f_2(fun x y : bool => orb x y).
 Eval compute in f_2(fun x y : bool => implb (orb (negb x) (negb y)) (negb (andb x y)) ).
 
-Search nat.
+Search list.
+Require Import Coq.Lists.List.
+Search list.
 
-Fixpoint f (n: nat) (g: bool -> bool) {struct n} : bool :=
+Definition si_true : list bool := cons true nil.
+Definition si_false : list bool := cons false nil.
+
+Fixpoint f (n: nat) (g: list bool -> bool) {struct n} : bool :=
 match n with
 | 0 => false
-| 1 => andb (g false) (g true)
-| S p => f p g
+| 1 => andb (g (cons true nil)) (g (cons false nil))
+| S p => andb (f p (fun x => g (app x si_true)) ) (f p (fun x => g (app x si_false)) )
 end.
 
-Eval compute in f 1 (fun x y : bool => orb x y).
+Eval compute in f 1 (fun x => orb (nth 1 x false) (negb (nth 1 x false))).
+(* az "nth 1 x false" rész a "list bool" típusból bool-ba konvertáláshoz kell *)
+
+Eval compute in f 2 (fun x => orb (nth 1 x false) (nth 2 x false)).
+Eval compute in f 2 (fun x => implb (orb (negb (nth 1 x false)) (negb (nth 2 x false)))
+                      (negb (andb (nth 1 x false) (nth 2 x false))) ).
+
+
 
  
