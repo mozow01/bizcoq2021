@@ -189,7 +189,9 @@ c) Definiáljuk ````UBTree````-ben is a ````length_UB```` levélhossz függvény
 forall s t : UBTree, length_UB(right_UB s t) =  length_UB s + length_UB t.
 ````
 
-2. Képzeljünk el olyan fákat, amiknek a levelein ````bool```` értékek vannak és a csúcsaiban ````bool```` műveletek. Az ilyen fák típusának definíciója:
+2. 
+
+Képzeljünk el olyan fákat, amiknek a levelein ````bool```` értékek vannak és a csúcsaiban ````bool```` műveletek. Az ilyen fák típusának definíciója:
 
 ````coq
 Inductive bTree : Set :=
