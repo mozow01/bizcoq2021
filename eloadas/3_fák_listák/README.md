@@ -178,7 +178,9 @@ a kimenet O(n) idejű. Az algoritmus tehát LINTIME-beli. *)
 ## Gyakorló házi feladatok
 
 1. 
-  a) Definiáljunk azon fáknak az ````UBTree```` típusát, amikben egy a levelek ````leaf```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
-  b) Definiáljuk a ````lambda (t:UBT) (s:UBT). right s t : UBT -> UBT -> UBT```` függvényt az fentiekhez hasonlóan, vagyis, azt, ami egy ````t```` fa esetén megkeresi a legjobboldalibb levelet (végül is mindegy, hogy felfelé vagy lefelé nő a fa) és ebből a levélből kinöveszt balra egy levelet és jobbra az ````s```` fát. 
+
+a) Definiáljunk azon fáknak az ````UBTree```` típusát, amikben egy a levelek ````leaf```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
+
+b) Definiáljuk a ````lambda (t:UBT) (s:UBT). right s t : UBT -> UBT -> UBT```` függvényt az fentiekhez hasonlóan, vagyis, azt, ami egy ````t```` fa esetén megkeresi a legjobboldalibb levelet (végül is mindegy, hogy felfelé vagy lefelé nő a fa) és ebből a levélből kinöveszt balra egy levelet és jobbra az ````s```` fát. 
 
 2.
