@@ -51,37 +51,11 @@ Világos, hogy ha egy függvényt applikálunk egy az inputjával egyező típus
 Pi komputációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%20%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20(%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM)%20N%20%5C%3B%5Cto_%5Cbeta%20%5C%3BM%5Bx%2FN%5D%3AB%5Bx%2FN%5D%20%7D"> 
 -------|--------
 
-
-
-
-
-
-
-## Absztrakt véges típusok
-
-````coq
-Inductive Fin : nat -> Set :=
-  |fzero : forall {n}, Fin (S n)
-  |fsucc : forall {n}, Fin n -> Fin (S n).
-````
-  
-````coq
-Theorem Fin_0_0_elemű : Fin 0 -> False.
-Proof.
-  intro p.
-  exact match p with 
-          | fzero   => True
-          | fsucc _ => True
-        end.
-  Show Proof.
-Defined.
-````
-
 ## Természetes számok
 
 Ez egy elég kemény dió. Sok csomag és taktika van, ami ezzel küzd: omega, crush, Mathematical Components.
 
-```coq
+````coq
 SearchAbout plus.
 
 Theorem n_plus_O : forall n : nat, n + O = n.
@@ -95,11 +69,11 @@ Proof.
   reflexivity.
   Show Proof.
 Qed.
-```
+````
 
 ## Fák, bokrok, ligetek
 
-```coq
+````coq
 Inductive tree : Set :=
   | l : tree
   | n : tree -> tree -> tree.
@@ -138,7 +112,161 @@ Theorem ossz_tree_ll : length (right l l) = length l + length l.
 Proof.
   apply ossz_tree with (t:=l) (s:=l).
 Qed.
-```
+````
 
+## Műveleket fákkal 
+
+````coq(* Műveleti jelek halmazának definíciója*)
+
+Inductive Operator : Set :=
+  | Plus : Operator
+  | Mult : Operator.
+
+(*Absztrakt szintaxis fa definíciója
+(leveleken számok, csúcsokban műveleti jelek).*)
+
+Inductive AST : Set :=
+  | leaf : nat -> AST
+  | node : Operator -> AST -> AST -> AST.
+
+(*Teszt arra, hogy ha pl. a (2*3)+6 -ot akarjuk szintaxisfaként kódolni,
+akkor a kifejezés szándékolt kódja AST típusú lesz-e. *)
+
+Check node Plus (node Mult (leaf 2) (leaf 3)) (leaf 6).
+
+(*Kimenet:
+node Plus (node Mult (leaf 2) (leaf 3)) (leaf 6)
+     : AST
+*)
+
+(*Kiszámítási algoritmus. Rekurzív: alacsonyabb fákra meghívja magát.*)
+
+Fixpoint evaluation (t : AST) : nat :=
+  match t with
+    | leaf l => l
+    | node o t_1 t_2 => match o with
+                          | Plus => plus (evaluation t_1) (evaluation t_2)
+                          | Mult => mult (evaluation t_1) (evaluation t_2)
+                        end
+  end.
+
+(*Teszt arra, hogy (2*3)+6=12 *)
+
+Eval compute in evaluation (node Plus (node Mult (leaf 2) (leaf 3)) (leaf 6)).
+
+(*Kimenet:
+ = 12
+     : nat
+*)
+
+(*De levelekkel is elbánik*)
+
+Eval compute in evaluation (leaf 6).
+
+(*Kimenet:
+ = 6
+     : nat
+*)
+
+(*Vegyük észre, hogy a fa minden elemét egyszer érinti az algoritmus!
+Ezért ha a bemenet a szintaxisfa kódja és ennek hossza ''n'', akkor
+a kimenet O(n) idejű. Az algoritmus tehát LINTIME-beli. *)
+````
+
+## Absztrakt szintaxis fák
+
+````coq
+(*Vegyük észre, hogy a fa minden elemét egyszer érinti az algoritmus!
+Ezért ha a bemenet a szintaxisfa kódja és ennek hossza ''n'', akkor 
+a kimenet O(n) idejű. Az algoritmus tehát LIN-beli. *)
+
+(*Na, jó, de ez tök ugyanaz, mint az andb :D *)
+
+(* A Coq egyik feladata a szintaxis kezelése *)
+
+Inductive BinAST {A:Set} {O:Set} : Type :=
+  | aleaf : A -> BinAST
+  | anode : O -> BinAST -> BinAST -> BinAST.
+
+
+(* Elemnevek halmazának definíciója*)
+
+Inductive Atom :  Set :=
+  | At : nat -> Atom.
+
+Check At(3).
+
+(* Műveleti jelek halmazának definíciója*)
+
+Inductive Operator : Set :=
+  | Plus : Operator
+  | Mult : Operator.
+
+
+(*Absztrakt szintaxis fa definíciója
+
+BinAST {Atom:Set} {Operator:Set}
+
+ *)
+
+Check anode Plus (aleaf (At 3)) (aleaf (At 4)).
+
+(*Modell definíciója*)
+
+Structure Model : Type := const_kozos
+{
+  A :> Set;
+
+  op1 : A -> A -> A ;
+  op2 : A -> A -> A ;
+}.
+
+(*Értékelés definíciója: v: Atom -> M, ahol M : Model *)
+
+(*Összetett kifejezés értékelése*)
+
+(*Kiszámítási algoritmus. Rekurzív: alacsonyabb fákra meghívja magát.*) 
+
+Fixpoint eval (M:Model) (v:Atom -> M) (t : BinAST) : M :=
+  match t with 
+    | aleaf l => v(l)
+    | anode o t_1 t_2 => match o with 
+                          | Plus => op1 M (eval M v t_1) (eval M v t_2)
+                          | Mult => op2 M (eval M v t_1) (eval M v t_2)
+                        end
+  end.
+
+Definition NAT_Model : Model := const_kozos nat plus mult.
+
+
+Definition v: Atom -> nat := fun x => match x with 
+                                        | At 0 => 2
+                                        | At 1 => 3
+                                        | At 2 => 6
+                                        | _ => 0
+                                      end.
+
+
+(*Teszt arra, hogy (2*3)+6=12 *)
+
+Eval compute in eval NAT_Model v 
+(anode Plus (anode Mult (aleaf (At 0)) (aleaf (At 1))) (aleaf (At 2))).
+
+(*Kimenet: 
+ = 12
+     : nat
+*)
+
+Theorem test : eval NAT_Model v 
+(anode Plus (anode Mult (aleaf (At 0)) (aleaf (At 1))) (aleaf (At 2)))=12.
+Proof. 
+  simpl. auto.
+Qed.
+
+
+(*Vegyük észre, hogy a fa minden elemét egyszer érinti az algoritmus!
+Ezért ha a bemenet a szintaxisfa kódja és ennek hossza ''n'', akkor 
+a kimenet O(n) idejű. Az algoritmus tehát LIN-beli. *)
+````
 
 
