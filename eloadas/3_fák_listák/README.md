@@ -2,7 +2,7 @@
 
 ## Ismétlés, összefoglalás
 
-A Coq nyelve egy függő típusos lamnda kalkulusra épül. Ennek atomi típusai: ````Set, Prop, Type(i)````. A kifejezések közül az atomiak a változók. Az összetett típusokat vagy a *Pi* operátorral készítjük el vagy új típusokkal bővítjük a nyelvet, amiket *induktív* módon vezetünk be. A <img src="https://render.githubusercontent.com/render/math?math=%5CGamma"> *kontextus* egy <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D"> alakú halmaz, ami változók deklarációit tartalmazza és lényegében a premisszák kerülnek bele. A <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D%5Cvdash%20%3F%3AC"> feladat a Proof Mode-ban az ------------- jelnél tanultakhoz kapcsolódik:
+A Coq nyelve egy függő típusos lambda kalkulusra épül. Ennek atomi típusai: ````Set, Prop, Type(i)````. A kifejezések közül az atomiak a változók. Az összetett típusokat vagy a *Pi* operátorral készítjük el vagy új típusokkal bővítjük a nyelvet, amiket *induktív* módon vezetünk be. A <img src="https://render.githubusercontent.com/render/math?math=%5CGamma"> *kontextus* egy <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D"> alakú halmaz, ami változók deklarációit tartalmazza és lényegében a premisszák kerülnek bele. A <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D%5Cvdash%20%3F%3AC"> feladat a Proof Mode-ban az ------------- jelnél tanultakhoz kapcsolódik:
 
 ````coq
 x:A
