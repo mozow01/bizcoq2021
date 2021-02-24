@@ -1,6 +1,3 @@
-Search bool.
-Print andb.
-
 Definition f_1 (g: bool -> bool) : bool :=
   match g(true) with
   | true => g(false)
