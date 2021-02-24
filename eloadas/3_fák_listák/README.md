@@ -189,4 +189,40 @@ c) Definiáljuk ````UBTree````-ben is a ````length_UB```` levélhossz függvény
 forall s t : UBTree, length_UB(right_UB s t) =  length_UB s + length_UB t.
 ````
 
-2.
+2. Képzeljünk el olyan fákat, amiknek a levelein ````bool```` értékek vannak és a csúcsaiban ````bool```` műveletek. Az ilyen fák típusának definíciója:
+
+````coq
+Inductive bTree : Set :=
+  | bleaf : bool -> bTree
+  | bnode : (bool -> bool -> bool) -> bTree -> bTree -> bTree.
+````
+
+Ilyen fa például az alábbi kettő:
+
+````coq
+Check bleaf true.
+Check bnode orb (bleaf true) (bnode andb (bleaf false) (bleaf true)).
+
+`````
+
+Most gondoljunk azokra a fákra, amik adott (mondjuk n) magasságúak, de szintén bool fák. Az ilyenek típusát így adhatjuk meg:
+
+````coq
+
+Inductive hbTree : nat -> Set :=
+  | hleaf : bool -> hbTree 0
+  | hnode : forall n:nat, (bool->bool->bool) -> hbTree n -> hbTree n -> hbTree (S n).
+
+(* pl.: *)
+
+Check hleaf true.
+Check hnode 0 andb (hleaf true) (hleaf true).
+````
+
+A hbTree típus tehát *függő típus,* ha n adott természetes szám, akkor hbTree n egy halmaz. 
+
+a) Definiáljuk rekurzívan a feledékeny függvényt, ami egy t : (hbTree n) fából legyártja a neki pontosan megfelelő forgetful t : bTree fát, ami tök úgy néz ki, csak nincs megmondva milyen magas!
+
+````coq
+Fixpoint forgetful (n:nat) (t: hbTree n) : bTree := ????
+````
