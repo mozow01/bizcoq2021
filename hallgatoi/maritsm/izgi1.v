@@ -18,9 +18,7 @@ Definition f_2 (g: bool -> bool -> bool) : bool :=
 Eval compute in f_2(fun x y : bool => orb x y).
 Eval compute in f_2(fun x y : bool => implb (orb (negb x) (negb y)) (negb (andb x y)) ).
 
-Search list.
 Require Import Coq.Lists.List.
-Search list.
 
 Definition si_true : list bool := cons true nil.
 Definition si_false : list bool := cons false nil.
