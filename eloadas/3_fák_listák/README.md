@@ -2,7 +2,7 @@
 
 ## Ismétlés, összefoglalás
 
-A Coq nyelve egy függő típusos lamda kalkulusra épül. Ennek atomi típusai: ````Set, Prop, Type(i)````. A kifejezések közül az atomiak a változók. Az összetett típusokat vagy a *Pi* operátorral készítjük el vagy új típusokkal bővítjük a nyelvet, amiket *induktív* módon vezetünk be. A <img src="https://render.githubusercontent.com/render/math?math=%5CGamma"> *kontextus* egy <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D"> alakú halmaz, ami változók deklarációit tartalmazza és lényegében a premisszák kerülnek bele. A <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D%5Cvdash%20%3F%3AC"> feladat a Proof Mode-ban az ------------- jelnél tanultakhoz kapcsolódik:
+A Coq nyelve egy függő típusos lamnda kalkulusra épül. Ennek atomi típusai: ````Set, Prop, Type(i)````. A kifejezések közül az atomiak a változók. Az összetett típusokat vagy a *Pi* operátorral készítjük el vagy új típusokkal bővítjük a nyelvet, amiket *induktív* módon vezetünk be. A <img src="https://render.githubusercontent.com/render/math?math=%5CGamma"> *kontextus* egy <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D"> alakú halmaz, ami változók deklarációit tartalmazza és lényegében a premisszák kerülnek bele. A <img src="https://render.githubusercontent.com/render/math?math=%5C%7Bx%3AA%2C%20y%3AB%2C%20%5Cdots%5C%7D%5Cvdash%20%3F%3AC"> feladat a Proof Mode-ban az ------------- jelnél tanultakhoz kapcsolódik:
 
 ````coq
 x:A
@@ -27,7 +27,7 @@ jelentését a halmazelméletben a halmazok Descartes-szorzata adja. Ha <img src
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle%20%5Cprod_%7Bx%5Cin%20A%7DB_x%3D%5Cleft%5C%7Bf%3AA%5Cto%20B%5Cmid%20f(x)%5Cin%20B_x%5Cright%5C%7D">
 
-Ennek elemei tehát pontosan azok a függvények, amik A-n értelmezettek és olyan az értékük, hogy minden x-re az A-ból, f(x) éppen B_x eleme. 
+Ennek elemei tehát pontosan azok a függvények, amik A-n értelmezettek és olyan az értékük, hogy minden x-re az A-ból, f(x) éppen B_x eleme. (A képletben B a (B_x) halmazcsalád uniója.)
 
 A Pi típus konstruktora a típuselméletben a lambda operátor:
 
@@ -41,12 +41,12 @@ fun x : A => M :
                  forall x : A, B
 ````
 
-Ennek eliminátora vagy destruktora az applikáció, vagy függvénykiszámítás:
+Ennek eliminátora vagy destruktora az applikáció, vagy függvényalkalmazás:
 
 Pi kiküszöbölési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20M%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20M%20N%20%3A%20B%5Bx%2FN%5D%20%7D">
 ----- | -----
 
-Világos, hogy ha egy függvényt applikálunk egy az inputjával egyező típusú értékkel, akkor egy olyan kifejezést kapunk, ami kiszámításért kiált. Ez az érték a beta reduktum:
+Világos, hogy ha egy függvényt applikálunk egy az inputjával egyező típusú értékre, akkor egy olyan kifejezést kapunk, ami kiszámításért kiált. Ez az érték a beta reduktum:
 
 Pi komputációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%20%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20(%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM)%20N%20%5C%3B%5Cto_%5Cbeta%20%5C%3BM%5Bx%2FN%5D%3AB%5Bx%2FN%5D%20%7D"> 
 -------|--------
@@ -179,7 +179,7 @@ a kimenet O(n) idejű. Az algoritmus tehát LINTIME-beli. *)
 
 1. 
 
-a) Definiáljunk azon fáknak az ````UBTree```` típusát, amiben a levelek ````leaf0```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
+a) Definiáljunk azon fák ````UBTree```` típusát, amiben a levelek ````leaf0```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
 
 b) Definiáljuk a ````right_UB (t:UBTree) (s:UBTree) : UBTree```` függvényt a fentiekhez hasonlóan, vagyis azt, ami egy ````t```` fa esetén megkeresi a legjobboldalibb levelet (végül is mindegy, hogy felfelé vagy lefelé nő a fa) és ebből a levélből kinöveszt balra egy levelet és jobbra az ````s```` fát.
 
@@ -206,11 +206,11 @@ Check bleaf true.
 Check bnode orb (bleaf true) (bnode andb (bleaf false) (bleaf true)).
 
 `````
-a) Definiáljuk rekurzívan egy ````bTree```` típusú fa magasságát és számoljuk ki néhány fára az értékét! (Használjuk a kétváltozós max függvényt!)
+a) Definiáljuk rekurzívan egy ````bTree```` típusú fa magasságát és számoljuk ki néhány fára az értékét! (Használjuk a kétváltozós ````max```` függvényt!)
 
 b) Definiáljuk rekurzívan egy ````bTree```` típusú fa tükörképét, azaz egy olyan fát, ami az összes node bal és jobb oldali ágát megfordítja!
 
-Most gondoljunk azokra a fákra, amik adott (mondjuk n) magasságúak, de szintén bool fák. Az ilyenek típusát így adhatjuk meg:
+Most gondoljunk azokra a fákra, amik adott (mondjuk n) magasságúak, de szintén bool fák! Az ilyenek típusát így adhatjuk meg:
 
 ````coq
 
@@ -224,7 +224,7 @@ Check hleaf true.
 Check hnode 0 andb (hleaf true) (hleaf true).
 ````
 
-A ````hbTree```` típus tehát *függő típus,* ha n adott természetes szám, akkor hbTree n egy halmaz. 
+A ````hbTree```` típus tehát *függő típus,* ha n adott természetes szám, akkor ````hbTree n```` egy halmaz. 
 
 c) Definiáljuk rekurzívan a *feledékeny függvényt,* ami egy ````t : (hbTree n)```` fából legyártja a neki pontosan megfelelő ````forgetful t : bTree```` fát, ami tök úgy néz ki, csak nincs megmondva milyen magas!
 
