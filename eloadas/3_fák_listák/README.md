@@ -145,7 +145,7 @@ node Plus (node Mult (leaf 2) (leaf 3)) (leaf 6)
 
 Fixpoint evaluation (t : AST) : nat :=
   match t with
-    | leaf l' => l
+    | leaf l' => l'
     | node o t_1 t_2 => match o with
                           | Plus => plus (evaluation t_1) (evaluation t_2)
                           | Mult => mult (evaluation t_1) (evaluation t_2)
@@ -186,7 +186,7 @@ b) Definiáljuk a ````right_UB (t:UBTree) (s:UBTree) : UBTree```` függvényt a 
 c) Definiáljuk ````UBTree````-ben is a ````length_UB```` levélhossz függvényt és igazoljuk, hogy 
 
 ````coq
-forall s t : UBTree, length_UB(right_UB s t) =  length_UB(s) + length_UB(t).
+forall s t : UBTree, length_UB(right_UB s t) =  length_UB s + length_UB t.
 ````
 
 2.
