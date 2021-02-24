@@ -114,7 +114,7 @@ Proof.
 Qed.
 ````
 
-## Műveleket fákkal 
+## Műveletek fákkal 
 
 ````coq
 
@@ -145,7 +145,7 @@ node Plus (node Mult (leaf 2) (leaf 3)) (leaf 6)
 
 Fixpoint evaluation (t : AST) : nat :=
   match t with
-    | leaf l => l
+    | leaf l' => l
     | node o t_1 t_2 => match o with
                           | Plus => plus (evaluation t_1) (evaluation t_2)
                           | Mult => mult (evaluation t_1) (evaluation t_2)
@@ -175,98 +175,10 @@ Ezért ha a bemenet a szintaxisfa kódja és ennek hossza ''n'', akkor
 a kimenet O(n) idejű. Az algoritmus tehát LINTIME-beli. *)
 ````
 
-## Absztrakt szintaxis fák
+## Gyakorló házi feladatok
 
-````coq
+1. 
+  a) Definiáljunk azon fáknak az ````UBTree```` típusát, amikben egy a levelek ````leaf```` konstruktorán és a bináris elágazások ````node2```` konstruktorán kívül az *egyelágazású* csúcsok ````node1```` konstruktora is szerepel.
+  b) Definiáljuk a ````lambda (t:UBT) (s:UBT). right s t : UBT -> UBT -> UBT```` függvényt az fentiekhez hasonlóan, vagyis, azt, ami egy ````t```` fa esetén megkeresi a legjobboldalibb levelet (végül is mindegy, hogy felfelé vagy lefelé nő a fa) és ebből a levélből kinöveszt balra egy levelet és jobbra az ````s```` fát. 
 
-
-(*Na, jó, de ez tök ugyanaz, mint az andb :D *)
-
-(* A Coq egyik feladata a szintaxis kezelése *)
-
-Inductive BinAST {A:Set} {O:Set} : Type :=
-  | aleaf : A -> BinAST
-  | anode : O -> BinAST -> BinAST -> BinAST.
-
-
-(* Elemnevek halmazának definíciója*)
-
-Inductive Atom :  Set :=
-  | At : nat -> Atom.
-
-Check At(3).
-
-(* Műveleti jelek halmazának definíciója*)
-
-Inductive Operator : Set :=
-  | Plus : Operator
-  | Mult : Operator.
-
-
-(*Absztrakt szintaxis fa definíciója
-
-BinAST {Atom:Set} {Operator:Set}
-
- *)
-
-Check anode Plus (aleaf (At 3)) (aleaf (At 4)).
-
-(*Modell definíciója*)
-
-Structure Model : Type := const_kozos
-{
-  A :> Set;
-
-  op1 : A -> A -> A ;
-  op2 : A -> A -> A ;
-}.
-
-(*Értékelés definíciója: v: Atom -> M, ahol M : Model *)
-
-(*Összetett kifejezés értékelése*)
-
-(*Kiszámítási algoritmus. Rekurzív: alacsonyabb fákra meghívja magát.*) 
-
-Fixpoint eval (M:Model) (v:Atom -> M) (t : BinAST) : M :=
-  match t with 
-    | aleaf l => v(l)
-    | anode o t_1 t_2 => match o with 
-                          | Plus => op1 M (eval M v t_1) (eval M v t_2)
-                          | Mult => op2 M (eval M v t_1) (eval M v t_2)
-                        end
-  end.
-
-Definition NAT_Model : Model := const_kozos nat plus mult.
-
-
-Definition v: Atom -> nat := fun x => match x with 
-                                        | At 0 => 2
-                                        | At 1 => 3
-                                        | At 2 => 6
-                                        | _ => 0
-                                      end.
-
-
-(*Teszt arra, hogy (2*3)+6=12 *)
-
-Eval compute in eval NAT_Model v 
-(anode Plus (anode Mult (aleaf (At 0)) (aleaf (At 1))) (aleaf (At 2))).
-
-(*Kimenet: 
- = 12
-     : nat
-*)
-
-Theorem test : eval NAT_Model v 
-(anode Plus (anode Mult (aleaf (At 0)) (aleaf (At 1))) (aleaf (At 2)))=12.
-Proof. 
-  simpl. auto.
-Qed.
-
-
-(*Vegyük észre, hogy a fa minden elemét egyszer érinti az algoritmus!
-Ezért ha a bemenet a szintaxisfa kódja és ennek hossza ''n'', akkor 
-a kimenet O(n) idejű. Az algoritmus tehát LIN-beli. *)
-````
-
-
+2.
