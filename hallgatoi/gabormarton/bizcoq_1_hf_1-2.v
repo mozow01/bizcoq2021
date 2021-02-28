@@ -115,7 +115,7 @@ Proof.
 Qed.
 
 
-(* hf 1 *)
+(* hf 2 *)
 
 Theorem hf_2 : (forall x y : Boole, ((nem x) es (nem y)) = nem (x vagy y)).
 Proof. 
