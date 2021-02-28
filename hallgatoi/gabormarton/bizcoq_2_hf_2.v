@@ -117,10 +117,10 @@ Fixpoint Z_6_iter (n:nat) (f:Z_6 -> Z_6) (x:Z_6) :=
     | S p => Z_6_iter p f (f x)
   end.
 
-Compute Z_6_iter 0 Z_6_s (z_6_0).
-Compute Z_6_iter 1 Z_6_s (z_6_0).
-Compute Z_6_iter 6 Z_6_s (z_6_0).
-Compute Z_6_iter 9 Z_6_s (z_6_5).
+Eval compute in Z_6_iter 0 Z_6_s (z_6_0).
+Eval compute in Z_6_iter 1 Z_6_s (z_6_0).
+Eval compute in Z_6_iter 6 Z_6_s (z_6_0).
+Eval compute in Z_6_iter 9 Z_6_s (z_6_5).
 
 Definition Z_6_op (x:Z_6) (y:Z_6) :=
   match y with
@@ -132,9 +132,9 @@ Definition Z_6_op (x:Z_6) (y:Z_6) :=
     | z_6_5 => Z_6_iter 5 Z_6_s x
   end.
 
-Compute Z_6_op z_6_0 z_6_0.
-Compute Z_6_op z_6_1 z_6_2.
-Compute Z_6_op z_6_3 z_6_4.
+Eval compute in Z_6_op z_6_0 z_6_0.
+Eval compute in Z_6_op z_6_1 z_6_2.
+Eval compute in Z_6_op z_6_3 z_6_4.
 
 Definition Z_6_inv (x:Z_6) :=
   match x with
