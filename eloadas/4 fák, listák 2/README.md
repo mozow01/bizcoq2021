@@ -88,3 +88,5 @@ Proof.
   simpl. auto.
 Qed.
 ````
+
+## Egy ,,One-Shot DETERMINISTIC Decision Problem'' 
