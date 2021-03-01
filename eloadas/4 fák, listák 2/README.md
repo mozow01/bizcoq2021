@@ -95,3 +95,31 @@ Kajálni szeretnénk ,,pizzáért indultam, de giros lett belőle'' szellemben. 
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cboxed%7Bs%3A%5Cmathrm%7BState%7D%7D%5C%3B%5C%3B%5Cxrightarrow%7Ba%3A%5Cmathrm%7BAction%7D%7D%5C%3B%5C%3B%20%5Cboxed%7Bs'%3A%5Cmathrm%7BState%7D%7D">
 
+Ennek ellenére megpróbálunk racionális döntést hozni, melyben az is szerepet játszik, hogy milyen korábbi tapasztalataink vannak. A számunkra kedvező eseteket bónuszponttal jutalmazni fogjuk. (Úgy is fogalmazhatunk, kognitív tudományi szempontból, hogy megpróbáljuk kideríteni, hogy az agy ezt gyorsan dönti-e el: ha triviális a választás, akkor igen, ha nem, akkor nem.
+
+Az állapotok a kaják lesznek: State = {pizza, bécsi, giros}, a tettek, hogy melyik kajáldába megyünk: Action = {Carlo, Margo, Artak}. Az átmenetfüggvény határozza meg, hogy mi, akik introvertáltak vagyunk, és az *s* kaját akarjuk és az *a* kajáldát választjuk, akkor milyen kaját kapunk ott. 
+
+````transition (s:State) (a:Action) : State :=````
+
+| |Carlo|Margo|Artak|
+|---|---|---|---|
+|pizza| pizza | pizza | giros|
+|bécsi| pizza | bécsi | bécsi|
+|giros| pizza | pizza | giros|
+
+Preferenciáink is vannak: pl. tudjuk, hogy Margó baromi jó rántotthúst süt, de rossz pizzát és nem veszi föl a maszkot, mert vírustagadó. A többi árús kb. OK. Ezt a juti függvény adja meg:
+
+````utility (s:State) (a:Action) : nat :=````
+
+| |Carlo|Margo|Artak|
+|---|---|---|---|
+|pizza| 9 | 2 | 0 |
+|bécsi| 0 | 10 | 7 |
+|giros| 0 | 0 | 10|
+
+A *modell* szerint úgy döntük, hogy készítünk egy ágens ( :trollface: ) döntési függvényt, amit a következő optimalizációs számítást végzi el:
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cmathrm%7BAgentAction%7D(s)%3D%5Cunderset%7Ba%3A%5Cmathrm%7BAction%7D%7D%7B%5Cmathrm%7Bargmax%7D%7D%5Cmathrm%7Butility%7D(%5Cmathrm%7Btransition(s%2Ca)%2Ca%7D)">
+
+vagyis megmondja, mi az *s* kaja függvényében egy olyan *a* tett, amelyhez a legtöbb jutalompont tartozik. 
+
