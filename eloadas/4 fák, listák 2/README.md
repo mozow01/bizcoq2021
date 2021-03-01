@@ -2,7 +2,7 @@
 
 ## Két kétváltozós művelet kiértékelése absztrakt környezetben
 
-Az előző órán egy ,,konkrét'' absztrakt szintaxis fát értékeltünk ki, ahol az AST levelein bool kifejezések voltak, csúcsaiban bool műveletek. Most mindent paraméteresen veszünk föl. Lesz egy fák formájában kódolt nyelv és lesz ennek a valóság, amiről ez a nyelv beszél. 
+Az előző órán egy ,,konkrét'' absztrakt szintaxis fát értékeltünk ki, ahol az AST levelein bool kifejezések voltak, csúcsaiban bool műveletek. Most mindent paraméteresen veszünk föl. Lesz egy fák formájában kódolt nyelv és lesz a valóság, amiről ez a nyelv beszél. 
 
 |Nyelv|Valóság|
 |--- |----|
@@ -31,4 +31,16 @@ Inductive Operator : Set :=
 Check anode Plus (aleaf (At 3)) (aleaf (At 4)).
 
 ````
-Ennek a nyelvnek sok modellje lehet. Most azt a struktúratípust definiáljuk, amiről szándékoztunk volna a fentiekben a beszélni.
+Ennek a nyelvnek ( ~(=^..^) ) sok modellje ( :scream_cat: ) lehet. Most azt a struktúratípust definiáljuk, amiről szándékoztunk volna a fentiekben a beszélni.
+
+````coq
+Structure Model : Type := const_kozos
+{
+  A :> Set;
+
+  op1 : A -> A -> A ;
+  op2 : A -> A -> A ;
+}.
+
+(*Értékelés definíciója: v: Atom -> M, ahol M : Model *)
+````
