@@ -44,3 +44,47 @@ Structure Model : Type := const_kozos
 
 (*Értékelés definíciója: v: Atom -> M, ahol M : Model *)
 ````
+
+Teljesen mindegy azonban mi a modell, a kiértékelés ugyanúgy megy:
+
+````coq
+Fixpoint eval (M:Model) (v:Atom -> M) (t : BinAST) : M :=
+  match t with 
+    | aleaf l => v(l)
+    | anode o t_1 t_2 => match o with 
+                          | Plus => op1 M (eval M v t_1) (eval M v t_2)
+                          | Mult => op2 M (eval M v t_1) (eval M v t_2)
+                        end
+  end.
+````
+
+ahol v adja meg az atomok konkrét értékét az M modellben. Például maga ````nat```` az összeadással és szorzással is modell: 
+
+````coq
+Definition NAT_Model : Model := const_kozos nat plus mult.
+
+
+Definition v: Atom -> nat := fun x => match x with 
+                                        | At 0 => 2
+                                        | At 1 => 3
+                                        | At 2 => 6
+                                        | _ => 0
+                                      end.
+
+
+(*Teszt arra, hogy (2*3)+6=12 *)
+
+Eval compute in eval NAT_Model v 
+(anode Plus (anode Mult (aleaf (At 0)) (aleaf (At 1))) (aleaf (At 2))).
+
+(*Kimenet: 
+ = 12
+     : nat
+*)
+
+Theorem test : eval NAT_Model v 
+(anode Plus (anode Mult (aleaf (At 0)) (aleaf (At 1))) (aleaf (At 2)))=12.
+Proof. 
+  simpl. auto.
+Qed.
+````
