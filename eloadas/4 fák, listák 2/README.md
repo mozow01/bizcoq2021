@@ -90,3 +90,8 @@ Qed.
 ````
 
 ## Egy ,,One-Shot DETERMINISTIC Decision Problem'' 
+
+Kajálni szeretnénk ,,pizzáért indultam, de giros lett belőle'' szellemben. A vállalkozók áldozatai vagyunk. Hogy mit sikerül kapnunk, azt teljes egészében ők határozzák meg. 
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cboxed%7Bs%3A%5Cmathrm%7BState%7D%7D%5C%3B%5C%3B%5Cxrightarrow%7Ba%3A%5Cmathrm%7BAction%7D%7D%5C%3B%5C%3B%20%5Cboxed%7Bs'%3A%5Cmathrm%7BState%7D%7D">
+
