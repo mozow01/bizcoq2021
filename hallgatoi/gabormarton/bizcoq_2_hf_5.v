@@ -4,8 +4,7 @@ Load bizcoq_2_hf_2.
 
 (*
 Definition EpiMorphismCat (X:Type) (Y:Type) (f:X->Y) : Prop :=
-  forall Z:Type g h:Y->Z,
-    (forall x:X, g (f x) = h (f x)) -> (forall y:Y, g y = h y).
+  forall Z:Type g h:Y->Z, g f = h f -> g = h.
 *)
 
 Definition EpiMorphism (G:Group) (H:Group) (f:G->H) : Prop :=  
