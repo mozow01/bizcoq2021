@@ -123,3 +123,134 @@ A *modell* szerint úgy döntük, hogy készítünk egy ágens ( :trollface: ) d
 
 vagyis megmondja, mi az *s* kaja függvényében egy olyan *a* tett, amelyhez a legtöbb jutalompont tartozik. 
 
+## Az ArgMax megvalósítása két lépésben -- pár vs lista, konkrét eset
+
+````coq
+Inductive H : Set :=
+  | Carlo : H
+  | Margo : H
+  | Artak : H.
+
+Print pair.
+
+Require Import Omega List.
+
+Definition MaxPairTwo (x y : H*nat) : H*nat :=
+  match x, y with
+    | pair a n, pair b m => 
+       if (le_lt_dec m n) then pair a n else pair b m
+  end.
+
+Eval compute in MaxPairTwo (Margo,7) (Carlo,6).
+
+Definition ArgMaxTwo (x y : H*nat) : H := fst(MaxPairTwo x y).
+
+Eval compute in ArgMaxTwo (Margo,7) (Artak,6).
+
+Definition MaxPairThree (x y z : H*nat) : H*nat := 
+  MaxPairTwo (MaxPairTwo x y) z.
+
+Eval compute in MaxPairThree (Margo,7) (Carlo,6) (Artak, 8).
+
+Fixpoint MaxPair (l : list (H*nat)) : H*nat := 
+  match l with 
+   | nil => (Margo,0)
+   | cons x l' => MaxPairTwo x (MaxPair l')
+  end.
+
+Eval compute in 
+MaxPair ((Margo,7)::(Margo,8)::(Artak,6)::(Carlo,10)::nil).
+
+(*A véges halmazon függvény, mint lista *)
+
+Definition listing (f: H -> nat) : list (H*nat) := 
+  (Carlo,f(Carlo))::(Margo,f(Margo))::(Artak,f(Artak))::nil. 
+
+Definition f (x:H) : nat :=
+  match x with
+    | Carlo => 0
+    | Margo => 2
+    | Artak => 2
+  end.
+
+Eval compute in MaxPair (listing f).
+
+Eval compute in fst (MaxPair (listing f)).
+````
+
+## Az ArgMax megvalósítása két lépésben -- opcionális típus, általános eset
+
+````coq
+Require Import Omega List.
+
+Definition MaxPairTwo {X:Set} (x y : option (X*nat)) : option (X*nat) :=
+  match x, y with
+    | None, None => None
+    | None, Some b => Some b
+    | Some a, None => Some a
+    | Some (pair a n), Some (pair b m) => 
+       if (le_lt_dec m n) then Some (pair a n) else Some (pair b m)
+  end.
+
+Fixpoint MaxPair {X:Set} (l : list (option(X*nat))) : option (X*nat) := 
+  match l with 
+   | nil => None
+   | cons x l' => MaxPairTwo x (MaxPair l')
+  end.
+
+Definition ArgMax {X:Set} (l : list (option(X*nat))) : option X := 
+  match MaxPair l  with
+    | None => None
+    | Some z => Some (fst z)
+  end.
+````
+## A probléma megoldása
+
+(folyt.)
+
+````coq
+Inductive Action : Set :=
+  | Margo : Action
+  | Carlo : Action
+  | Artak : Action.
+
+Inductive State : Set :=
+  | pizza : State
+  | bécsi : State
+  | giros : State.
+
+Definition transition (s:State) (a:Action) : State :=
+  match s, a with
+   | _ , Carlo => pizza
+   | pizza , Margo => pizza
+   | bécsi , Margo => bécsi   
+   | _ , Margo => pizza
+   | bécsi , Artak => bécsi
+   | giros , Artak => giros
+   | _ , Artak => giros
+  end.
+
+Eval compute in (transition pizza Artak).
+
+Definition utility (s:State) (a:Action) : nat :=
+  match s, a with
+   | pizza , Carlo => 9
+   | bécsi , Artak => 6
+   | bécsi , Margo => 10
+   | pizza , Margo => 2
+   | giros , Artak => 10
+   | _ , Margo => 0
+   | _ , Carlo => 0
+   | _ , Artak => 0
+  end.
+
+Definition listing (f: Action -> nat) : list (option(Action*nat)) := 
+  Some (Carlo,f(Carlo))::Some (Margo,f(Margo))::Some (Artak,f(Artak))::nil. 
+
+(*AgentAction(s) := arg max_a {utility(transition(s a) a)} *)
+
+Definition AgentAction(s:State) : option Action := 
+  ArgMax (listing (fun x:Action => utility (transition s x) x) ).
+
+Eval compute in AgentAction pizza.
+````
