@@ -44,7 +44,7 @@ Proof.
   Show Proof.
 Qed.
 
-Theorem szavak_dec_2_v2 : forall (x : szavak), x = Hello world \/ x <> Hello world.
+Theorem szavak_dec_2_v0 : forall (x : szavak), x = Hello world \/ x <> Hello world.
 Proof.
   induction x.
   destruct IHx as [IHx1 | IHx2].
