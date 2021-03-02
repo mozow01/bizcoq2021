@@ -12,6 +12,20 @@ Qed.
 
 (* hf *)
 
+Theorem szavak_dec_2 : forall (x : szavak), x = Hello world \/ x <> Hello world.
+Proof.
+  intro x.
+  destruct x.
+  destruct x.
+  right.
+  discriminate.
+  left.
+  reflexivity.
+  right.
+  discriminate.
+  Show Proof.
+Qed.
+
 Theorem szavak_cons_inj : forall (x y: szavak), x <> y -> Hello x <> Hello y.
 Proof.
   intros x y H.
@@ -30,7 +44,7 @@ Proof.
   Show Proof.
 Qed.
 
-Theorem szavak_dec_2 : forall (x : szavak), x = Hello world \/ x <> Hello world.
+Theorem szavak_dec_2_v2 : forall (x : szavak), x = Hello world \/ x <> Hello world.
 Proof.
   induction x.
   destruct IHx as [IHx1 | IHx2].
