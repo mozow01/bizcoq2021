@@ -98,19 +98,18 @@ Fixpoint length_UB (t: UBTree) : nat :=
     | node2 a b => (length_UB a) + (length_UB b)
   end.
 
-Print f_equal.
-
 Theorem leveltetel: forall s t : UBTree, length_UB(right_UB s t) =  length_UB s + length_UB t.
 Proof.
   intros.
-  induction t; simpl; auto.
-  induction s.
-  compute.
-  reflexivity.
-  apply IHs. (* Jesus Christ be praised :-) *)
   simpl.
-  rewrite -> IHs2.
-
+  induction s.
+  auto.
+  auto.
+  simpl.
+  rewrite IHs2.
+  Require Import Omega.
+  omega.
+Qed.
 
 Inductive bTree : Set :=
   | bleaf : bool -> bTree
@@ -147,12 +146,33 @@ Fixpoint forgetful (n:nat) (t: hbTree n) : bTree :=
     | hnode size fn a b => bnode fn (forgetful size a) (forgetful size b)
   end.
 
+Search max.
+
 Theorem magassagtetel : forall (n:nat) (t: hbTree n), bTree_height(forgetful n t) = n. 
 Proof.
-  intros.
+  induction t.
+  induction b.
+  compute.
+  reflexivity.
+  compute.
+  reflexivity.
+  simpl.
+  rewrite IHt1.
+  rewrite IHt2.
+  assert (H: Init.Nat.max n0 n0 = n0).
+  apply Nat.max_id.
+  rewrite H.
+  omega.
+Qed.
 
+Fixpoint hbTree_mirror (n: nat) (t: hbTree n) : hbTree n :=
+  match t with
+    | hleaf x => hleaf x
+    | hnode size fn a b => hnode size fn (hbTree_mirror size b) (hbTree_mirror size a)
+  end.
 
-
+Check hnode 0 andb (hleaf true) (hleaf true).
+Check hbTree_mirror 1 (hnode 0 andb (hleaf true) (hleaf true)).
 
 
 
