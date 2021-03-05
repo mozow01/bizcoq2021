@@ -1,0 +1,31 @@
+Inductive UBTree : Set :=
+  | leaf0 : UBTree
+  | node1 : UBTree -> UBTree
+  | node2 : UBTree -> UBTree -> UBTree.
+
+Fixpoint right_UB (t:UBTree) (s:UBTree) : UBTree :=
+match t with
+  | leaf0 => node2 leaf0 s
+  | node1 t0 => node1 (right_UB t0 s)
+  | node2 t1 t2 => node2 t1 (right_UB t2 s) end.
+
+Fixpoint length_UB (t:UBTree): nat :=
+  match t with
+  | leaf0 => 1
+  | node1 t0 => length_UB(t0)
+  | node2 t1 t2 => length_UB(t1) + length_UB(t2) end.
+
+Theorem faossz_UB : forall s t : UBTree, length_UB(right_UB s t) =  length_UB s + length_UB t.
+Proof.
+  intros.
+  induction s.
+  simpl.
+  auto.
+  simpl.
+  rewrite IHs.
+  auto.
+  simpl.
+  rewrite IHs2.
+  Require Import Omega.
+  omega.
+Qed.
