@@ -297,6 +297,14 @@ Proof.
   assumption.
 Qed.
 
+Lemma test (n:nat) (H:n <> 0) : forall a:A (Z_n_group n H), a = a.
+Proof.
+  intro a.
+  (* case a. *)
+  reflexivity.
+Qed.
+
+(* Lemma test (n:nat) (H:n <> 0) : forall a:A (Z_n_group n H), Z_n_order n a < n. *)
 
 Theorem Z_n_cyclic_group (n:nat) : n > 1 -> CyclicGroup.
 Proof.
