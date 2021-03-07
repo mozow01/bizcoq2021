@@ -65,3 +65,86 @@ Proof.
   Show Proof.
 Defined.
 ````
+Először annak a definíciója, hogy egy függvény kölcsönösen egyértelmű, azaz bijekció: 
+
+````coq
+Definition Bijection (A B:Set) (j:A->B) : Prop := 
+  (forall y: B, exists x: A, j(x)=y) /\
+  forall x1 x2 : A, j(x1)=j(x2) -> x1=x2. 
+````
+
+Ez azért kell, mert akkor mondjuk, hogy A és B azonos számosságú, ha van bijekció a két halmaz között. Ez a Fin 2 és bool között a következő (amiről be kell majd látnunk, hogy valóban bijekció).
+
+````coq
+Definition f : (Fin 2) -> bool := fun x => 
+            match x with 
+              | @fzero 1 => true 
+              | @fsucc 1 _ => false 
+            end.
+````
+És akkor a releváns bizonyítás.
+
+````coq
+Theorem Fin_2_bool : Bijection (Fin 2) bool f.
+Proof.
+  unfold Bijection.
+  split.
+  apply bool_ind.
+  apply ex_intro with (x:=@fzero 1).
+  compute; auto.
+  apply ex_intro with (x:=@fsucc 1 (fzero)).
+  compute; auto.
+  intros x1 x2.
+  apply Fin_2_ind with (P:=fun x1 => (f x1 = f x2 -> x1 = x2)).
+  simpl.
+  apply Fin_2_ind with (P:=fun x2 => (true = f x2 -> fzero = x2)).
+  compute; auto.
+  intros f3.
+  compute.
+  intro.
+  assert (K:true <> false).
+  discriminate.
+  contradiction.
+  intros f3.
+  simpl.
+  apply Fin_2_ind with (P:=fun x2 => (false = f x2 -> fsucc f3 = x2)).
+  compute.
+  intro.
+  assert (K: false <> true).
+  discriminate.
+  contradiction.
+  intros f0.
+  compute.
+  intros.
+  assert (K1:fzero=f3).
+  apply Fin_1_egyelemu with (x:=f3).
+  assert (K2:fzero=f0).
+  apply Fin_1_egyelemu with (x:=f0).
+  assert (K3: f3=f0).
+  congruence. 
+  rewrite K3; auto.
+Qed.
+````
+
+Kicsit körülményes.
+
+Egyszerűbb belátni, hogy Fin 2 kételemű:
+
+````coq
+Definition Fin_2_ketelemu : (forall x:Fin 2, x=fzero \/ x=fsucc fzero) /\ (fzero <> (fsucc (@fzero 0))).
+  split.
+  intros.
+  apply Fin_2_ind with (P:=fun x => (x=fzero \/ x=fsucc fzero)).
+  left.
+  auto.
+  intros.
+  right.
+  enough (H:fzero=f3).
+  rewrite H.
+  auto.
+  apply Fin_1_egyelemu with (x:=f3).
+  discriminate.
+Defined.
+````
+
+A tanult új taktikák: ````assert````, ````contradiction````, ````enough````.
