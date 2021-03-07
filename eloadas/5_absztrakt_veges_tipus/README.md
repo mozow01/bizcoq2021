@@ -148,3 +148,54 @@ Defined.
 ````
 
 A tanult új taktikák: ````assert````, ````contradiction````, ````enough````.
+
+## Egyszerűbb feladatok
+
+1. True egyelemű típus, egyetlen lakója true (SearchAbout True.). Igazoljuk, hogy az f: Fin 1 -> True, fzero |---> true bijekció Fin 1 és True között. Puskázhatunk innen: [https://coq.inria.fr/library/Coq.Vectors.Fin.html].
+2.  bFun egy olyan függő típus, mely a többváltozós bool függvényeket fogja össze. 
+````coq
+Fixpoint bFun (n:nat) : Set :=
+  match n with
+    | 0 => bool
+    | S m => bool -> bFun m
+  end.
+````
+Például andb egy bool->bool->bool függvény és egyben egy bFun 2 típusú függvény is:
+
+````coq
+Check andb : bFun 2.
+````
+nbTree egy olyan típus, ami olyan fákból áll, amiknek akármennyi, de véges sok elágazása lehet, a csúcsokon bool (ennek megfelelő számú bemenetű) műveletek vannak, a leveleken bool értékek.
+
+````coq
+Inductive nbTree : Type :=
+  | leaf : bool -> nbTree
+  | node : forall {n : nat}, bFun n -> (Fin n -> nbTree) ->  nbTree.
+````
+
+Például az alábbi egy nbTree fa:
+
+````coq
+Definition f (z : Fin 2) :=  
+  match z with 
+          | fzero  => leaf true
+          | fsucc (fzero) => leaf false
+          | _ => leaf false
+  end.
+
+Check (@node 2) andb f.
+````
+Mondjunk még 1-2 ilyen fát!
+
+## Nehezebb feladatok
+
+4. Fogalmazzuk meg Fin 0-ra az indukciós szabályt, igazoljuk, hogy Fin 0 nulla elemű és igazoljuk, hogy Fin 0 Set-izomorf False-szal. Puskázhatunk innen: [https://coq.inria.fr/library/Coq.Vectors.Fin.html].
+5. Készítsük el azt a transzformációt, ami egy bTree fából egy nbTree fát csinál.
+
+````coq
+Inductive bTree : Set :=
+  | bleaf : bool -> bTree
+  | bnode : (bool->bool->bool) -> bTree -> bTree -> bTree.
+````
+
+
