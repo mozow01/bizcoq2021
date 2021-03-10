@@ -35,7 +35,7 @@ Proof.
   intro p.
   exact match p with
           | @fzero 0 => f
-          | @fsucc 0 x => (fun (p:Fin 0) => match p with end) x
+          | @fsucc 0 x => match x with end
         end.
   Show Proof.
 Defined.
