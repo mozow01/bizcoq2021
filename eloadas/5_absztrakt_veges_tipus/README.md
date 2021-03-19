@@ -27,17 +27,58 @@ Check @fsucc 1 (@fzero 0) : Fin 2.
 
 ````
 
-Fin 1-nek, mint véges típusnak szintén van induktora: 
+Fin 1-nek, mint véges típusnak szintén van induktora, bár az igaz, hogy Fin 1 egy típuscsaládnak (függő típusnak) eleme és nem önállóan definiált típus. Az induktor az lenne, ami arra enged következtetni, hogy ````P : Fin 1 -> Prop```` egy predikátum mikor igaz a típus összes elemére:
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BP%3A%5Cmathrm%7BFin%7D%5C%3B1%5Cto%20%5Cmathrm%7BProp%7D%5Cquad%5Cquad%20f%3AP%5C%3B%5Cmathrm%7Bfzero%7D%7D%7B%5Cforall%20x%3A%20%5Cmathrm%7BFin%7D%5C%3B1%2C%5C%3B%20P%5C%3Bx%7D">
+
+A probléma abban áll, hogy akár hogy is ügyeskedünk, nem kerülhetjük meg, hogy Fin elemeinek rejtett paraméterét (````{n}````) ne szerepeltessük az induktorban. Ennek megfelelően az egyik megoldás egy csak a Fin 1-re jellemző induktor megfogalmazására az, hogy hivatkozunk a teljes típuscsalád indukciós szabályára, aminek a típusa a következő. Minden <img src="https://render.githubusercontent.com/render/math?math=P%3A%5Cprod%20(n%3A%5Cmathrm%7Bnat%7D)%2C%5Cmathrm%7BFin%7D%5C%3Bn%5Cto%20%5Cmathrm%7BProp%7D"> esetén:
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5Cforall%20n%3A%5Cmathrm%7Bnat%7D%2C%20%5C%3BP%20%5C%2C(%5Cmathrm%7BS%7D%5C%2Cn)%20%5C%2C%5Cmathrm%7Bfzero%7D%5Cquad%5C%3B%20%5Cforall%20n%3A%5Cmathrm%7Bnat%7D%2C%20f%3A%5Cmathrm%7BFin%7D%5C%2Cn%2C%20P%5C%2Cn%5C%2C%20f%5C%2C%20%5Cto%5C%2C%20P%5C%2C(%5Cmathrm%7BS%7D%5C%2C%20n)%5C%2C%20(%5Cmathrm%7Bfsucc%7D%5C%2C%20f)%7D%7B%5Cforall%20n%3A%5Cmathrm%7Bnat%7D%2Cx%3A%20%5Cmathrm%7BFin%7D%5C%3Bn%2C%5C%3B%20P%5C%2Cn%5C%2Cx%7D">
+
+Vagy Coq nyelven:
 
 ````coq
-Theorem Fin_1_ind (P : (Fin 1) -> Prop) (f: P fzero) : forall (p:Fin 1), P p.
-Proof.
-  intro p.
-  exact match p with
-          | @fzero 0 => f
-          | @fsucc 0 x => match x with end
-        end.
-  Show Proof.
+Fin_ind : forall P : forall n : nat, Fin n -> Prop, 
+          (forall n : nat, P (S n)  @fzero n) ->
+          (forall (n : nat) (f0 : Fin n), P n f0 -> P (S n) (@fsucc n f0)) ->
+          forall (n : nat) (f1 : Fin n), P n f1
+````
+
+Érdemes először a Fin 0 induktorát definiálni:
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BP%3A%5Cmathrm%7BFin%7D%5C%2C0%5Cto%20%5Cmathrm%7BProp%7D%5Cquad%20p%3A%5Cmathrm%7BFin%7D%5C%2C0%7D%7B%5Cmathrm%7BFin%7D%5C%2C%5Cmathrm%7Bind%7D%5C%2C0%3A%20P%20p%7D">
+
+````coq
+Definition Fin_0_ind (P : Fin 0 -> Prop) (p: Fin 0): P p := 
+match p with 
+  | fzero => (fun x => False_ind IDProp x) 
+  | fsucc _ => (fun x => False_ind IDProp x) 
+end.
+````
+Majd készíteni egy olyan ````nat```` bemenetű segédfüggvényt, ami egy adott ````Q : Fin 1 -> Prop```` függvényt ad vissza, ha az a szóban forgó természetes szám az 1 és az azonosan True függvényt, ha a más.
+
+````coq
+Definition Aux_Fin_ind_1 (Q : Fin 1 -> Prop) ( n : nat ) : Fin n -> Prop := 
+match n with 
+  | 0 => fun x : Fin 0 => True
+  | 1 => fun x : Fin 1 => Q x
+  | S (S m) => fun x : Fin (S (S m)) => True
+end.
+````
+Így Fin 1 induktora menten megvan:
+````coq
+Definition Fin_1_ind (Q : Fin 1 -> Prop) (f0 : Q fzero) :
+ forall (f : Fin 1), Q f.
+  apply Fin_ind with (P:= Aux_Fin_ind_1 Q).
+  - induction n.
+    + exact f0.
+    + compute; auto.
+  - intros.
+    induction n.
+    + apply False_ind.
+      {apply Fin_0_ind.
+      exact f. }
+    + compute; auto.
 Defined.
 ````
 
