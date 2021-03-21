@@ -98,10 +98,28 @@ Structure WeakProjPlan : Type := make_WeakProjPlan
 (I x l = true) /\ (I y l = true) /\ (I z l = true) /\ (x<>y)/\ (y<>z) /\ (x<>z) ;
 }.
 ````
-(A projektív síkon pontok, egyenesek és illeszkedés van. Bármely két különböző pontra egyetlen egyenes illeszkedik.  Emlékezzünk arra, hogy a pro
+(A gyengus projektív síkon pontok, egyenesek és ezek között illeszkedés reláció van. Bármely két különböző pontra egyetlen egyenes illeszkedik. Bármely két különböző pontra egyetlen egyenes illeszkedik. Bármely két egyenesnek legalább egy közös pontja van. Minden egyenesen legalább három pontot tartamlaz. Emlékezzünk arra, hogy a projektív sík esetén létezik egy *dualitási* tulajdonság: ha az egyenes szót a pontra cseréljük, akkor a tételek érvényben maradnak.)
 
-a) Igazoljuk, hogy 
+a) Adjunk meg ennek egy modelljét! Olyat is, amiben legalább két különböző egyenes van!
+
+b) Igazoljuk, hogy 
 
 ````coq
 forall p q : P, p <> q -> exists l : L, (I p l = true) /\ (I q l = true).
+````
+c)  Fogalmazzuk meg a four_points állítást: There exist at least four distinct points of which no three are collinear 
+(collinear means they live in the same line). Igazoljuk, hogy 
+
+d)  
+
+````coq
+forall l k : L, l <> k -> exists p : P, (I p l = true) /\ (I p k = true)
+            /\ (forall q : P, ((I q l = true) /\ (I q k = true)) -> p=q)
+````
+
+e) (NEHÉZ) Four_point állítás felhasználásával igazoljuk, hogy 
+
+````coq
+forall (p : P), exists (l k m : L), (I p l = true) /\ (I p k = true) /\ (I p m = true) 
+/\ (l<>k)/\ (k<>m) /\ (l<>m).
 ````
