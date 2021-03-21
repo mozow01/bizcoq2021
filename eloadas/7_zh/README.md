@@ -123,3 +123,35 @@ e) (NEHÉZ) Four_point állítás felhasználásával igazoljuk, hogy
 forall (p : P), exists (l k m : L), (I p l = true) /\ (I p k = true) /\ (I p m = true) 
 /\ (l<>k)/\ (k<>m) /\ (l<>m).
 ````
+
+**5. Listák**
+
+a) Definiáljuk egy nat értékeket felvevő lista összegét (használjuk az opcionális típust figyelve arra, hogy üres lista is lehet a bemenet).
+
+b) ... minimumát. 
+
+c) Definiáljuk az Argmin függvényt, mely (a:..., b:nat) párok listájához rendeli az opcionális olyan a értéket, amielyhez a legkisebb b érték tartozik.   
+
+**6. Számok**
+
+a) Definiáljunk egy nat -> bool függvényt, ami egy természetes számhoz pontosan akkor rendeli a true értéket, ha az a 3.
+
+b) Definiáljunk egy nat -> bool függvényt, ami egy természetes számhoz pontosan akkor rendeli a true értéket, ha kisebb, mint 3.
+
+c) Definiáljuk azt a nat -> nat -> bool függvényt, ami pontosan akkor rendeli egy (m:nat) (n:nat) bemenethez a true értéket, ha n>m.  
+ 
+**7. Számok_2**
+
+a) Definiáljuk azt a nat -> (nat -> nat) -> nat  függényt, ami egy n számhoz és f függvényhez hozzárendeli az f függvény leső n tagjának összegét.
+
+b) Igazoljuk, hogy az első n természetes szám összegének kétszerese n*(n+1).
+
+**8. Fák**
+
+````Require Import ZArith.```` az egész számok elméletét hívja segítségül a Coq-ban.
+
+a) Definiáljuk a bináris, ````Z```` (egész, de pozitív, negatív, nulla is) értékű számokat a címkéjükön hordozó Z_btree fákat.
+
+b) Defniniáljuk azt a függvényt, ami egy Z_btree fához a true értéket rendeli, ha van a címkéi között 0 és a false-t, ha nincs benne 0. (Az összehasonlító függvény a ````Zeq_bool````).
+
+c) Ugyanez nem nullával, hanem egy tetszőleges m számmal.
