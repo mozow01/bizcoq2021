@@ -1,6 +1,6 @@
 # ZH feladatok
 
-Az alábbiak közül **legalább 3 feladatban** kérek legalább **nemtriviális hozzájárulást** felmutatni. Ha a feladatokban részemről a definíciók vagy tételek **nincsenek** szintaktikailag vagy szemantikailag **jól vagy rendesen kimondva,** akkor a feladathoz tartozik ennek helyes tisztázása. Ha bármelyik feladatnál célszerűbb más formális konstrukcióban tárgyalni a kérdést, akkor **válasszunk** egy **olyan** tálalást, **amiben kényelmesebb** dolgozni!
+Az alábbiak közül **legalább 3 feladatban** kérek legalább **nemtriviális hozzájárulást** felmutatni. (Tehát nem kell sem az összes feladatot megcsinálni, se egy feladaton belül az összes részkérdést, de azért valamit igen.) Ha a feladatokban részemről a definíciók vagy tételek **nincsenek** szintaktikailag vagy szemantikailag **jól vagy rendesen kimondva,** akkor a feladathoz tartozik ennek helyes tisztázása. Ha bármelyik feladatnál célszerűbb más formális konstrukcióban tárgyalni a kérdést, akkor **válasszunk** egy **olyan** tálalást, **amiben kényelmesebb** dolgozni!
 
 **1. Irányítatlan hurokmentes gráf -- konstruktív felépítés**
 
