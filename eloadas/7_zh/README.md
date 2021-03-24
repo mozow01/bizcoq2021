@@ -98,7 +98,7 @@ Structure WeakProjPlan : Type := make_WeakProjPlan
 (I x l = true) /\ (I y l = true) /\ (I z l = true) /\ (x<>y)/\ (y<>z) /\ (x<>z) ;
 }.
 ````
-(A gyengus projektív síkon pontok, egyenesek és ezek között illeszkedés reláció van. Bármely két különböző pontra egyetlen egyenes illeszkedik. Bármely két különböző pontra egyetlen egyenes illeszkedik. Bármely két egyenesnek legalább egy közös pontja van. Minden egyenesen legalább három pontot tartamlaz. Emlékezzünk arra, hogy a projektív sík esetén létezik egy *dualitási* tulajdonság: ha az egyenes szót a pontra cseréljük, akkor a tételek érvényben maradnak.)
+(A gyengus projektív síkon pontok, egyenesek és ezek között illeszkedés reláció van. Bármely két különböző pontra egyetlen egyenes illeszkedik. Bármely két egyenesnek legalább egy közös pontja van. Minden egyenesen legalább három pontot tartamlaz. Emlékezzünk arra, hogy a projektív sík esetén létezik egy *dualitási* tulajdonság: ha az egyenes szót a pontra cseréljük, akkor a tételek érvényben maradnak.)
 
 a) Adjunk meg ennek egy modelljét! Olyat is, amiben legalább két különböző egyenes van!
 
@@ -130,7 +130,7 @@ a) Definiáljuk egy nat értékeket felvevő lista összegét (használjuk az op
 
 b) ... minimumát. 
 
-c) Definiáljuk az Argmin függvényt, mely (a:..., b:nat) párok listájához rendeli az opcionális olyan a értéket, amielyhez a legkisebb b érték tartozik.   
+c) Definiáljuk az Argmin függvényt, mely (a:..., b:nat) párok listájához rendeli az opcionális olyan a értéket, amelyhez a legkisebb b érték tartozik.   
 
 **6. Számok**
 
@@ -142,7 +142,7 @@ c) Definiáljuk azt a nat -> nat -> bool függvényt, ami pontosan akkor rendeli
  
 **7. Számok_2**
 
-a) Definiáljuk azt a nat -> (nat -> nat) -> nat  függényt, ami egy n számhoz és f függvényhez hozzárendeli az f függvény leső n tagjának összegét.
+a) Definiáljuk azt a nat -> (nat -> nat) -> nat  függényt, ami egy n számhoz és f függvényhez hozzárendeli az f függvény első n tagjának összegét.
 
 b) Igazoljuk, hogy az első n természetes szám összegének kétszerese n*(n+1).
 
@@ -152,6 +152,6 @@ b) Igazoljuk, hogy az első n természetes szám összegének kétszerese n*(n+1
 
 a) Definiáljuk a bináris, ````Z```` (egész, de pozitív, negatív, nulla is) értékű számokat a címkéjükön hordozó Z_btree fákat.
 
-b) Defniniáljuk azt a függvényt, ami egy Z_btree fához a true értéket rendeli, ha van a címkéi között 0 és a false-t, ha nincs benne 0. (Az összehasonlító függvény a ````Zeq_bool````).
+b) Definiáljuk azt a függvényt, ami egy Z_btree fához a true értéket rendeli, ha van a címkéi között 0 és a false-t, ha nincs benne 0. (Az összehasonlító függvény a ````Zeq_bool````).
 
 c) Ugyanez nem nullával, hanem egy tetszőleges m számmal.
