@@ -117,7 +117,7 @@ forall l k : L, l <> k -> exists p : P, (I p l = true) /\ (I p k = true)
             /\ (forall q : P, ((I q l = true) /\ (I q k = true)) -> p=q)
 ````
 
-e) (NEHÉZ) Four_point állítás felhasználásával igazoljuk, hogy 
+e) (NEHÉZ) A four_points állítás felhasználásával igazoljuk, hogy 
 
 ````coq
 forall (p : P), exists (l k m : L), (I p l = true) /\ (I p k = true) /\ (I p m = true) 
