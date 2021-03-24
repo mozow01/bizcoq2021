@@ -19,14 +19,14 @@ Structure GraphConst : Type := make_GraphConst
 
 a) Igazoljuk a 
 ````coq
-Theorem triangle_free : exists G : UDLFGraph, (exists x y z : G, ((x<>y)/\ (y<>z) /\ (x<>z))
+Theorem triangle_free : exists G : GraphConst, (exists x y z : G, ((x<>y)/\ (y<>z) /\ (x<>z))
 /\ (~(E G x y) \/ ~(E G y z) \/ ~(E G x z))).
 ````
 tételt!
 
 b) Igazoljuk a 
 ````coq 
-Theorem triangle_has : exists G : UDLFGraph, (exists x y z w : G, ((x<>y)/\ (y<>z) /\ (x<>z))
+Theorem triangle_has : exists G : GraphConst, (exists x y z w : G, ((x<>y)/\ (y<>z) /\ (x<>z))
 /\ ((E G x y) /\ (E G y z) /\ (E G x z) /\ ~(E G x w))). 
 ````
 c)
