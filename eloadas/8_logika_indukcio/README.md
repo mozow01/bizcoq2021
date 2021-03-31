@@ -26,3 +26,42 @@ Ha B nem függ x-től (B-ben nem szerepel vagy nem szerepel szabadon x, pl. a ``
  
  -> komputációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=(%5Clambda%20x.f(x))%5C%2Ca%5C%3B%5Cto_%5Cbeta%5C%3B%20f(a)">
  -------|------
+ 
+ ## Az axiómák hátrányairól
+ 
+ Nem csak arról van szó, amiről Russell írt 1919-ben: 
+ 
+ > Az általunk kívánt ,,posztulálás'' módszerének számos előnye van; nem mások, mint a lopás előnyei a tisztességes munkával szemben.
+
+Hanem arról, hogy az axiómáknál a komputáció elakad. Tekintsük ugyanis a következőket. 
+
+````coq
+Axiom NAT_dec : forall n m : nat, {n=m} + {n<>m}.
+
+Definition char_2 (n : nat) : nat :=
+if (NAT_dec n 2) then 1 else 0.
+
+Eval compute in char_2 2.
+
+(* = if NAT_dec 2 2 then 1 else 0
+     : nat *)
+
+Require Import Arith.
+
+Definition char_2' (n : nat) : nat :=
+if (Nat.eq_dec n 2) then 1 else 0.
+
+Eval compute in char_2' 2.
+ 
+(* = 1
+     : nat*)
+````
+
+Míg ````NAT_dec```` csak deklarálva van (axiómaként), addig ````Nat.eq_dec```` rekurzív/konstruktív módon van definiálva (lásd ````Print Nat.eq_dec````).
+
+Világos, hogy a probléma elméleti. Ha ````t : A -> B````-t csak deklaráljuk, akkor tetszőlesen ````a : A```` a ````t a```` term nem redukálható tovább, azaz elakad a komputációs út. Ha azonban megvan az a ````fun x => f x```` függvény, amit ````t```` jelöl, akkor 
+
+````coq
+t a = (fun x => f x) a ------> f a 
+```` 
+
