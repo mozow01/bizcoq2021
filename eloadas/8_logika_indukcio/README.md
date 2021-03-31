@@ -59,9 +59,9 @@ Eval compute in char_2' 2.
 
 Míg ````NAT_dec```` csak deklarálva van (axiómaként), addig ````Nat.eq_dec```` rekurzív/konstruktív módon van definiálva (lásd ````Print Nat.eq_dec````).
 
-Világos, hogy a probléma elméleti. Ha ````t : A -> B````-t csak deklaráljuk, akkor tetszőlesen ````a : A```` -ra ````t a```` term nem redukálható tovább, azaz elakad a komputációs út. Ha azonban megvan az a ````fun x => f x```` függvény, amit ````t```` jelöl, akkor 
+Világos, hogy a probléma elméleti. Ha ````t : nat -> nat````-t csak deklaráljuk, akkor a ````t 2```` term nem redukálható tovább, azaz elakad a komputációs út. Ha azonban megvan az a mondjuk ````fun x => S x```` függvény, amit ````t```` jelöl, akkor 
 
-> ````t a    =    (fun x => f x)a  ------>  fa```` 
+> ````t 2    =    (fun x => S x) 2  ------>  S 2```` 
 
-
+````S 2```` már egy olyan, amit egy számítás eredményeként várunk, azaz a 3 term.   
 
