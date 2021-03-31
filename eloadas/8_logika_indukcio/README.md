@@ -65,3 +65,4 @@ Világos, hogy a probléma elméleti. Ha ````t : nat -> nat````-t csak deklarál
 
 ````S 2```` már egy olyan, amit egy számítás eredményeként várunk, azaz a 3 term.   
 
+Ezért van az, hogy **a típuselméletben nincsenek axiómák, csak levezetési szabályok.**
