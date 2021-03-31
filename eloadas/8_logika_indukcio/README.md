@@ -66,3 +66,9 @@ Világos, hogy a probléma elméleti. Ha ````t : nat -> nat````-t csak deklarál
 ````S 2```` már egy olyan, amit egy számítás eredményeként várunk, azaz a 3 term.   
 
 Ezért van az, hogy az induktív konstrukciók kalkulusában **nincsenek axiómák, csak levezetési szabályok.**
+
+Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentőssége van, hanem gyakorlati. Az ````fun x => f x```` alakú termek a programoknak felelnek meg, a program futtatásának egy ````a```` inputon pedig a beta-redukció:
+
+````coq
+(fun x => f x) a = f a
+````
