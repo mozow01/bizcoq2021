@@ -14,7 +14,7 @@ Pi kiküszöbölési szabálya: | <img src="https://render.githubusercontent.com
 Pi komputációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%20%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20(%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM)%20N%20%5C%3B%5Cto_%5Cbeta%20%5C%3BM%5Bx%2FN%5D%3AB%5Bx%2FN%5D%20%7D"> 
 -------|--------
 
-## Implikáció
+## Implikáció és konjunkció
 
 Ha B nem függ x-től (B-ben nem szerepel vagy nem szerepel szabadon x, pl. a ````nat```` típus konstans, abban nincsenek változók) és B állítástípusú ````Prop```` (pl. ````A/\B : Prop```` és A, B csak _paraméter,_ ezért nem függő típus), akkor a fenti képletek átmennek a ,,ha..., akkor... '' szabályaiba:
 
@@ -26,6 +26,15 @@ Ha B nem függ x-től (B-ben nem szerepel vagy nem szerepel szabadon x, pl. a ``
  
  -> komputációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=(%5Clambda%20x.f(x))%5C%2Ca%5C%3B%5Cto_%5Cbeta%5C%3B%20f(a)">
  -------|------
+ 
+A további logikai konnektívumokat is fel tudjuk venni nyelvbe, az ````Inductive```` parancs segítségével, a bevezetési szabályuk alapján. Így például az "és" bevezetési szabálya:
+
+
+````coq
+Inductive and (A B : Prop) : Prop :=  
+    | conj : A -> B -> A /\ B
+where "A /\ B" = and A B.
+````
  
  ## Az axiómák hátrányairól
  
