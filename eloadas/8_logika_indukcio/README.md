@@ -31,7 +31,7 @@ Ha B nem függ x-től (B-ben nem szerepel vagy nem szerepel szabadon x, pl. a ``
  
  Nem csak arról van szó, amiről Russell írt 1919-ben: 
  
- > Az általunk kívánt ,,posztulálás'' módszerének számos előnye van; nem mások, mint a lopás előnyei a tisztességes munkával szemben.
+ > Az általunk kívánt ,,posztulálás'' módszerének számos előnye van; nem mások, mint a tolvajlás előnyei a tisztességes munkával szemben. :joy:
 
 Hanem arról, hogy az axiómáknál a komputáció elakad. Tekintsük ugyanis a következőket. 
 
