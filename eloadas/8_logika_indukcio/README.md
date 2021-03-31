@@ -80,7 +80,7 @@ A bevezetési és kiküszöbölési szabályok rendszeréhez (ezt természetes l
 
 Gerhard Gentzen sejtette meg először, hogy a bevezetési szabályok meghatározzák a kiküszöbölési szabályokat. A Coq ezt a paradigmát követi. A bevezetési szabályból algoritmikusan generálja a kiküszöbölési (indukciós) szabályt.
 
-## Hogyan határozza meg a bezetetési szabály a kiküszöbölésit?
+## Hogyan határozza meg a bevezetési szabály a kiküszöbölésit?
 
 
  
