@@ -70,5 +70,5 @@ Ezért van az, hogy az induktív konstrukciók kalkulusában **nincsenek axióm�
 Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentőssége van, hanem gyakorlati. Az ````fun x => f x```` alakú termek a programoknak felelnek meg, a program futtatásának egy ````a```` inputon pedig a beta-redukció:
 
 ````coq
-(fun x => f x) a = f a
+((fun x => f x) a) = f a
 ````
