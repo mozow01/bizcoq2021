@@ -1,0 +1,2 @@
+# Logikai típusok, indukciós elvek
+
