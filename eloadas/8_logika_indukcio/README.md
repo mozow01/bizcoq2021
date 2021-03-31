@@ -1,2 +1,15 @@
 # Logikai típusok, indukciós elvek
 
+A Coq a CIC-et (Calculus of Inductive Construction-t) implementálja. Magelméletének levezetési szabályai közül az leglényegesebbek:
+
+|Pi formációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20A%3AType%5Cquad%5Cquad%20%5CGamma%2Cx%3AA%5Cvdash%20B%3AType%7D%7B%5CGamma%5Cvdash%20%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%3AType%7D">
+---------|-------
+
+ Pi bevezetési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%3AType%5Cquad%5Cquad%20%5CGamma%2Cx%3AA%5Cvdash%20M%3AB%7D%7B%5CGamma%5Cvdash%20%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%7D"> 
+ -------|------
+
+Pi kiküszöbölési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20M%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20M%20N%20%3A%20B%5Bx%2FN%5D%20%7D">
+----- | -----
+
+Pi komputációs szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM%3A%5CPi%5C!%20x%5C!%3A%5C!%20A.%5C%3B%20B%20%5Cquad%5Cquad%20%5CGamma%20%5Cvdash%20N%3AA%7D%7B%5CGamma%5Cvdash%20(%5Clambda%20%5C!x%5C!%3A%5C!A.%5C%2CM)%20N%20%5C%3B%5Cto_%5Cbeta%20%5C%3BM%5Bx%2FN%5D%3AB%5Bx%2FN%5D%20%7D"> 
+-------|--------
