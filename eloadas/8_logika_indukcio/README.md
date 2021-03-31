@@ -18,7 +18,7 @@ Pi komputációs szabálya: | <img src="https://render.githubusercontent.com/ren
 
 Ha B nem függ x-től (B-ben nem szerepel vagy nem szerepel szabadon x, pl. a ````nat```` típus konstans, abban nincsenek változók) és B állítástípusú ````Prop```` (pl. ````A/\B : Prop```` és A, B csak _paraméter,_ ezért nem függő típus), akkor a fenti képletek átmennek a ,,ha..., akkor... '' szabályaiba:
 
--> bevezetési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Ccup%20%5C%7Ba%3AA%5C%7D%5Cvdash%20f(x)%3AB%20%7D%7B%5CGamma%5Cvdash%5Clambda%20x.f(x)%3AA%20%5Cto%20B%7D">
+-> bevezetési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Ccup%20%5C%7Bx%3AA%5C%7D%5Cvdash%20f(x)%3AB%20%7D%7B%5CGamma%5Cvdash%5Clambda%20x.f(x)%3AA%20%5Cto%20B%7D">
  -------|------
 
 -> kiküszöbölési szabálya: | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%20f%3AA%5Cto%20B%5Cquad%20%5CGamma%5Cvdash%20a%3AA%20%7D%7B%5CGamma%5Cvdash%20fa%3AB%7D">
