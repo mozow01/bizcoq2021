@@ -188,7 +188,7 @@ a) Bizonyítsuk be csak wmp felhasználásával problem_2-t!
 b) Értsük problem_2-t így: 
 
 ````
-A, A wimp (B wimp C), (~~(B wimp C)) wimp C |- ~~C
+A, A wimp (B wimp C), (~~(B wimp C)) wimp C ⊦ ~~C
 ````
 
 Rajzoljuk le akár kézzel, akár LaTeX-ben problem_2 levezetésfáját!
