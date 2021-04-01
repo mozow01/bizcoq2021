@@ -129,3 +129,26 @@ Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentősség
 ````coq
 ((fun x => f x) a) = f a
 ````
+
+## Házi feladatok
+
+1. Definiáljuk a következő logikai típust: 
+
+````coq
+Reserved Notation "A 'wimp' B" (at level 99).
+
+Inductive WImp (A B : Prop) : Prop :=
+  | w1 : ~A -> A wimp B
+  | w2 : ~~B -> A wimp B
+where "A 'wimp' B" := (WImp A B) : type_scope.
+
+Print WImp_ind.
+````
+(itt ~ a negáció jele ( ````Print not.```` )).
+
+a) Igazoljuk, hogy 
+
+````coq 
+Theorem problem_1 : forall A B : Prop, A wimp B -> A -> ~~B.
+````
+(használjuk a ````contradiction.```` taktikát, ami formális ellentmondást keres a feltételek között).
