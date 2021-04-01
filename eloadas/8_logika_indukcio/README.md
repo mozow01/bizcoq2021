@@ -138,8 +138,8 @@ Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentősség
 Reserved Notation "A 'wimp' B" (at level 99).
 
 Inductive WImp (A B : Prop) : Prop :=
-  | w1 : ~A -> A wimp B
-  | w2 : ~~B -> A wimp B
+  | wl : ~A -> A wimp B
+  | wr : ~~B -> A wimp B
 where "A 'wimp' B" := (WImp A B) : type_scope.
 
 Print WImp_ind.
