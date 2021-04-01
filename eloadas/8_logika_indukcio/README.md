@@ -166,3 +166,21 @@ c) Vegyük fel axiómaként, hogy ````Axiom wmp : forall A B : Prop, A wimp B ->
 ````coq
 Theorem wimp_ind : forall A B P : Prop, (A \/ ~A) -> (~ A -> P) -> (~ ~ B -> P) -> (A wimp B) -> P
 ````
+
+2. Adjunk meg olyan induktívan definiált "A simp B : Prop" típust (A B : Prop), amelynek kiküszöbölési szabálya:
+
+````coq
+forall A B P : Prop, ((A -> False) -> P) -> (B -> P) -> (A simp B) -> P
+````
+
+típusú!
+
+3. Tanuljunk egy kis levezetésfákat! Itt 
+
+[]() itt a tex file is, amiből el lehet sajátítani a levezetésfa LaTeX kódolást []() (NEM RÖHÖGNI, HOGY MILYEN BÉNA A LATEX-EM! :D )
+
+leírtam annak a logikának a szabályait, amelyben a wimp kiküszöbölési szabály a wmp. 
+
+a) Bizonyítsuk be csak wmp felhasználásával problem_2-t!
+
+b) Rajzoljuk le akár kézzel, akár LaTeX-ben problem_2 ilyen levezetésfáját! 
