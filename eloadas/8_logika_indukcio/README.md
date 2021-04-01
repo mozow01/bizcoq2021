@@ -177,10 +177,10 @@ típusú!
 
 3. Tanuljunk egy kis levezetésfákat! Itt 
 
-[]() itt a tex file is, amiből el lehet sajátítani a levezetésfa LaTeX kódolást []() (NEM RÖHÖGNI, HOGY MILYEN BÉNA A LATEX-EM! :D )
+[bizcoq_8.pdf](https://github.com/mozow01/bizcoq2021/blob/main/forrasok/bizcoq_8.pdf) itt a tex file is, amiből el lehet sajátítani a levezetésfa LaTeX kódolást [bizcoq_8.tex](https://github.com/mozow01/bizcoq2021/blob/main/forrasok/bizcoq_8.pdf) (NEM RÖHÖGNI, HOGY MILYEN BÉNA A LATEX-EM! :D )
 
 leírtam annak a logikának a szabályait, amelyben a wimp kiküszöbölési szabály a wmp. 
 
 a) Bizonyítsuk be csak wmp felhasználásával problem_2-t!
 
-b) Rajzoljuk le akár kézzel, akár LaTeX-ben problem_2 ilyen levezetésfáját! 
+b) Rajzoljuk le akár kézzel, akár LaTeX-ben problem_2 levezetésfáját! 
