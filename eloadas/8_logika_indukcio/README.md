@@ -175,9 +175,11 @@ forall A B P : Prop, ((A -> False) -> P) -> (B -> P) -> (A simp B) -> P
 
 típusú!
 
-3. Tanuljunk egy kis levezetésfákat! Itt 
+3. Tanuljunk egy kis levezetésfákat!
 
-[bizcoq_8.pdf](https://github.com/mozow01/bizcoq2021/blob/main/forrasok/bizcoq_8.pdf) itt a tex file is, amiből el lehet sajátítani a levezetésfa LaTeX kódolást [bizcoq_8.tex](https://github.com/mozow01/bizcoq2021/blob/main/forrasok/bizcoq_8.tex) (NEM RÖHÖGNI, HOGY MILYEN BÉNA A LATEX-EM! :D )
+[bizcoq_8.pdf](https://github.com/mozow01/bizcoq2021/blob/main/forrasok/bizcoq_8.pdf)  [bizcoq_8.tex](https://github.com/mozow01/bizcoq2021/blob/main/forrasok/bizcoq_8.tex) 
+
+itt a tex file is, amiből el lehet sajátítani a levezetésfa LaTeX kódolást (NEM RÖHÖGNI, HOGY MILYEN BÉNA A LATEX-EM! :D )
 
 leírtam annak a logikának a szabályait, amelyben a wimp kiküszöbölési szabály a wmp. 
 
