@@ -185,4 +185,10 @@ leírtam annak a logikának a szabályait, amelyben a wimp kiküszöbölési sza
 
 a) Bizonyítsuk be csak wmp felhasználásával problem_2-t!
 
-b) Rajzoljuk le akár kézzel, akár LaTeX-ben problem_2 levezetésfáját! 
+b) Értsük problem_2-t így: 
+
+````
+A, B, A wimp (B wimp C), (~~(B wimp C)) wimp C |- ~~C
+````
+
+Rajzoljuk le akár kézzel, akár LaTeX-ben problem_2 levezetésfáját!
