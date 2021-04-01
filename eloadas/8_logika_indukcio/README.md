@@ -152,3 +152,17 @@ a) Igazoljuk, hogy
 Theorem problem_1 : forall A B : Prop, A wimp B -> A -> ~~B.
 ````
 (használjuk a ````contradiction.```` taktikát, ami formális ellentmondást keres a feltételek között).
+
+b) Igazoljuk, hogy 
+
+````coq
+Theorem problem_2 : forall A B C: Prop, 
+A -> B -> A wimp (B wimp C) -> (~~(B wimp C)) wimp C -> ~~C.
+````
+(használjuk fel a ````problem_1```` -et.)
+
+c) Vegyük fel axiómaként, hogy ````Axiom wmp : forall A B : Prop, A wimp B -> A -> ~~B.```` Igazoljuk, hogy ekkor (a WImp_ind szabály nélkül levezethető)
+
+````coq
+Theorem wimp_ind : forall A B P : Prop, (A \/ ~A) -> (~ A -> P) -> (~ ~ B -> P) -> (A wimp B) -> P
+````
