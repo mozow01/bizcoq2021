@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc} 
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb,amsmath,latexsym,amscd,mathtools}
+\usepackage{prftree}
+
+\tolerance = 9999
+
+\textwidth = 450pt
+\textheight = 700pt
+
+\hoffset = -1cm
+\voffset = -2cm
+
+\begin{document}
+\section*{wimp}
+
+$\mathsf{wimp}$ egy gyenge implikáció, amelyet úgy kapunk, hogy a csak a $\to$ és $\mathsf{False}$-ról szóló (bővebb) implikációs logikát bővítjük ezzel a konnektívummal (mondatösszekapcsoló kézikészülék) és a rá vonatkozó levezetési szabályokkal.\\
+
+Levezetési szabályok:
+
+\begin{displaymath}
+ \prftree[r]{$_\mathrm{wl}$}
+        {\sim A}
+        {A\;\mathsf{wimp}\;B}
+        \qquad
+  \prftree[r]{$_\mathrm{wr}$}
+        {\sim\sim B}
+        {A\;\mathsf{wimp}\;B}
+\end{displaymath}
+\begin{displaymath}
+ \prftree[r]{$_\mathrm{wmp}$}
+        {A\;\mathsf{wimp}\;B\quad}
+        {A}
+        {\sim\sim B}
+\end{displaymath}
+
+\noindent Wimp redukciós (komputációs) szabályai. Ezekre nem lesz szükség, de érdekes rájuk nézni és értelmezni őket.
+\begin{center}
+ \begin{tabular}{lcl}
+$
+ \prftree[r]{$_\mathrm{wmp}$}
+  		{
+				\prftree[r]{$_\mathrm{wl}$}
+       			{\sim A}
+        		{A\;\mathsf{wimp}\;B\quad} 				
+        }
+        {A\qquad}
+        {\sim\sim B}
+$ & 
+\qquad$\to$\qquad\qquad
+ & 
+$
+ \prftree[r]{$_\mathrm{False}$}
+        {
+        		\prftree[r]{$_\mathrm{mp}$}
+        		{A\to \mathsf{False}\quad}
+        		{A}
+       			{\mathsf{False}}
+        }
+        {\sim\sim B} 	
+$ 
+\end{tabular} 
+\end{center}
+És van egy másik is:
+\begin{center}
+\begin{tabular}{ccc}
+$
+ \prftree[r]{$_\mathrm{wmp}$}
+  		{
+				\prftree[r]{$_\mathrm{wr}$}
+       			{\sim\sim B}
+        		{A\;\mathsf{wimp}\;B\quad} 				
+        }
+        {A\qquad}
+        {\sim\sim B}
+$ & 
+\qquad$\to$\qquad\qquad
+ & 
+$
+ \sim\sim B	
+$
+\end{tabular}
+ \end{center} 
+Ahol \quad $\sim A\quad\equiv\quad A \to \mathsf{False}$ \quad , a $\to$ két levezetési szabálya és a $\mathsf{False}$ egyetlen intuicionista szabálya:
+
+\begin{displaymath}
+ \prftree[r]{$_\mathrm{ded}\,_{\prfref<assum:x>}$}
+        {        
+        	\prftree[r]{}
+        	{
+        			\prftree[r]{}
+        			{\prfboundedassumption<assum:x>{A}}
+        			{\vdots}
+        	}
+        	{B}
+        }
+        {A\to B}
+\qquad\qquad
+ \prftree[r]{$_\mathrm{mp}$}
+        {A\to B\quad}
+        {A}
+        {B}
+\qquad\qquad
+\prftree[r]{$_\mathrm{False}$}
+        {\mathsf{False}}
+        {C}
+\end{displaymath}
+(feltéve, hogy $C\not\equiv\mathsf{False}$.)
+
+
+\end{document}
+
+
