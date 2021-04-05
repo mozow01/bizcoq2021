@@ -94,6 +94,37 @@ Nem függő (de paraméteres) típusok esetén:
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cunderset%7B%5Cmathrm%7Bhead%7D%7D%7B%5Cforall%20A_1%5Cdots%20%5Cforall%20A_k%5Cforall%20P%3AT(A_1%2C%5Cdots%2C%20A_k)%5Cto%20Prop%7D%2C%5Cquad%0A%5Cunderset%7B%5Cmathrm%7Bprinciple_premiss%7D%7D%7BP(C_i(A_1%2C%5Cdots%2C%20A_k))%7D%5Cdots%2C%5Cquad%5Cto%20%5Cunderset%7B%5Cmathrm%7Bepilogue%7D%7D%7B%5Cforall%20y%3AT(A_1%2C%5Cdots%2C%20A_k)%2C%20P%5C%2Cy%7D">
 
+ahol T a definiált típus, C_i pedig a típus konstruktorai. 
+
+Példák 1. polimorf lista típus:
+
+````coq
+Inductive list (A : Type) : Type :=
+    nil  : list A | 
+    cons : A -> list A -> list A.
+````
+
+A _fej_ (prológus) ilyenkor az egyetlen paraméter és a predikátum felett kvantifikál:
+
+````coq
+forall (A : Type) (P : list A -> Prop),
+````
+
+A _főpremissza_ úgy keletkezik, hogy az először az összes egyik majd a másik konstruktorral keletkezett elemről teszi fel, hogy teljesül rá P
+
+````coq
+P nil -> (forall (a : A) (l : list A ) (p : P l ), P (cons a l)) -> 
+````
+
+Végül az _epilogus_ arról beszél, hogy list A minden eleme teljesíti P-t:
+
+````coq
+forall l : list A, P l
+````
+
+
+
+
 ## Az axiómák hátrányairól
  
  Nem csak arról van szó, amiről Russell írt 1919-ben: 
