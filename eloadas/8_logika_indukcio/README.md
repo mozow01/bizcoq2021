@@ -157,7 +157,7 @@ Ez tehát nemkonstans P esetén ez lenne:
 ````coq
 forall (A B : Prop) (P : A /\ B  -> Prop), (forall (a : A) (b : B) P (conj a b)) -> (forall p: A /\ B) P p.
 ```` 
-Világos, hogy ha P konstans, azaz P nem függ p-től, hanem mondjuk Q, akkor ````(forall p: A /\ B) P p```` -ből ````A /\ B -> Q```` lesz.
+Világos, hogy ha P konstans, azaz P nem függ p-től, hanem mondjuk Q, akkor a kvantifikációból implikáció lesz, azaz ````(forall p: A /\ B) P p```` -ből ````A /\ B -> Q````.
 
 ## Az axiómák hátrányairól
  
