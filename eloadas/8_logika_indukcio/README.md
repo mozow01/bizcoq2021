@@ -72,7 +72,7 @@ Ez nem is szokásos és nehezen ábrázolható szabály (még a bizonyításelm�
 
 ennek ellenére szintén belátható, hogy ekvivalens a modus ponens-szel.
 
-## Használatelmélet - egy pici filozófia
+## Használatelmélet -- egy pici filozófia
 
 A bevezetési és kiküszöbölési szabályok rendszeréhez (ezt természetes levezetési rendszernek nevezzük), leginkább egy olyan jelentéselmélet tartozik, amit a nyelvfilozófiában _használatelméletnek_ neveznek. A használatelmélet szerint egy adott szó jelentése a használatában rejlik. Így van ez a logikai szavakkal is. Egy ilyen jelentés két részből áll.
 - a verifikációs jelentésrész azt mondja meg, hogy ha egy mondatban szerepel, akkor mi mondat állításának feltétele
@@ -82,9 +82,16 @@ Gerhard Gentzen sejtette meg először, hogy a bevezetési szabályok meghatáro
 
 ## Hogyan határozza meg a bevezetési szabály a kiküszöbölésit?
 
+A kiküszöbölési szabályok közül induktívnak, vagy általános kiküszöbölési szabálynak nevezzük azt, ami arról beszél, hogy a definiált típus esetén minek kell teljesülnie, hogy egy tulajdonság a típus összes lakójára igaz legyen. Az elv az, hogy 
+
+> ha a típus összes konstruált lakója teljesíti P-t, akkor minden lakója teljesíti P-t.
+
+Az indukciós elvek alapvető szerkezete a következő:
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cunderset%7B%5Cmathrm%7Bhead%7D%7D%7B%5Cforall%20A_1%5Cdots%20%5Cforall%20A_k%5Cforall%20P%3A%5Cforall%20x_1%5Cdots%20%5Cforall%20x_l%2CT(A_1%2C%5Cdots%2C%20A_k%2Cx_1%2C%5Cdots%2C%20x_l)%5Cto%20Prop%7D%2C%5Cquad%0A%5Cunderset%7B%5Cmathrm%7Bprinciple_premiss%7D%7D%7B%5Cforall%20x_1%5Cdots%20%5Cforall%20x_l%20P(C_i(A_1%2C%5Cdots%2C%20A_k%2Cx_1%2C%5Cdots%2C%20x_l))%7D%5Cdots%2C%5Cquad%5Cto%20%5Cunderset%7B%5Cmathrm%7Bepilogue%7D%7D%7B%5Cforall%20y%3A%5Cforall%20x_1%5Cdots%20%5Cforall%20x_l%3AT(A_1%2C%5Cdots%2C%20A_k%2Cx_1%2C%5Cdots%2C%20x_l)%2C%20P%5C%2Cy%7D">
 
  
- ## Az axiómák hátrányairól
+## Az axiómák hátrányairól
  
  Nem csak arról van szó, amiről Russell írt 1919-ben: 
  
