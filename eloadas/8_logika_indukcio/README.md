@@ -94,9 +94,9 @@ Nem függő (de paraméteres) típusok esetén:
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cunderset%7B%5Cmathrm%7Bhead%7D%7D%7B%5Cforall%20A_1%5Cdots%20%5Cforall%20A_k%5Cforall%20P%3AT(A_1%2C%5Cdots%2C%20A_k)%5Cto%20Prop%7D%2C%5Cquad%0A%5Cunderset%7B%5Cmathrm%7Bprinciple_premiss%7D%7D%7BP(C_i(A_1%2C%5Cdots%2C%20A_k))%7D%5Cdots%2C%5Cquad%5Cto%20%5Cunderset%7B%5Cmathrm%7Bepilogue%7D%7D%7B%5Cforall%20y%3AT(A_1%2C%5Cdots%2C%20A_k)%2C%20P%5C%2Cy%7D">
 
-ahol T a definiált típus, C_i pedig a típus konstruktorai. 
+ahol T a definiált típus, C_i pedig a T típus konstruktorai. 
 
-Példák 1. polimorf lista típus:
+**1. Példa** polimorf lista típus:
 
 ````coq
 Inductive list (A : Type) : Type :=
@@ -122,8 +122,42 @@ Végül az _epilogus_ arról beszél, hogy list A minden eleme teljesíti P-t:
 forall l : list A, P l
 ````
 
+**2. Példa.** Szorzat típus:
 
+````coq
+Inductive prod (A B : Type) : Type :=  pair : A -> B -> A * B.
+````
 
+A _fej_ (prológus) ilyenkor a két paraméter és a predikátum felett kvantifikál:
+
+````coq
+forall (A B : Type) (P : A * B -> Prop),
+````
+
+A _főpremissza_ úgy keletkezik, hogy az összes konstruktorral keletkezett elemről teszi fel, hogy teljesül rá P
+
+````coq
+(forall (f : A) (g : B) P (pair f g)) -> 
+````
+
+Végül az _epilogus_ arról beszél, hogy list A minden eleme teljesíti P-t:
+
+````coq
+forall p : A * B , P p
+````
+
+**3. Példa.** Éredekes megjegyezni, hogy a konjunkciónak pontosan ugyanaz a definiíciója, csak nem Type-ba, hanem Prop-ba képez. Ekkor a Coq a Simplyfied Induction Principle-t adja ki alapból, azaz azt az esetet, amikor csak **konstans** P-re van kimondva az indukciós szabály. Propozíciók esetén ugyanis a konklúzió általában -- de nem mindig -- propzíció és nem valamely állítások bizonyításairól szóló predikátum.
+
+````coq
+forall A B P : Prop, (A -> B -> P) -> A /\ B -> P
+```` 
+
+Ez tehát nemkonstans P esetén ez lenne: 
+
+````coq
+forall (A B : Prop) (P : A /\ B  -> Prop), (forall (a : A) (b : B) P (a,b)) -> (forall p: A /\ B) P p.
+```` 
+Világos, hogy ha P konstans, azaz P nem függ p-től, hanem mondjuk Q, akkor (forall p: A /\ B) P p -ból A /\ B -> Q lesz.
 
 ## Az axiómák hátrányairól
  
