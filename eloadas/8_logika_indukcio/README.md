@@ -159,51 +159,6 @@ forall (A B : Prop) (P : A /\ B  -> Prop), (forall (a : A) (b : B) P (conj a b))
 ```` 
 Világos, hogy ha P konstans, azaz P nem függ p-től, hanem mondjuk Q, akkor a kvantifikációból implikáció lesz, azaz ````(forall p: A /\ B) P p```` -ből ````A /\ B -> Q````.
 
-## Az axiómák hátrányairól
- 
- Nem csak arról van szó, amiről Russell írt 1919-ben: 
- 
- > Az általunk kívánt ,,posztulálás'' módszerének számos előnye van; nem mások, mint a tolvajlás előnyei a tisztességes munkával szemben. :joy:
-
-Hanem arról, hogy az axiómáknál a komputáció elakad. Tekintsük ugyanis a következőket. 
-
-````coq
-Axiom NAT_dec : forall n m : nat, {n=m} + {n<>m}.
-
-Definition char_2 (n : nat) : nat :=
-if (NAT_dec n 2) then 1 else 0.
-
-Eval compute in char_2 2.
-
-(* = if NAT_dec 2 2 then 1 else 0
-     : nat *)
-
-Require Import Arith.
-
-Definition char_2' (n : nat) : nat :=
-if (Nat.eq_dec n 2) then 1 else 0.
-
-Eval compute in char_2' 2.
- 
-(* = 1
-     : nat*)
-````
-
-Míg ````NAT_dec```` csak deklarálva van (axiómaként), addig ````Nat.eq_dec```` rekurzív/konstruktív módon van definiálva (lásd ````Print Nat.eq_dec````).
-
-Világos, hogy a probléma elméleti. Ha ````t : nat -> nat````-t csak deklaráljuk, akkor a ````t 2```` term nem redukálható tovább, azaz elakad a komputációs út. Ha azonban megvan az a mondjuk ````fun x => S x```` függvény, amit ````t```` jelöl, akkor 
-
-> ````t 2    =    (fun x => S x) 2  ------>  S 2```` 
-
-````S 2```` már egy olyan, amit egy számítás eredményeként várunk, azaz a 3 term.   
-
-Ezért van az, hogy az induktív konstrukciók kalkulusában **nincsenek axiómák, csak levezetési szabályok.**
-
-Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentőssége van, hanem gyakorlati. Az ````fun x => f x```` alakú termek a programoknak felelnek meg, a program futtatásának egy ````a```` inputon pedig a beta-redukció:
-
-````coq
-((fun x => f x) a) = f a
-````
 
 ## Házi feladatok
 
