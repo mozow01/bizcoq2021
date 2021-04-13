@@ -4,7 +4,7 @@
 
 ### Mi az hilberti finitizmus?
 
-Alapvetően a primitív rekurzív aritmetika, azaz 
+Alapvetően a primitív rekurzív aritmetika (PRA), azaz 
 
 1. _Alapfüggvények:_ 0 : N, S _ : N -> N
 2. _Primitív rekurzió:_ F : N -> N értelmezett, ha 
@@ -29,11 +29,15 @@ fix F (n : nat) : P n :=
 ````
 És minden induktív típus feletti függvény ilyen szellemben van értelmezve, azaz rekurzorral.
 
-Fő példa finit érvelésre: 
+**Fő példa finit érvelésre:**
 
 > Minden p prímre létezik prím a (p, p! + 1] intervallumban. 
 
-(Ha ugyanis nem lenne ilyen prím, akkor p! + 1 -et egy szám sem osztaná az (1, p!] intervallumból, mert az (1, p]-beli összes számmal osztva 1-ek kapunk maradékul, (p, p! + 1)-ben meg az indirekt feltevés miatt nincs prím, így ezek sem osztják, így p! + 1 prím, ami ellentmond az indirekt feltevésnek.)
+(Ha ugyanis nem lenne ilyen prím, akkor p! + 1 -et egy szám sem osztaná az (1, p!] intervallumból, mert az (1, p]-beli összes számmal osztva 1-ek kapunk maradékul, (p, p! + 1)-ben meg az indirekt feltevés miatt nincs prím, így ezek sem osztják, így p! + 1 prím, ami ellentmond az indirekt feltevésnek. Megjegyzés: a SZAT egy PRA-beli tétel.)
+
+Megjegyzés: P(x) = "x prím és létezik y prím, hogy x < y ≤ x! + 1" eldönthető predikátum. Véges x² szorzás eldönti, hogy prím-e, (x! + 1 -x)³ db szorzás eldönti, hogy van-e y, tehát x!-nek 4. hatványa időben eldől, hogy igaz-e. De eldől! :) Gyakorlatilag arról van szó, hogy ha x rögzített, mondjuk p, akkor P(p) egy véges diszjunkcióval ekvivalens, ami szintén eldönthető tagokba való behelyettesítésből áll.
+
+Ezzel szemben _alapból,_ nem eldönthető (csak a fortiori az előző miatt), hogy ,,létezik x-nél nagyobb prím''. 
 
 ### Az axiómák hátrányairól -- miért természetes levezetés és nem Hilbert-féle felépítés
  
@@ -80,3 +84,44 @@ Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentősség
 ````coq
 ((fun x => f x) a) = f a
 ````
+
+## A kiszámíthatóságot garantáló feltételek
+
+### Végtelen ciklus rekonstrukció nem szigorúan pozitív előfordulás miatt
+
+Legyen L 
+
+### Pozitivitási feltétel
+
+Egy induktív T típus konstruktorai ilyen típusúak tudnak lenni:
+
+> A_1 -> A_2 -> --- -> A_n -> T
+
+ahol -- függő típusokat elfelejtve -- ahol T pozitívan szerepel A_1 -> A_2 -> --- -> A_n -> T -ben.
+
+T _pozitívan szerepel_ A-ban, ha
+
+1. A = T = atomi,
+2. A = U -> V, és U-ban T szigorúan pozitívan szerepel és V-ben pozitívan szerepel.
+
+T _szigorúan pozitívan szerepel_ A-ban:
+
+1. ha nem szerepel benne :) 
+2. A = T = atomi
+3. A = U -> V, és T az U-ban nem szerepel, V-ben pedig szigorúan pozitívan szerepel.
+
+**Példa: **
+
+````coq 
+Inductive T : Type 
+  | furi : nat -> (T -> nat) -> T.
+````
+
+olyan, hogy T nem pozitívan szerepel T -> nat-ban (T szerepel T-ben, azaz nem szigorúan pozitívan szerepel).
+
+````coq 
+Inductive T : Type 
+  | nemfuri : nat -> (nat -> T) -> T.
+````
+
+nat -> (nat -> T) -> T -ban T pozitívan szerepel.
