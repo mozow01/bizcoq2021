@@ -110,7 +110,7 @@ T _szigorúan pozitívan szerepel_ A-ban:
 2. A = T = atomi
 3. A = U -> V, és T az U-ban nem szerepel, V-ben pedig szigorúan pozitívan szerepel.
 
-**Példa: **
+**Példa:**
 
 ````coq 
 Inductive T : Type 
