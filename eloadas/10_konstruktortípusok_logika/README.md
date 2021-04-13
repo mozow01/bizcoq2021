@@ -8,8 +8,8 @@ Alapvetően a primitív rekurzív aritmetika, azaz
 
 1. _Alapfüggvények:_ 0 : N, S _ : N -> N
 2. _Primitív rekurzió:_ F : N -> N értelmezett, ha 
-⋅⋅1. F(0) primitív rekurzívan értelmezett, és 
-⋅⋅2. van primitív rekurzívan értelmezett g : N -> N -> N, hogy F(S n) = g(n, F(n)).
+  * 1. F(0) primitív rekurzívan értelmezett, és 
+  * 2. van primitív rekurzívan értelmezett g : N -> N -> N, hogy F(S n) = g(n, F(n)).
 3. _Helyettesítés:_ Ha h : N -> N -> N p.r. és f(), g(): N -> N, akkor g(f(),g()) is pr. 
 
 (Ez Tait-tézise. Ami ugyan történetileg cáfolható, mert Hilbert nézete változott és a transzfinit rekurziót is finitként értette, de filozófiailag alátámasztható az állítása.)
