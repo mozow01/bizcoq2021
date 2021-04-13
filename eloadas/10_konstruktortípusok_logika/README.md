@@ -31,9 +31,9 @@ fix F (n : nat) : P n :=
 
 Fő példa finit érvelésre: 
 
-  Minden p prímre létezik prím a (p, p! + 1] intervallumban. 
+> Minden p prímre létezik prím a (p, p! + 1] intervallumban. 
 
-(Ha ugyanis nem lenne ilyen prím, akkor p! + 1 -et egy szám sem osztaná az (1, p!] intervallumból, mert az (1, p] beli összes számmal osztva 1-ek kapunk maradékul, (p, p! + 1)-ban meg az indirekt feltevés miatt nincs prím, így ezek sem osztják, így p! + 1 prím.)
+(Ha ugyanis nem lenne ilyen prím, akkor p! + 1 -et egy szám sem osztaná az (1, p!] intervallumból, mert az (1, p]-beli összes számmal osztva 1-ek kapunk maradékul, (p, p! + 1)-ben meg az indirekt feltevés miatt nincs prím, így ezek sem osztják, így p! + 1 prím, ami ellentmond az indirekt feltevésnek.)
 
 ### Az axiómák hátrányairól -- miért természetes levezetés és nem Hilbert-féle felépítés
  
