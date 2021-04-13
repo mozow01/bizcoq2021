@@ -89,7 +89,29 @@ Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentősség
 
 ### Végtelen ciklus rekonstrukció nem szigorúan pozitív előfordulás miatt
 
-Legyen L 
+Legyen 
+
+````coq 
+*Inductive T : Type :=
+| App : T -> T -> T
+| Lam : (T -> T) -> T.
+````
+itt T neve termek típusa, Lam egy olyan konstrukció, ami egy függvényből termet csinál (Lam f : T, ha f : T -> T)
+
+````coq 
+*Definition ω : T -> T := fun x =>
+  match x with
+    | Lam f => f x
+    | _ => x
+  end.
+````
+
+Ekkor 
+
+````coq 
+*ω (Lam ω) =ι (fun x => match x with | Lam f => f x | _ => x end.) Lam ω =β ω (Lam ω)
+````
+
 
 ### Pozitivitási feltétel
 
@@ -97,7 +119,7 @@ Egy induktív T típus konstruktorai ilyen típusúak tudnak lenni:
 
 > A_1 -> A_2 -> --- -> A_n -> T
 
-ahol -- függő típusokat elfelejtve -- ahol T pozitívan szerepel A_1 -> A_2 -> --- -> A_n -> T -ben.
+ahol -- függő típusokat elfelejtve -- ahol T pozitívan szerepel A_1 -> A_2 -> ... -> A_n -> T -ben.
 
 T _pozitívan szerepel_ A-ban, ha
 
