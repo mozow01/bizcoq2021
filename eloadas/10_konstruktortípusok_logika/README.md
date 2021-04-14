@@ -148,3 +148,9 @@ Inductive T : Type
 ````
 
 nat -> (nat -> T) -> T -ban T pozitívan szerepel.
+
+## Reflexion
+
+Reflectionnek nevezzük, amikor az elég gazdag nyelv, jelen esetben a Coq egy töredékét a szemantikai rendszererrel együtt modellezzük és a nyelven belül. 
+
+
