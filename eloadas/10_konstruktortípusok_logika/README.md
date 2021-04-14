@@ -151,6 +151,6 @@ nat -> (nat -> T) -> T -ban T pozitívan szerepel.
 
 ## Reflection
 
-Reflectionnek nevezzük, amikor az elég gazdag nyelv, jelen esetben a Coq egy töredékét a szemantikai rendszererrel együtt modellezzük és a nyelven belül. 
+Reflectionnek nevezzük, amikor az elég gazdag nyelv, jelen esetben a Coq egy töredékét a szemantikai rendszerével együtt modellezzük a nyelven belül. 
 
 
