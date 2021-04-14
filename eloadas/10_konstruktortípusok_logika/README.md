@@ -109,9 +109,10 @@ itt T neve termek típusa, Lam egy olyan konstrukció, ami egy függvényből te
 Ekkor 
 
 ````coq 
-*ω (Lam ω) =ι (fun x => match x with | Lam f => f x | _ => x end) Lam ω =β ω (Lam ω)
+*ω (Lam ω) =ζcbn (fun x => match x with | Lam f => f x | _ => x end) Lam ω  
+           =β Lam ω with | Lam f => f Lam ω | _ => Lam ω end 
+           =ι ω (Lam ω)
 ````
-
 
 ### Pozitivitási feltétel
 
