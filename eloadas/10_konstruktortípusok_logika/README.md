@@ -1,4 +1,4 @@
-# Kostruktorok típusai, logika
+# Konstruktorok típusai, logika
 
 ## Az induktív konstruktciók kalkulusa és a finitizmus
 
