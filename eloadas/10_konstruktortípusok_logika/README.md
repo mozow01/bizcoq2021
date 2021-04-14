@@ -35,7 +35,7 @@ fix F (n : nat) : P n :=
 
 (Ha ugyanis nem lenne ilyen prím, akkor p! + 1 -et egy szám sem osztaná az (1, p!] intervallumból, mert az (1, p]-beli összes számmal osztva 1-ek kapunk maradékul, (p, p! + 1)-ben meg az indirekt feltevés miatt nincs prím, így ezek sem osztják, így p! + 1 prím, ami ellentmond az indirekt feltevésnek. Megjegyzés: a SZAT egy PRA-beli tétel.)
 
-Megjegyzés: P(x) = "x prím és létezik y prím, hogy x < y ≤ x! + 1" eldönthető predikátum.
+Megjegyzés: P(x) = "x prím és létezik y prím, hogy x < y ≤ x! + 1" eldönthető predikátum, persze naiv módon, kb. x! esetetben kell ellenőrizni, hogy valami prím-e, ami a futási időre nézve elég nagy felső korlát.
 
 Ezzel szemben _alapból,_ nem eldönthető (csak a fortiori az előző miatt), hogy ,,létezik x-nél nagyobb prím''. 
 
