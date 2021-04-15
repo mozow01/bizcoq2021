@@ -86,6 +86,49 @@ Egyben azt is láttuk, hogy a beta-redukciónak nem csak elméleti jelentősség
 ````
 
 ## A kiszámíthatóságot garantáló feltételek
+<!--- 
+### Jólfundáltsági feltétel
+
+Kíséreljünk meg rekurzióval _definiálni_ egy f ( _ _ _ ) függvényt, ami T típusú. Ezt valami egyenlettel gondoljuk megtenni:
+
+> f (a, b, c) := g ( f (d, e, h) )
+
+ahol **1.** f nem szerepel g-ben és **2.** amikor g-t f (d, e, h) -re alkalmazzuk, akkor de d, e, h alacsonyabb _konstrukciós_ bonyolultságú, mint a, b, c, azaz d, e, h -re már rekurzívan definiált (megkonstruált) f. 
+
+Ezek az induktívan definiált típusokra is igazak, vagyis azokra a típusokra, amelyekben az a, b, c, d, e, h konstrukciók laknak. Legyen T ( _ _ _ ) egy paraméteres típus, amit rekurzióval definiálunk, azaz megadunk cons konstruktorokat, amik T ( _ _ _ ) -beli lakókat gyártanak le, pl. Backus--Naur-jelléssel (itt a konstruktor nincs feltüntetve):
+
+> T (A, B, C) ::= ... | cons ( T (A, B, C) ) | ...
+
+illetve a lakókat általános t (A, B, C) : T (A, B, C) jelöléssel feltüntetve:
+
+> t(A, B, C) ::= ... | const ( t (A, B, C), ... ) | ...
+
+Pl. Coq jelöléssel, mondjuk a vagy (ebben nincs rekurzió)
+
+````coq
+Inductive or (A B : Prop) : Prop :=
+    | or_introl : A -> A \/ B 
+    | or_intror : B -> A \/ B.
+````
+
+BNF-ben:
+
+> t (A, B) ::= or_intro (A) | or_intror (B) 
+
+illetve a nat lista:
+
+````coq
+Inductive list (A : Type) : Type :=
+    | nil : list A 
+    | cons : A -> list A -> list A
+````
+
+BNF-ben:
+
+> t (A) ::= nil | cons (A) ( t (A) )
+
+
+-->
 
 ### Végtelen ciklus rekonstrukció nem szigorúan pozitív előfordulás miatt
 
@@ -120,7 +163,7 @@ Egy induktív T típus konstruktorai ilyen típusúak tudnak lenni:
 
 > A_1 -> A_2 -> --- -> A_n -> T
 
-ahol -- függő típusokat elfelejtve -- ahol T pozitívan szerepel A_1 -> A_2 -> ... -> A_n -> T -ben.
+ahol -- függő típusokat elfelejtve -- ahol T (ami azért paraméterektől függhet) pozitívan szerepel A_1 -> A_2 -> ... -> A_n -> T -ben.
 
 T _pozitívan szerepel_ A-ban, ha
 
