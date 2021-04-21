@@ -24,7 +24,9 @@ Kontextus (premisszahalmaz) és kétardumentumú levezethetőség reláció:
 Judgement : list Sent -> Sent -> Prop
 ````
 
-ahol Γ : list Sent -eket kontextusnak. Judgement : list Sent -> Sent -> Prop vagy röviden a (Γ : list Sent) ⊢ (A : Sent) relációt levezethetőségnek nevezzük.
+ahol Γ : list Sent -eket kontextusnak. Judgement : list Sent -> Sent -> Prop vagy röviden a 
+>(Γ : list Sent) ⊢ (A : Sent) 
+relációt levezethetőségnek nevezzük.
 
 _Levezetési szabályok:_
 
