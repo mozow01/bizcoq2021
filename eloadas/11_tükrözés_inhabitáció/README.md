@@ -31,7 +31,7 @@ relációt levezethetőségnek nevezzük.
 
 _Levezetési szabályok:_
 
-**Var** szabály
+**Var**
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%20%5Cquad%5Cquad%20%7D%7B%5CGamma%5Cvdash%20A%7D%5Cquad%5Cquad%5Cquad%5Cquad%20(A%5Cin%20%5CGamma)">
 
@@ -50,4 +50,21 @@ _Levezetési szabályok:_
 **Abs**
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7B%5CGamma%5Cvdash%5Cbot%7D%7B%5CGamma%5Cvdash%20A%7D">
+
+Implementáció:
+
+````coq
+Reserved Notation "Γ ⊢ A" (at level 99).
+Inductive Judgement : list Sent -> Sent -> Prop :=
+| Var    : forall Γ A, In A Γ -> Γ ⊢ A
+| ImplI  : forall Γ A B, A::Γ ⊢ B -> Γ ⊢ A → B
+| ImplE  : forall Γ A B, Γ ⊢ A → B -> Γ ⊢ A -> Γ ⊢ B
+| ConjI  : forall Γ A B, Γ ⊢ A -> Γ ⊢ B -> Γ ⊢ A ∧ B
+| ConjE  : forall Γ A B C, Γ ⊢ A ∧ B -> B::A::Γ ⊢ C -> Γ ⊢ C
+| DisjI1 : forall Γ A B, Γ ⊢ A -> Γ ⊢ A ∨ B
+| DisjI2 : forall Γ A B, Γ ⊢ B -> Γ ⊢ A ∨ B
+| DisjE  : forall Γ A B C, Γ ⊢ A ∨ B -> A::Γ ⊢ C -> B::Γ ⊢ C -> Γ ⊢ C
+| FalsI  : forall Γ A, Γ ⊢ ⊥ -> Γ ⊢ A
+where "Γ ⊢ A" := (Judgement Γ A) : type_scope.
+````
 
