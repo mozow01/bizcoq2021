@@ -70,17 +70,17 @@ where "Γ ⊢ A" := (Judgement Γ A) : type_scope.
 
 ## Reprezentáció
 
-A változóértékelések típusa a VAL := nat -> Prop függvényt.
+A változóértékelések típusa a ````VAL := nat -> Prop```` függvényt.
 
-A mondatfordítás egy VAL' : VAL -> Sent -> Prop függvény, ami kirejeszti VAL-t rekurzívan Sent-re.
+A mondatfordítás egy ````VAL' : VAL -> Sent -> Prop```` függvény, ami kirejeszti VAL-t rekurzívan Sent-re.
 
-Ítéletfordítás egy VAL'' : VAL' -> list Sent -> Prop függvény, ami az Γ ⊢ A alakú tárgynyelvi kifejezéseket fordítja le a Coq home-nyelvére.
+Ítéletfordítás egy ````VAL'' : VAL' -> list Sent -> Prop```` függvény, ami az Γ ⊢ A alakú tárgynyelvi kifejezéseket fordítja le a Coq home-nyelvére.
 
-_Soundness:_ forall Γ A v, Γ ⊢ A -> VAL'' v Γ A
+_Soundness:_ ````forall Γ A v, Γ ⊢ A -> VAL'' v Γ A````
 
 (ez nehéz!)
 
-Nyilván nem igaz a _Completeness:_ forall Γ A, (forall v, VAL'' v Γ A ) -> Γ ⊢ A.
+Általában bizonytalan a _Completeness:_ ````forall Γ A, (forall v, VAL'' v Γ A ) -> Γ ⊢ A````.
 
 ## Inhabitációs algoritmus
 
