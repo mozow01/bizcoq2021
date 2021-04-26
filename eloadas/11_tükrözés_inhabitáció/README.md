@@ -84,7 +84,7 @@ _Soundness:_ ````forall Γ A v, Γ ⊢ A -> VAL'' v Γ A````
 
 ## Inhabitációs algoritmus
 
-[Innen](forrasok/typ_alg.pdf)
+[Innen](https://github.com/mozow01/bizcoq2021/blob/main/)
 
 ## Házi feladatok
 
