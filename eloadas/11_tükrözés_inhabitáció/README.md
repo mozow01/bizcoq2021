@@ -88,11 +88,11 @@ _Soundness:_ ````forall Γ A v, Γ ⊢ A -> VAL'' v Γ A````
 
 ## Házi feladatok
 
-1. Tekintsük az alábbi, Arthur Priortól származó levezetési rendszert, amiben A tonk B az egyetlen mondatkonnektívum.
+**1.** Tekintsük az alábbi, Arthur Priortól származó levezetési rendszert, amiben A tonk B az egyetlen mondatkonnektívum.
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BA%5Cin%20%5CGamma%7D%7B%5CGamma%20%5Cvdash%20A%7D%2C%5Cquad%20%0A%5Cdfrac%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D%7BA%7D%2C%20%5Cquad%20%0A%5Cdfrac%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D%7BB%7D%2C%20%5Cquad%0A%5Cdfrac%7BA%7D%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D%2C%20%5Cquad%0A%5Cdfrac%7BB%7D%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D">
 
-Implementáljuk ezt a rendszert Coq-ban, ahogy azt a Ni-ben tettük fent és igazoljuk, hogy: 
+Implementáljuk ezt a rendszert Coq-ban, ahogy azt a Ni-vel tettük fent, és igazoljuk, hogy: 
 
 ````coq
 Theorem tonk_problem : forall A B Γ, In A Γ -> Γ ⊢ B.
@@ -102,5 +102,25 @@ vagyis, hogy ez a rendszer teljességgel hasznavehetetlen :)
 
 (Priornál ez arra volt példa, hogy nem lehet akárhogyan megválogatni a bevezzetési és kiküszöbölési szabályokat -- persze csak arról van szó, hogy meg lehet választani akárhogyan, legfeljebb triviális lesz a rendszer.)
 
+**2.** Emlékezzünk vissza erre az algoritmusra:
 
+````coq
+Inductive Operator : Set :=
+  | Plus : Operator
+  | Mult : Operator.
 
+Inductive AST : Set :=
+  | leaf : nat -> AST
+  | node : Operator -> AST -> AST -> AST.
+
+Fixpoint evaluation (t : AST) : nat :=
+  match t with
+    | leaf l' => l'
+    | node o t_1 t_2 => match o with
+                          | Plus => plus (evaluation t_1) (evaluation t_2)
+                          | Mult => mult (evaluation t_1) (evaluation t_2)
+                        end
+  end.
+````
+
+Milyen bonyolultsági osztályba sorolható az algoritmus, amennyiben DTM-ként ill. ATM-ként gondolunk rá? Azt is adjuk meg, hogy mi az input mérete, amiben a futási időt mérjük! (Emlékeztető: az ATM párhuzamos műveleteket is tud végrezni és a párhuzamosan végzett rekurzív hívások közül csak a leghosszab számítási út zámít, de nem az összes hívás, a DTM-ben minden számít.)
