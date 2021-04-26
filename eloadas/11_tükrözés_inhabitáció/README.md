@@ -100,7 +100,7 @@ Theorem tonk_problem : forall A B Γ, In A Γ -> Γ ⊢ B.
 
 vagyis, hogy ez a rendszer teljességgel hasznavehetetlen :)
 
-(Priornál ez arra volt példa, hogy nem lehet akárhogyan megválogatni a bevezzetési és kiküszöbölési szabályokat -- persze csak arról van szó, hogy meg lehet választani akárhogyan, legfeljebb triviális lesz a rendszer.)
+(Priornál ez arra volt példa, hogy nem lehet akárhogyan megválogatni a bevezetési és kiküszöbölési szabályokat -- persze csak arról van szó, hogy meg lehet választani akárhogyan, legfeljebb triviális lesz a rendszer.)
 
 **2.** Emlékezzünk vissza erre az algoritmusra:
 
