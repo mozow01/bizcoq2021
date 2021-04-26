@@ -84,5 +84,23 @@ _Soundness:_ ````forall Γ A v, Γ ⊢ A -> VAL'' v Γ A````
 
 ## Inhabitációs algoritmus
 
+[Innen](typ_alg.pdf)
+
+## Házi feladatok
+
+1. Tekintsük az alábbi, Arthur Priortól származó levezetési rendszert, amiben A tonk B az egyetlen mondatkonnektívum.
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BA%5Cin%20%5CGamma%7D%7B%5CGamma%20%5Cvdash%20A%7D%2C%5Cquad%20%0A%5Cdfrac%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D%7BA%7D%2C%20%5Cquad%20%0A%5Cdfrac%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D%7BB%7D%2C%20%5Cquad%0A%5Cdfrac%7BA%7D%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D%2C%20%5Cquad%0A%5Cdfrac%7BB%7D%7BA%5C%3B%5Cmathrm%7Btonk%7D%5C%3BB%7D">
+
+Implementáljuk ezt a rendszert Coq-ban, ahogy azt a Ni-ben tettük fent és igazoljuk, hogy: 
+
+````coq
+Theorem tonk_problem : forall A B Γ, In A Γ -> Γ ⊢ B.
+````
+
+vagyis, hogy ez a rendszer teljességgel hasznavehetetlen :)
+
+(Priornál ez arra volt példa, hogy nem lehet akárhogyan megválogatni a bevezzetési és kiküszöbölési szabályokat -- persze csak arról van szó, hogy meg lehet választani akárhogyan, legfeljebb triviális lesz a rendszer.)
+
 
 
