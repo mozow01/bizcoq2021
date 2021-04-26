@@ -123,4 +123,4 @@ Fixpoint evaluation (t : AST) : nat :=
   end.
 ````
 
-Milyen bonyolultsági osztályba sorolható az algoritmus, amennyiben DTM-ként ill. ATM-ként gondolunk rá? Azt is adjuk meg, hogy mi az input mérete, amiben a futási időt mérjük! (Emlékeztető: az ATM párhuzamos műveleteket is tud végrezni és a párhuzamosan végzett rekurzív hívások közül csak a leghosszab számítási út zámít, de nem az összes hívás, a DTM-ben minden számít.)
+Milyen bonyolultsági osztályba sorolható az algoritmus, amennyiben DTM-ként ill. ATM-ként gondolunk rá? (Tehát PTIME, LOGTIME, EXPTIME, APTIME, ALOGTIME, AEXPTIME?) Azt is adjuk meg, hogy mi az input mérete, amiben a futási időt mérjük! (Emlékeztető: az ATM párhuzamos műveleteket is tud végrezni és a párhuzamosan végzett rekurzív hívások közül csak a leghosszab számítási út számít, de nem az összes hívás. A DTM-ben minden művelet számít.)
