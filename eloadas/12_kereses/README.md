@@ -41,14 +41,13 @@ z:A ⊢ **K**zM
 **Megjegyzés:** Az Y fixpont kombinátorról ne essék szó, mert a típusos lambda kalkulusban alapból ilyen nincs. De erről beszéltünk az induktív típusok definíciójánál. 
 
 <!--
-**Tételke.** Ha M kifejezés, melyben minden változó különböző, akkor minden összetett típusra létezik Γ, hogy Γ ⊢ M : A.
+**Tételke.** Ha M kifejezés, amelyben minden változószereplésben különböző változó áll, akkor van Γ és A, hogy Γ ⊢ M : A.
 
 _Bizonyítás._ Strukturális indukcióval. 
 
-_1._ Ha M = x, akkor M minden A típussal típusolható: x : A ⊢ x : A.
+_1._ Ha M = x, akkor minden A típussal x : A ⊢ x : A.
+ -->
 
-_2._ Ha M = PQ, (és minden változó különböző,) akkor tetszőleges B összetettre-re van Γ és Γ', hogy nincs bennük közös változó, és Γ ⊢ P : B → A és Γ' ⊢ Q : B. Így Γ, Γ' ⊢ PQ : A.
 
-_3._ Ha M = λx.P, akkor legyen A = B->C összetett minden összetett C-re létezik Γ, hogy Γ ⊢ P : C. Ekkor vagy van Γ-ban x:A
 
--->
+
