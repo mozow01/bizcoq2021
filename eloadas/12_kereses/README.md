@@ -12,7 +12,7 @@ Kontextusok: . | Γ,x:A
 
 **.. ⊢ .. : .. reláció:**
 
-Típusolás: 
+**Típusolás: **
 
 |Var | App  | Lam |
 |---|---|---|
@@ -28,10 +28,14 @@ Típusolás:
  
  **1.**  ⊢ λx.x : ? , ⊢ λx.λy.x : ? , ⊢ λx.λy.λz.xz(yz) : ?
  
- (**I** := λx.x, **K** := λx.λy.x , **S** := λx.λy.λz.xz(yz))
+ (**I** := λx.x, **K** := λx.λy.x , **S** := λx.λy.λz.xz(yz) kombinátorok)
  
- Megjegyzés: Meglepő módon a típusolhatóság nem nehezebb probléma a típusellenőrzésnél. Az M zárt kifejezés pontosan akkor típusolható, ha tetszőleges A-ra:
+**Megjegyzés:** Meglepő módon a típusolhatóság nem nehezebb probléma a típusellenőrzésnél. Az M zárt kifejezés pontosan akkor típusolható, ha tetszőleges A-ra:
  
-> z:A ⊢ **K**zM
+z:A ⊢ **K**zM
 
+**Megjegyzés:** **K** és **S** a modus ponenszel együtt generálja az intuicionista implikációs logika hilberti felépítését: axiómák kódja **K**, **S** és egyetlen levezetési rendszer MP.
 
+**Megjegyzés:** Az Y fixpont kombinátorról ne essék szó, mert a típusos lambda kalkulusban alapból ilyen nincs. De erről beszéltünk az induktív típusok definíciójánál. 
+
+**Tételke.**  
