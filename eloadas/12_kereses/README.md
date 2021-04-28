@@ -38,4 +38,6 @@ z:A ⊢ **K**zM
 
 **Megjegyzés:** Az Y fixpont kombinátorról ne essék szó, mert a típusos lambda kalkulusban alapból ilyen nincs. De erről beszéltünk az induktív típusok definíciójánál. 
 
-**Tételke.**  
+**Tételke.** Ha M típusos kifejezés, melyben minden változó különböző, akkor M típusolható, azaz a ? ⊢ M : ? probléma igenlő módon megoldható.
+
+_Bizonyítás._ 
