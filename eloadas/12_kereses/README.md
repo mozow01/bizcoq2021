@@ -10,6 +10,8 @@ Termek:  x | MN | λx.M
 
 Kontextusok: . | Γ,x:A
 
+A kontextus jól formált, ha minden változó típusa egyértelmű, azaz ha x:A, x:B &isin; Γ, akkor A = B.
+
 **.. ⊢ .. : .. reláció:**
 
 **Típusolás: **
@@ -38,6 +40,15 @@ z:A ⊢ **K**zM
 
 **Megjegyzés:** Az Y fixpont kombinátorról ne essék szó, mert a típusos lambda kalkulusban alapból ilyen nincs. De erről beszéltünk az induktív típusok definíciójánál. 
 
-**Tételke.** Ha M típusos kifejezés, melyben minden változó különböző, akkor M típusolható, azaz a ? ⊢ M : ? probléma igenlő módon megoldható.
+<!--
+**Tételke.** Ha M kifejezés, melyben minden változó különböző, akkor minden összetett típusra létezik Γ, hogy Γ ⊢ M : A.
 
-_Bizonyítás._ 
+_Bizonyítás._ Strukturális indukcióval. 
+
+_1._ Ha M = x, akkor M minden A típussal típusolható: x : A ⊢ x : A.
+
+_2._ Ha M = PQ, (és minden változó különböző,) akkor tetszőleges B összetettre-re van Γ és Γ', hogy nincs bennük közös változó, és Γ ⊢ P : B → A és Γ' ⊢ Q : B. Így Γ, Γ' ⊢ PQ : A.
+
+_3._ Ha M = λx.P, akkor legyen A = B->C összetett minden összetett C-re létezik Γ, hogy Γ ⊢ P : C. Ekkor vagy van Γ-ban x:A
+
+-->
