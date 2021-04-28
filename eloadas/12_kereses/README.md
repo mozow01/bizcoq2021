@@ -36,7 +36,7 @@ A kontextus jól formált, ha minden változó típusa egyértelmű, azaz ha x:A
  
 z:A ⊢ **K**zM
 
-**Megjegyzés:** **K** és **S** a modus ponenszel együtt generálja az intuicionista implikációs logika hilberti felépítését: axiómák kódja **K**, **S** és egyetlen levezetési rendszer MP.
+**Megjegyzés:** **K** és **S** a modus ponenszel együtt generálja az intuicionista implikációs logika hilberti felépítését: axiómák kódja **K**, **S** és egyetlen levezetési szabály MP.
 
 **Megjegyzés:** Az Y fixpont kombinátorról ne essék szó, mert a típusos lambda kalkulusban alapból ilyen nincs. De erről beszéltünk az induktív típusok definíciójánál. 
 
