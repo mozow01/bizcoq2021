@@ -94,7 +94,7 @@ Theorem problem_4 : forall A B : Prop, ((A -> B) -> A) -> (~ ~ A ).
 Theorem problem_5 : forall A B : Prop, ~ ~ (A \/ ~ A).
 ````
 
-**2.** Igazoljuk, az inhabitációs algoritmus alkalmazásával, hogy az ````(A -> B) -> A -> (A -> C -> C)```` az egyszerű típusos lambda kalkulusban nem inhabitált!
+**2.** Igazoljuk, az inhabitációs algoritmus alkalmazásával, hogy az ````( (A -> B) -> A ) -> ((A -> C) -> C)```` az egyszerű típusos lambda kalkulusban nem inhabitált!
 
 **3.** Keressük meg (akár Coq-kal is) a λx.λy.λz.xz(yz) kifejezés típusát! Milyen logikai szabályt fejez ez ki?
 
