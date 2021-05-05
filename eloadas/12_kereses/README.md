@@ -66,12 +66,12 @@ Proof.
 Show Proof.
 Qed.
 
-Theorem problem_2 : forall A B C D : Prop, (A -> B) -> ( A /\ (B -> C) -> C).
+Theorem problem_2 : forall A B C : Prop, (A -> B) -> ( A /\ (B -> C) -> C).
 Proof.
   tauto.
 Qed.
 
-Theorem problem_3 : forall A : nat -> Prop, (forall x, A x) -> ({ x | ~ A x } -> False).
+Theorem problem_3 : forall A : nat -> Prop, (forall x, A x) -> ( { x | ~ A x } -> False ).
 Proof.
   intros.
   assert (K : ~ A (proj1_sig H0)). { exact (proj2_sig H0). }
@@ -91,7 +91,7 @@ Theorem problem_4 : forall A B : Prop, ((A -> B) -> A) -> (~ ~ A ).
 és 
 
 ````coq
-Theorem problem_5 : forall A B : Prop, ~ ~ (A \/ ~ A).
+Theorem problem_5 : forall A : Prop, ~ ~ (A \/ ~ A).
 ````
 
 **2.** Igazoljuk, az inhabitációs algoritmus alkalmazásával, hogy az ````( (A -> B) -> A ) -> ((A -> C) -> C)```` az egyszerű típusos lambda kalkulusban nem inhabitált!
