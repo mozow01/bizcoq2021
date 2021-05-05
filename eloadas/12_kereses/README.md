@@ -40,7 +40,7 @@ z:A ⊢ **K**zM : A
 
 **Megjegyzés:** Az Y fixpont kombinátorról ne essék szó, mert a típusos lambda kalkulusban alapból ilyen nincs. De erről beszéltünk az induktív típusok definíciójánál. 
 
-## Példák normalizációra, type check-ra és az inhabitációs algoritmus alkalmazására.
+## Példák normalizációra, type check-re és az inhabitációs algoritmus alkalmazására.
 
 ````coq
 Parameter E F : Prop.
@@ -80,7 +80,7 @@ Proof.
 Qed.
 ````
 
-## Házi feladat
+## Házi feladatok
 
 **1.** Igazoljuk, hogy 
 
