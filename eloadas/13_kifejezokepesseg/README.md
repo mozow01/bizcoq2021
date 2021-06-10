@@ -14,7 +14,7 @@ azaz, van olyan, aki ha iszik, mindenki iszik. Ezek a klasszikus logika paradoxo
 
 **BHK-cáfolat** Ha lenne (∃x)(((∃x)A(x)) → A(x))-nak konstruktív levezetése, akkor lenne _a_, hogy ((∃x)A(x)) → A(_a_). Ez az _a_ viszont független kell, hogy legyen A-tól, mert nem feltételezhetjük, hogy (∃x)A(x)-nak van igazságértéke.  
 
-## Konstruktív próbálkozások.
+## Konstruktív próbálkozások
 
 ````coq
 Print sig.
