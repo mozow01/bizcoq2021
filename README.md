@@ -13,12 +13,15 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 ## Tartalom
 
+<!--
 1. óra leírása: [itt](eloadas/1_bevezetes/) és a [.v file](eloadas/1_bevezetes/bizcoq_1.v). (Tanult parancsok és taktikák: Definition, Show Proof, Check, Print, SerachAbout, "match ... with |", reflexivity, unfold ..., apply ..., exact, assumption.)
 
 2. óra leírása: [itt](eloadas/2_bonyolultabb/) és a [.v file](eloadas/2_bonyolultabb/bizcoq_2.v). (Tanult parancsok és taktikák: Structure, "induction x, y; auto; right; discriminate.")
 
 3. óra leírása: [itt](eloadas/3_fák_listák/) és a [.v file](eloadas/3_fák_listák/bizcoq_3.v). (Tanult parancsok és taktikák: Require Import Omega (meg minden), Fixpoint (azaz rekurzív definíció), induction x, simpl, congruence, rewrite IHx.) 
+-->
 
+Lásd  [https://github.com/mozow01/bizcoq2021/tree/main/eloadas](előadás) mappa.
 
 ## Egyebek
 
