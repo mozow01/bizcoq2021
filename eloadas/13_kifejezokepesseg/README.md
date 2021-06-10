@@ -111,14 +111,15 @@ Proof.
   firstorder.
 Qed.
 
-Theorem drinker's : exists x, (exists x, A x) -> A x.
+Theorem drinker's_1 : exists x, (exists x, A x) -> A x.
 Proof.
   assert (K := LEM).
   destruct K as [K1|K2].
   Print ex_ind.
-  - apply ex_ind with (A:=U) (P:=fun x => A x) 
-     (P0:=exists x : U, (exists x0 : U, A x0) -> A x).
-  intros.
+  - induction K1. 
+  (* apply ex_ind with (A:=U) (P:=fun x => A x) 
+     (P0:=exists x : U, (exists x0 : U, A x0) -> A x). 
+  intros. *)
   apply ex_intro with (x:=x).
   all: auto.
   - assert (L:=U_non_empty).
