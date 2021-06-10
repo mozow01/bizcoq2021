@@ -21,7 +21,7 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 3. óra leírása: [itt](eloadas/3_fák_listák/) és a [.v file](eloadas/3_fák_listák/bizcoq_3.v). (Tanult parancsok és taktikák: Require Import Omega (meg minden), Fixpoint (azaz rekurzív definíció), induction x, simpl, congruence, rewrite IHx.) 
 -->
 
-Lásd  [eloadas](előadás) mappa.
+Lásd  [bizcoq2021/eloadas/](előadás) mappa.
 
 ## Egyebek
 
