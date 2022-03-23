@@ -1,5 +1,83 @@
 # Fák, listák 2.
 
+## Paralell programvégrehajtás, tree as a program.
+
+````coq
+Inductive At : Set :=
+  | At_c : nat -> At.
+
+Inductive UnOp : Set :=
+  | NOT : UnOp.
+
+Inductive BinOp : Set :=
+  | AND : BinOp
+  | OR : BinOp.
+
+Inductive Exp : Set :=
+  | const : At -> Exp
+  | NOT_c : Exp -> Exp
+  | AND_c : Exp -> Exp -> Exp
+  | OR_c : Exp -> Exp -> Exp.
+
+Inductive AST : Set :=
+  | leaf : At -> AST 
+  | node1 : UnOp -> AST -> AST
+  | node2 : BinOp -> AST -> AST -> AST.
+
+Fixpoint ExpDenote (e:Exp) (v : nat -> bool) : bool :=
+match e with 
+  | const (At_c n) => v n
+  | NOT_c e1 => negb (ExpDenote e1 v)
+  | AND_c e1 e2 => andb (ExpDenote e1 v) (ExpDenote e2 v)
+  | OR_c e1 e2 => orb (ExpDenote e1 v) (ExpDenote e2 v)
+end.
+
+Fixpoint ASTEval (t : AST) (v : nat -> bool) {struct t} : bool :=
+match t with 
+  | leaf (At_c n) => v n
+  | node1 _ t1 => negb (ASTEval t1 v)
+  | node2 x t1 t2 => 
+match x with
+  | AND => andb (ASTEval t1 v) (ASTEval t2 v)
+  | OR => orb (ASTEval t1 v) (ASTEval t2 v)
+end
+end.
+
+Fixpoint Translation_1 (t : AST) :=
+match t with
+  | leaf (At_c n) => const (At_c n)
+  | node1 _ t1 => NOT_c (Translation_1 t1)
+  | node2 x t1 t2 => 
+match x with
+  | AND => AND_c (Translation_1 t1) (Translation_1 t2)
+  | OR => OR_c (Translation_1 t1) (Translation_1 t2)
+end
+end. 
+
+Fixpoint Translation_2 (e : Exp) :=
+match e with 
+  | const (At_c n) => leaf (At_c n)
+  | NOT_c e1 => node1 NOT (Translation_2 e1)
+  | AND_c e1 e2 => node2 AND (Translation_2 e1) (Translation_2 e2)
+  | OR_c e1 e2 => node2 OR (Translation_2 e1) (Translation_2 e2)
+end.
+
+Theorem Soundness_1 : forall (e : Exp) (v  : nat -> bool), 
+ExpDenote e v = ASTEval (Translation_2 e) v.
+Proof.
+intros.
+induction e.
+induction a.
+compute.
+reflexivity.
+simpl.
+rewrite IHe.
+auto.
+Admitted.
+
+Qed.
+````
+
 ## Két kétváltozós művelet kiértékelése absztrakt környezetben
 
 Az előző órán egy ,,konkrét'' absztrakt szintaxis fát értékeltünk ki, ahol az AST levelein bool kifejezések voltak, csúcsaiban bool műveletek. Most mindent paraméteresen veszünk föl. Lesz egy fák formájában kódolt nyelv és lesz a valóság, amiről ez a nyelv beszél. 
