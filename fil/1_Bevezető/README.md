@@ -10,10 +10,13 @@ Thierry Coquand, Christine Paulin-Mohring implementálták számítógépesen az
 Alappélda: a **természetes számok** halmaza, mint rekurzívan definiált sorozat (nat).
 
 Konstruktorok:
+
 <img src="https://render.githubusercontent.com/render/math?math=0%3A%5Ctext%7Bnat%7D">
+
 <img src="https://render.githubusercontent.com/render/math?math=S%3A%5Ctext%7Bnat%7D%5Cto%20%5Ctext%7Bnat%7D">
 
 Indukciós szabály:
+
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BP(0)%2C%5Cquad%20%5Cforall%20n%3A%5Ctext%7Bnat%7D%2C%20P(n)%5Cto%20P(Sn)%7D%7B%5Cforall%20n%3A%5Ctext%7Bnat%7D%2C%20P(n)%7D">
 
 
