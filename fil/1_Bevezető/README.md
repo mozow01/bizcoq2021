@@ -9,16 +9,14 @@ Thierry Coquand, Christine Paulin-Mohring implementálták számítógépesen az
 
 Alappélda: a **természetes számok** halmaza, mint rekurzívan definiált sorozat (nat).
 
-Konstruktorok:
+_Konstruktorok:_
 
 <img src="https://render.githubusercontent.com/render/math?math=0%3A%5Ctext%7Bnat%7D">
 
 <img src="https://render.githubusercontent.com/render/math?math=S%3A%5Ctext%7Bnat%7D%5Cto%20%5Ctext%7Bnat%7D">
 
-Indukciós szabály:
+_Indukciós szabály:_
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7BP(0)%2C%5Cquad%20%5Cforall%20n%3A%5Ctext%7Bnat%7D%2C%20P(n)%5Cto%20P(Sn)%7D%7B%5Cforall%20n%3A%5Ctext%7Bnat%7D%2C%20P(n)%7D">
 
-
-
-"Szemléletesen, egy induktívan definiált típus konstruktorok egy teljes listája által adott. A nekik megfelelő indukciós elvvel érvelünk a típus elemeivel kapcsolatban és a konstruktorokon függvényeket adunk meg, amik alkamasak az egész típus felett értelmezett primitív rekurzív függvények definiálására." 
+"Szemléletesen, egy induktívan definiált típus konstruktorok egy teljes listája által adott. A nekik megfelelő indukciós elvvel érvelünk a típus elemeivel kapcsolatban és a konstruktorokon függvényeket adunk meg, amik alkamasak az egész típus felett értelmezett primitív rekurzív függvények definiálására." (Christine Paulin-Mohring, 1990)
