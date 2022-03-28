@@ -14,8 +14,21 @@ Középiskolásoknál arról érdeklődtünk, hogy érvényesek-e ilyen követke
 
 <img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_1.png" width=900>
 
-(vízszinte: hatékonyság (jobbra erősebb jó döntés), függőleges: bátorság (felfelé bátortalan))
+(vízszinte: megkülönböztetőképesség (jobbra erősebb), függőleges: bátortalanság (felfelé bátortalan))
 
 Tanulás után ez a helyezt tovább billent a konstruktív logika javára.
 
 <img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_4.png" width=900>
+
+Az adatfelhők is erről árulkodnak.
+
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_7.png" width=900>
+
+## BME kognitív tudományi szakdolgozó:
+
+Igazságtáblázatos logika vagy bizonyítékelmélet?
+
+
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_5.png" width=900>
+
+
