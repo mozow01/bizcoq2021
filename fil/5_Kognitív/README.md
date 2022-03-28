@@ -7,4 +7,6 @@
 
 Előzetes mérés: mindkét csoport előzetesen a konstruktív logika szerint gondolkodik.
 
-<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_1.png" width=600>
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_1.png" width=900>
+
+(vízszinte: hatékonyság (jobbra erősebb jó döntés), függőleges: bátorság (felfelé bátortalan))
