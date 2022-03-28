@@ -8,7 +8,7 @@ Tractatus 1.1 A világ a tények összesség, nem a dolgoké. (W.)
 
 Van ilyen felépítése a matematikának: **kategóriaelmálet**.
 
-<img src="https://github.com/mozow01/bizcoq2021/blob/main/coprod.png" width=300>
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/cat_1.png" width=300>
 
 ## Komputációs triád
 
