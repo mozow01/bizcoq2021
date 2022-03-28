@@ -6,7 +6,7 @@ Paul Benacerraf amellett érvelt, hogy nincs semmi értelme a matematikai objekt
 
 Tractatus 1.1 A világ a tények összesség, nem a dolgoké. (W.)
 
-<img src="https://github.com/mozow01/bizcoq2021/main/coprod.png" width=600>
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/coprod.png" width=600>
 
 
 
