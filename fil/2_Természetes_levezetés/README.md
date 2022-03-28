@@ -30,7 +30,7 @@ Az induktív adattípusoknál sem azt mondjuk meg, hogy mik ezek, hanem hogy has
 
 Dummett Wittgenstein egy ötletét vitte tovább a logikafilozófiában, Prawitz pedig Gerhard Gentzen egy sejtését dolgozta ki és építette be az analitikus nyelvfilozófia érvelési gyakorlatába.
 
-"A bevezetési szabály, hogy úgy mondjuk definiálja a kérdéses konstansot, (...) a kiküszöbölési szabály csak egy következménye a megfelelő bevezetési szabálynak, és ez így foglalható össze: egy kiküszübölési szabály alkalmazásakor csak azt használhatjuk amilyen jelentést a bevezetési szabály megadott a konstansra nézve." (Gentzen)
+"A bevezetési szabály, hogy úgy mondjuk definiálja a kérdéses szót, (...) a kiküszöbölési szabály csak egy következménye a megfelelő bevezetési szabálynak, és ez így foglalható össze: egy kiküszübölési szabály alkalmazásakor csak azt használhatjuk amilyen jelentést a bevezetési szabály adott a szónak." (Gentzen)
 
 Ez a _harmónia_ feltevése. És valóban! A kiküszöbölési szabályokat a Coq automatikusan generálni tudja az induktív definíciót követően. 
 
