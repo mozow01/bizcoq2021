@@ -39,5 +39,5 @@ destruct H as [H1|H2].
 contradiction.
 auto.
 Qed.
-```
+````
 
