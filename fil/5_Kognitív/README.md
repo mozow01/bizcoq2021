@@ -2,6 +2,11 @@
 
 ## ELTE matematika tanárszakos szakdolgozóval közöt munka:
 
+Középiskolásoknál arról érdeklődtünk, hogy érvényesek-e ilyen következtetések?
+
+|<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_2.png" width=600> | <img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_2.png" width=600>|
+|---|---|
+
 1. csoport: klasszikus igazságtáblázatos logika
 2. csoport: Coq-alapján tanult konstruktív logika
 
