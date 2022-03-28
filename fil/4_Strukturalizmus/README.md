@@ -6,6 +6,10 @@ Paul Benacerraf amellett érvelt, hogy nincs semmi értelme a matematikai objekt
 
 Tractatus 1.1 A világ a tények összesség, nem a dolgoké. (W.)
 
+Van ilyen felépítése a matematikának: **kategóriaelmálet**.
+
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/coprod.png" width=300>
+
 ## Komputációs triád
 
 Van itt egy melyebb összefüggés is. A **Curry--Howard--Lambek tétel** szerint 
