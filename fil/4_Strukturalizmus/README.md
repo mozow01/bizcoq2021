@@ -8,7 +8,7 @@ Tractatus 1.1 A világ a tények összesség, nem a dolgoké. (W.)
 
 ## Komputációs triád
 
-Van itt egy melyebb összefüggés is. A **Curry-Hovard-Lambek tétel** szerint 
+Van itt egy melyebb összefüggés is. A **Curry--Howard--Lambek tétel** szerint 
 
 a _konstruktív logika_, 
 
