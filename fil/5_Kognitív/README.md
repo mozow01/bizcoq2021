@@ -7,4 +7,4 @@
 
 Előzetes mérés: mindkét csoport előzetesen a konstruktív logika szerint gondolkodik.
 
-<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_1.png" width=300>
+<img src="https://github.com/mozow01/bizcoq2021/blob/main/cog_1.png" width=600>
