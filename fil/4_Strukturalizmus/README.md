@@ -8,7 +8,15 @@ Tractatus 1.1 A világ a tények összesség, nem a dolgoké. (W.)
 
 ## Komputációs triád
 
-Van itt egy melyebb összefüggés is. A **Curry-Hovard-Lambek tétel** szerint a _konstruktív logika_, a _típusos funkcionális programozás_ és a _kategóraielmélet_ izomorfizmus erelyéig ugyanaz. Azaz a bizonyítások programok és a programok morfizmusok, a morfizmusok bizonyítások.
+Van itt egy melyebb összefüggés is. A **Curry-Hovard-Lambek tétel** szerint 
+
+a _konstruktív logika_, 
+
+a _típusos funkcionális programozás_ és 
+
+a _kategóraielmélet_ 
+
+izomorfizmus erelyéig ugyanaz. Azaz a bizonyítások programok és a programok morfizmusok, a morfizmusok bizonyítások.
 
 | <img src="https://render.githubusercontent.com/render/math?math=%5Cdfrac%7Bp%3AA%7D%7B%0Ain_1%20p%3AA%5Cvee%20B%7D%5Cquad%20%5Cdfrac%7Bp%3AB%7D%7B%0Ain_2%20p%3AA%5Cvee%20B%7D"> |  |
 | ---- | ---- |  
