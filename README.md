@@ -1,5 +1,6 @@
 # bizcoq2021
 BMETE91AM58
+Molnár Zoltán Gábor, BME TTK Algebra Tsz., mozow@math.bme.hu
 
 ## Telepítés
 
