@@ -1,3 +1,3 @@
 # Simple Type Theory with Explicite Varables
 
-Types: &iota;
+Types: &iota; | A &arrow; B
