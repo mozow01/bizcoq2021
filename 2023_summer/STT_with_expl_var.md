@@ -1,4 +1,4 @@
-# Simple Type Theory with Explicite Varables
+# Simple Type Theory with Explicit Varables
 
 Ez egy típusos programozási nyelv változódeklarációval, melyben a változók névvel szerepelnek. A típusokat, a pogramokat és a változókörnyezeteket is rekurzívan definiáljuk.
 
