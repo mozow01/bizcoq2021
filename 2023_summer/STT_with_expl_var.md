@@ -48,9 +48,9 @@ Pl.:
 
 A levezetési szabályok jelentése: 
 
-PQ kódolja a függvénykiszámítás feladatát egy adott helyen (nem végzi el, ez csak egy utasítás). Néha PQ-t P&dollar;Q-ral jelölik. PQ _balra asszociált:_ PQR = (PQ)R  (P&dollar;Q&dollar;R = (P&dollar;Q)&dollar;R).
+PQ (applikáció) kódolja a _függvénykiszámítás feladatát_ egy adott helyen (nem végzi el, ez csak egy utasítás). Néha PQ-t P&dollar;Q-ral jelölik. PQ _balra asszociált:_ PQR = (PQ)R  (P&dollar;Q&dollar;R = (P&dollar;Q)&dollar;R).
 
-&lambda;x.P kódolja azt a függvényt, ami az x imputból a P-t számítja ki. &lambda; hatóköre a lehető legtágabb jobbra: &lambda;x.PQ = &lambda;x.(PQ).
+&lambda;x.P (lambda-absztrakció) kódolja azt a _függvényt,_ ami az x imputból a P-t számítja ki. &lambda; hatóköre a lehető legtágabb jobbra: &lambda;x.PQ = &lambda;x.(PQ).
 
 **Programfuttatás:**
 
