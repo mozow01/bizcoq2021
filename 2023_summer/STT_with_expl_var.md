@@ -40,7 +40,7 @@ Pl.:
 
 (van egy csomó implicit premissza, persze)
 
-&vdash; jelentése: _levezethetőség_ vagy _típusolhatóság._  
+&vdash; jelentése: _levezethetőség_ vagy _típusolhatóság_ vagy a legismertebb: _típusinferálás_ pl. a Matlabban vagy a Typescript-ben.
 
 A levezetési szabályok jelentése: 
 
