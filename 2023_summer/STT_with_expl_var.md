@@ -12,11 +12,15 @@ Változók (Var)
 
 <img align="center" src="https://i.upmath.me/svg/x%2Cy%2Cz%2C..." alt="x,y,z,..." />
 
-Valtozódeklarációk (kontextusok, környezetek)
+Valtozódeklarációk (kontextusok, környezetek). 
 
-<img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%7D%7B%20%5Cdiamond%5Cvdash%7D%2C%5Cqquad%20%5Cfrac%7B%5CGamma%5Cvdash%5Cqquad%20x%3A%5Ctext%7BVar%20%5Cqquad%20A%3A%5Ctext%7BType%7D%7D%7D%7B%5CGamma%2Cx%3AA%20%5Cvdash%7D" alt="\frac{}{ \diamond\vdash},\qquad \frac{\Gamma\vdash\qquad x:\text{Var \qquad A:\text{Type}}}{\Gamma,x:A \vdash}" />
+<img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%7D%7B%20%5Cemptyset%20%3A%20%5Ctext%7BContext%7D%7D%2C%5Cqquad%20%5Cfrac%7B%5CGamma%20%3A%20%5Ctext%7BContext%7D%7D%7B%5CGamma%5Ccup%5C%7B(x%2CA)%5C%7D%20%3A%20%5Ctext%7BContext%7D%7D" alt="\frac{}{ \emptyset : \text{Context}},\qquad \frac{\Gamma : \text{Context}}{\Gamma\cup\{(x,A)\} : \text{Context}}" />
 
-Ha &Gamma; egyszerűen egy x:A-k listája, akkor a rendszer kontextuális típuselmélet.
+Ha &Gamma; egyszerűen x:A -k listája,és nem valami rekurzív relációval definiált kifejezés, akkor a rendszer _kontextuális típuselmélet:_
+
+<img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%7D%7B%20%5Ctext%7Bnill%7D%20%3A%20%5Ctext%7BContext%7D%7D%2C%5Cqquad%20%5Cfrac%7B%5CGamma%20%3A%20%5Ctext%7BContext%7D%7D%7B((x%3AA)%20%3A%3A%5CGamma)%20%3A%20%5Ctext%7BContext%7D%7D" alt="\frac{}{ \text{nill} : \text{Context}},\qquad \frac{\Gamma : \text{Context}}{((x:A) ::\Gamma) : \text{Context}}" />
+
+ahol nill az üres lista, :: a lista bővítése balról.
 
 
 
