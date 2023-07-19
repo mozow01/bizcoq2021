@@ -36,6 +36,8 @@ Pl.:
 
 **Típusos kifejezések:**
 
+(&Gamma; &vdash; ... : ... rekurzív reláció)
+
 <img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%7D%7B%5CGamma%5Ccup%5C%7B(x%2CA)%5C%7D%20%5Cvdash%20x%3AA%20%7D" alt="\frac{}{\Gamma\cup\{(x,A)\} \vdash x:A }" />
 
 <img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%5CGamma%20%5Cvdash%20P%3AA%5Cto%20B%5Cqquad%20%5CGamma%20%5Cvdash%20Q%3AA%7D%7B%5CGamma%20%5Cvdash%20P%20Q%3AB%7D%2C%5Cqquad%20%5Cfrac%7B%5CGamma%5Ccup%5C%7B(x%2CA)%5C%7D%20%5Cvdash%20P%3AB%7D%7B%5CGamma%20%5Cvdash%20%5Clambda%20x%5Ccolon%20%5C!%5C!A.%20P%3AA%5Cto%20B%7D" alt="\frac{\Gamma \vdash P:A\to B\qquad \Gamma \vdash Q:A}{\Gamma \vdash P Q:B},\qquad \frac{\Gamma\cup\{(x,A)\} \vdash P:B}{\Gamma \vdash \lambda x\colon \!\!A. P:A\to B}" />
@@ -51,6 +53,8 @@ PQ kódolja a függvénykiszámítás feladatát egy adott helyen (nem végzi el
 &lambda;x.P kódolja azt a függvényt, ami az x imputból a P-t számítja ki. &lambda; hatóköre a lehető legtágabb jobbra: &lambda;x.PQ = &lambda;x.(PQ).
 
 **Programfuttatás:**
+
+(&Gamma; &vdash; ... &equiv; ... : ... rekurzív reláció)
 
 <img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%5CGamma%5Cvdash%20P%3AA%5Cto%20B%5Cqquad%20%5CGamma%5Cvdash%20Q%3AA%7D%7B%5CGamma%5Cvdash%20(%5Clambda%20x%5Ccolon%5C!%5C!A.P)Q%5Cequiv%20P%5Bx%2F%20Q%5D%3AB%7D%5Cquad%20(%5Cbeta%5Ctext%7B-redukci%C3%B3%7D)" alt="\frac{\Gamma\vdash P:A\to B\qquad \Gamma\vdash Q:A}{\Gamma\vdash (\lambda x\colon\!\!A.P)Q\equiv P[x/ Q]:B}\quad (\beta\text{-redukció})" />
 
