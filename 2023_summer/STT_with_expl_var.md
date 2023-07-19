@@ -8,11 +8,11 @@ Ez egy típusos programozási nyelv változódeklarációval, melyben a változ�
 
 Pl.:  <img align="center" src="https://i.upmath.me/svg/(A%5Cto%20%20B)%20%5Cto%20A%2C%5Cqquad%20A%5Cto%20(%20B%20%5Cto%20A%20)%5Cquad%20%5Cleft(%5Coverset%7B%5Ctext%7Bdef.%7D%7D%7B%3D%7DA%5Cto%20%20B%20%5Cto%20A%20%5Cright)%20%20%20" alt="(A\to  B) \to A,\qquad A\to ( B \to A )\quad \left(\overset{\text{def.}}{=}A\to  B \to A \right)   " />
 
-**Változók**
+**Explicit változók:**
 
 <img align="center" src="https://i.upmath.me/svg/x%2Cy%2Cz%2C..." alt="x,y,z,..." /> : Var
 
-**Valtozódeklarációk** (kontextusok, környezetek). 
+**Valtozódeklarációk** (kontextusok, környezetek):
 
 <img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%7D%7B%20%5Cemptyset%20%3A%20%5Ctext%7BContext%7D%7D%2C%5Cqquad%20%5Cfrac%7B%5CGamma%20%3A%20%5Ctext%7BContext%7D%5Cqquad%20x%3A%5Ctext%7BVar%7D%5Cqquad%20A%3A%5Ctext%7BType%7D%7D%7B%5CGamma%5Ccup%5C%7B(x%2CA)%5C%7D%20%3A%20%5Ctext%7BContext%7D%7D" alt="\frac{}{ \emptyset : \text{Context}},\qquad \frac{\Gamma : \text{Context}\qquad x:\text{Var}\qquad A:\text{Type}}{\Gamma\cup\{(x,A)\} : \text{Context}}" />
 
