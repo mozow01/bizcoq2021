@@ -16,9 +16,9 @@ Konstans típus (mint &iota;) bármennyi lehet és bármilyen, például: nat, b
 
 <img align="center" src="https://i.upmath.me/svg/x%2Cy%2Cz%2C..." alt="x,y,z,..." /> : Var
 
-**Valtozódeklarációk** (kontextusok, környezetek):
+**Valtozódeklarációk** (kontextusok, környezetek)
 
-Pontosabban változódeklarációk _halmaza._
+( {x : ..., y : ..., z : ..., ... } alakú kifejezés)
 
 <img align="center" src="https://i.upmath.me/svg/%5Cfrac%7B%7D%7B%20%5Cemptyset%20%3A%20%5Ctext%7BContext%7D%7D%2C%5Cqquad%20%5Cfrac%7B%5CGamma%20%3A%20%5Ctext%7BContext%7D%5Cqquad%20x%3A%5Ctext%7BVar%7D%5Cqquad%20A%3A%5Ctext%7BType%7D%7D%7B%5CGamma%5Ccup%5C%7B(x%2CA)%5C%7D%20%3A%20%5Ctext%7BContext%7D%7D" alt="\frac{}{ \emptyset : \text{Context}},\qquad \frac{\Gamma : \text{Context}\qquad x:\text{Var}\qquad A:\text{Type}}{\Gamma\cup\{(x,A)\} : \text{Context}}" />
 
