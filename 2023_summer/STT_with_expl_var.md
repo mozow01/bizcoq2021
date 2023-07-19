@@ -26,7 +26,10 @@ Ha &Gamma; egyszerűen x:A -k listája, és nem valami explicit rekurzív relác
 
 ahol nill az üres lista, :: a lista bővítése balról.
 
-Pl.: y : &iota; csak egy atomi típusú változó mondjuk: n : nat, vagy x : A&rarr;B egy függvény típusú változó, pl.: f : nat&rarr;nat.
+Pl.: 
+{y : &iota;} csak egy atomi típusú változó (mondjuk: n : nat)
+
+{x : A&rarr;B, z : A} két változó is van, egy konstans és egy függvény (pl.: f : nat&rarr;nat).
 
 **Típusos kifejezések:**
 
