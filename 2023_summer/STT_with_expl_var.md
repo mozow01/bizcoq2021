@@ -30,7 +30,7 @@ Pl.:
 
 {y : &iota;} csak egy atomi típusú változó (mondjuk: n : nat)
 
-{x : A&rarr;B, z : A} két változó is van, egy konstans és egy függvény (pl.: f : nat&rarr;nat).
+{x : A&rarr;B, z : A} két változó is van, egy konstans és egy függvény (pl.: f : nat&rarr;nat, n : nat).
 
 **Típusos kifejezések:**
 
@@ -44,7 +44,7 @@ Pl.:
 
 A levezetési szabályok jelentése: 
 
-PQ kódolja a függvénykiszámítás feladatát egy adott helyen (nem végzi el, ez csak egy utasítás). Néha PQ-t P&dollar;Q-ral jelölik. PQ _balra asszociált:_  P&dollar;Q&dollar;R = (P&dollar;Q)&dollar;R.
+PQ kódolja a függvénykiszámítás feladatát egy adott helyen (nem végzi el, ez csak egy utasítás). Néha PQ-t P&dollar;Q-ral jelölik. PQ _balra asszociált:_ PQR = (PQ)R  (P&dollar;Q&dollar;R = (P&dollar;Q)&dollar;R).
 
 &lambda;x.P kódolja azt a függvényt, ami az x imputból a P-t számítja ki. &lambda; hatóköre a lehető legtágabb jobbra: &lambda;x.PQ = &lambda;x.(PQ).
 
