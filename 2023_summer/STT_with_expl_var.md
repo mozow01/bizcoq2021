@@ -40,7 +40,7 @@ Pl.:
 
 (van egy csomó implicit premissza, persze)
 
-&vdash; jelentése: _levezethetőség_ vagy _típusolhatóság_ vagy a legismertebb: _típusinferálás_ pl. a Matlabban vagy a Typescript-ben.
+&vdash; jelentése: _levezethetőség_ vagy _típusolhatóság_ vagy a legismertebb: **_típusinferálás_** pl. a Matlabban vagy a Typescript-ben. ( &vdash; nem feltétlenül eldönthető reláció, általában csak félig eldönthető; de most a &rarr; esetén eldönthető, PSPACE bonyolultságú.)
 
 A levezetési szabályok jelentése: 
 
