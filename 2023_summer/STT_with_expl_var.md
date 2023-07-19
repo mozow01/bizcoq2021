@@ -77,7 +77,7 @@ A levezetés ez:
 
 <img src="https://i.upmath.me/svg/%5C%7Bz%3AA%2C%20x%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20y(xz)%3AC" alt="\{z:A, x:A\to B,y:B\to C\}\vdash y(xz):C" />
 
-<img src="https://i.upmath.me/svg/%5C%7Bz%3AA%2C%20x%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20%5Clambda%20z%5Ccolon%20%5C!%5C!A.y(xz)%3AA%5Cto%20C" alt="\{z:A, x:A\to B,y:B\to C\}\vdash \lambda z\colon \!\!A.y(xz):A\to C" />
+<img src="https://i.upmath.me/svg/%5C%7Bx%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20%5Clambda%20z%5Ccolon%20%5C!%5C!A.y(xz)%3AA%5Cto%20C" alt="\{x:A\to B,y:B\to C\}\vdash \lambda z\colon \!\!A.y(xz):A\to C" />
 
 
 
