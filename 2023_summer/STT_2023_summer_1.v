@@ -1,4 +1,4 @@
-(*STT nyelve implicit változókkal*)
+(*Simple Type Theory with Nameless Dummies*)
 
 Require Import List.
 
@@ -10,6 +10,8 @@ Inductive Typ : Set :=
 
 Notation "'ι'" := Iota (at level 20).
 Infix "→" := Arrow (at level 20, right associativity).
+
+Check ι→ι.
 
 (*Változók: nameless dummies :)
 
@@ -23,8 +25,8 @@ Definition Cntxt := list Typ.
 
 Inductive Trm : Set :=
   | ind : nat -> Trm
-  | lam : Typ -> Trm -> Trm
-  | app : Trm -> Trm -> Trm.
+  | app : Trm -> Trm -> Trm
+  | lam : Typ -> Trm -> Trm.
 
 Notation "x '$' y" := (app x y) (at level 20).
 
