@@ -16,7 +16,7 @@ Konstans típus (mint &iota;) bármennyi lehet és bármilyen, például: nat, b
 
 <img align="center" src="https://i.upmath.me/svg/x%2Cy%2Cz%2C..." alt="x,y,z,..." /> : Var
 
-**Valtozódeklarációk** (kontextusok, környezetek)
+**Változódeklarációk** (kontextusok, környezetek)
 
 ( {x : ..., y : ..., z : ..., ... } alakú kifejezés)
 
