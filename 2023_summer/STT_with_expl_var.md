@@ -10,6 +10,7 @@ Konstans típus (mint &iota;) bármennyi lehet és bármilyen, például: nat, b
 
 Összetett típusra példa (most csak függvénytípusaink vannak) <img align="center" src="https://i.upmath.me/svg/(A%5Cto%20%20B)%20%5Cto%20A%2C%5Cqquad%20A%5Cto%20(%20B%20%5Cto%20A%20)%5Cquad%20%5Cleft(%5Coverset%7B%5Ctext%7Bdef.%7D%7D%7B%3D%7DA%5Cto%20%20B%20%5Cto%20A%20%5Cright)%20%20%20" alt="(A\to  B) \to A,\qquad A\to ( B \to A )\quad \left(\overset{\text{def.}}{=}A\to  B \to A \right)   " />
 
+&rarr; _jobbra asszociált,_ azaz: A&rarr;B&rarr;C = A&rarr;(B&rarr;C)
 
 **Explicit változók:**
 
@@ -39,9 +40,9 @@ Pl.: y : &iota; csak egy atomi típusú változó mondjuk: n : nat, vagy x : A&r
 
 A levezetési szabályok jelentése: 
 
-PQ kódolja a függvénykiszámítás feladatát egy adott helyen (nem végzi el, ez csak egy utasítás), 
+PQ kódolja a függvénykiszámítás feladatát egy adott helyen (nem végzi el, ez csak egy utasítás). Néha PQ-t P&dollar;Q-ral jelölik. PQ _balra asszociált:_  P&dollar;Q&dollar;R = (P&dollar;Q)&dollar;R.
 
-&lambda;x.P kódolja azt a függvényt, ami az x imputból a P-t számítja ki.
+&lambda;x.P kódolja azt a függvényt, ami az x imputból a P-t számítja ki. &lambda; hatóköre a lehető legtágabb jobbra: &lambda;x.PQ = &lambda;x.(PQ).
 
 **Programfuttatás:**
 
@@ -53,7 +54,15 @@ Itt
 
 az implicit helyettesítés.
 
-**Példák.** 
+**Példák:** 
+
+Legyártunk az x:A&rarr;B és y:B&rarr;C programokból egy A&rarr;C típusú P programot. Sok ilyet lehet csinálni, de mi egy _kanonikusat_ fogunk csinálni.
+
+<img align="center" src="https://i.upmath.me/svg/%5C%7Bx%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20P%3AA%20%5Cto%20C" alt="\{x:A\to B,y:B\to C\}\vdash P:A \to C" />
+
+
+
+
 
 
 
