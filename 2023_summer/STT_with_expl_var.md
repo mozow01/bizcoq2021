@@ -56,9 +56,34 @@ az implicit helyettesítés.
 
 **Példák:** 
 
-Legyártunk az x:A&rarr;B és y:B&rarr;C programokból egy A&rarr;C típusú P programot. Sok ilyet lehet csinálni, de mi egy _kanonikusat_ fogunk csinálni.
+**1.** Legyártunk az x:A&rarr;B és y:B&rarr;C programokból egy A&rarr;C típusú P programot. Sok ilyet lehet csinálni, de mi egy _kanonikusat_ fogunk csinálni.
 
 <img align="center" src="https://i.upmath.me/svg/%5C%7Bx%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20P%3AA%20%5Cto%20C" alt="\{x:A\to B,y:B\to C\}\vdash P:A \to C" />
+
+A levezetés ez: 
+
+<img src="https://i.upmath.me/svg/%5C%7Bz%3AA%2C%20x%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20z%3AA" alt="\{z:A, x:A\to B,y:B\to C\}\vdash z:A" />
+
+<img src="https://i.upmath.me/svg/%5C%7Bz%3AA%2C%20x%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20xz%3AB" alt="\{z:A, x:A\to B,y:B\to C\}\vdash xz:B" />
+
+<img src="https://i.upmath.me/svg/%5C%7Bz%3AA%2C%20x%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20y(xz)%3AC" alt="\{z:A, x:A\to B,y:B\to C\}\vdash y(xz):C" />
+
+<img src="https://i.upmath.me/svg/%5C%7Bx%3AA%5Cto%20B%2Cy%3AB%5Cto%20C%5C%7D%5Cvdash%20%5Clambda%20x%5Ccolon%20%5C!%5C!A.y(xz)%3AA%5Cto%20C" alt="\{x:A\to B,y:B\to C\}\vdash \lambda x\colon \!\!A.y(xz):A\to C" />
+
+**2.** Legyártunk egy A&rarr;B&rarr;A típusú programot csak a semmiből.
+
+<img src="https://i.upmath.me/svg/%5Cvdash%20P%3AA%5Cto%20(B%5Cto%20A)" alt="\vdash P:A\to (B\to A)" />
+
+A levezetés ez: 
+
+<img src="https://i.upmath.me/svg/%5C%7Bx%3AA%2Cy%3AB%5C%7D%5Cvdash%20x%3AA" alt="\{x:A,y:B\}\vdash x:A" />
+
+<img src="https://i.upmath.me/svg/%5C%7Bx%3AA%5C%7D%5Cvdash%20%5Clambda%20y%5Ccolon%20%5C!%5C!B.x%3AB%5Cto%20A" alt="\{x:A\}\vdash \lambda y\colon \!\!B.x:B\to A" />
+
+<img src="https://i.upmath.me/svg/%5Cvdash%20%5Clambda%20x%5Ccolon%20%5C!%5C!A.%5Clambda%20y%5Ccolon%20%5C!%5C!B.x%3AA%5Cto%20(B%5Cto%20A)" alt="\vdash \lambda x\colon \!\!A.\lambda y\colon \!\!B.x:A\to (B\to A)" />
+
+
+
 
 
 
