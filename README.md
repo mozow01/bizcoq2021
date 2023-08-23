@@ -33,7 +33,7 @@ Lásd  [előadás](eloadas) mappa.
 1. bool és Prop adattípusok és érvelés velük
 2. nat, tree, list és minden: az induktív adattípusok, primitív rekurzív függvények
 3. monadizáció, side effectek kezelése
-4. lambda kalkulus és funkcionális programozás: Curry--Howard-izomorfizmus: állítások, mint típusok, bizonyítások, mint programok
+4. Curry--Howard-izomorfizmus, lambda kalkulus és funkcionális programozás
 5. matematikai elméletek beprogramozása és bizonyítások
 6. egyszerű, polimorf és függő típusok
 
