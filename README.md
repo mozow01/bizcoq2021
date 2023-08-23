@@ -8,7 +8,7 @@ BME TTK Algebra Tsz.,
 
 mozow@math.bme.hu
 
-A kurzust a bizonyítás-asszisztens szöftverek (proverek) és a típusos-funkcionális programozás iránt érdeklődő hallgatóknak ajánljuk. A funkcionális programozási paradigma áttekinthetővé, a tiszta típusrendszer bolondbiztossá teszi a programozási nyelveket (pl. Haskell, Rust). A Coq nyelv és társai (Lean, Agda, Idris) azzal fejeli meg ezt, hogy olyan erős a típusrendszere, hogy képes matematikai állításokat is kifejezeni, konkrétan az egész ismert matematika belefér a kifejezősépességébe, tételestül, bizonyításostul. A kurzusban informatikai, logikai és matematikai példákon keresztül nyerünk betekintést a Coq (és Lean) nyelvek programozásába. 
+A kurzust a bizonyítás-asszisztens szoftverek (proverek) és a típusos-funkcionális programozás iránt érdeklődő hallgatóknak ajánljuk. A funkcionális programozási paradigma áttekinthetővé, a tiszta típusrendszer bolondbiztossá teszi a programozási nyelveket (pl. Haskell, Rust). A Coq nyelv és társai (Lean, Agda, Idris) azzal fejeli meg ezt, hogy olyan erős a típusrendszere, hogy képes matematikai állításokat is kifejezeni, konkrétan az egész ismert matematika belefér a kifejezősépességébe, tételestül, bizonyításostul. A kurzusban informatikai, logikai és matematikai példákon keresztül nyerünk betekintést a Coq (és Lean) nyelvek programozásába. 
 
 
 
