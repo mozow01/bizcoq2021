@@ -30,16 +30,13 @@ _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra
 
 Lásd  [előadás](eloadas) mappa.
 
-### bool és Prop adattípusok és érvelés velük
-### nat: az induktív adattípusok fő példája
-### primitív rekurzív, funkcionális programozás: tree, list és minden
-### programnyelvek modellezése, BN-forma
-### matematikai elméletek beprogramozása és bizonyítások
-### lambda kalkulus és implikációs logika
-### Curry--Howard-izomorfizmus: állítások, mint típusok, bizonyítások, mint programok
-### automatikus és fél-automatikus bizonyítás
-### egyszerű, polimorf és függő típusok
-### monadizáció, side effectek kezelése
+1. bool és Prop adattípusok és érvelés velük
+2. nat: az induktív adattípusok fő példája, primitív rekurzív, funkcionális programozás: tree, list és minden
+3. programnyelvek modellezése, BN-forma
+4. matematikai elméletek beprogramozása és bizonyítások
+5. lambda kalkulus és implikációs logika, Curry--Howard-izomorfizmus: állítások, mint típusok, bizonyítások, mint programok
+6. egyszerű, polimorf és függő típusok
+7. monadizáció, side effectek kezelése
 
 ## Egyebek
 
