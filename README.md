@@ -8,7 +8,12 @@ BME TTK Algebra Tsz.,
 
 mozow@math.bme.hu
 
-A kurzust az automatikus bizonyítás és a típusos-funkcionális programozás iránt érdeklődő hallgatóknak ajánljuk.
+A kurzust a bizonyítás-asszisztens szöftverek (proverek) és a típusos-funkcionális programozás iránt érdeklődő hallgatóknak ajánljuk. A funkcionális programozási paradigma áttekinthetővé, a tiszta típusrendszer bolondbiztossá teszi a programozási nyelveket (pl. Haskell, Rust). A Coq nyelv és társai (Lean, Agda, Idris) azzal fejeli meg ezt, hogy olyan erős a típusrendszere, hogy képes matematikai állításokat is kifejezeni, konkrétan az egész ismert matematika belefér a kifejezősépességébe, tételestül, bizonyításostul. A kurzusban informatikai, logikai és matematikai példákon keresztül nyerünk betekintést a Coq (és Lean) nyelvek programozásába. 
+
+
+
+
+## Bővebben
 
 A funkcionális programozási paradigma olyan megközelítést jelent az informatikában, ahol a programokra függvényekként tekintünk, amik adatokat esznek és adatokat adnak vissza. Az imperatív paradigmához képest, amely szerint a programok utasítások sorozata, a funkcionális programozás nem enged állapotparamétereket szerepeltetni (for i ...) és mellékhatásokat érvényesítani (print, non-defined), minden ilyen működést beépít vagy az inputba vagy az outputba vagy a függvénybe magába (monadizáció). Előnyei közé tartozik a kód jó olvashatósága és karbantarthatósága, a hibák könnyebb azonosíthatósága és a párhuzamosíthatósága.
 
