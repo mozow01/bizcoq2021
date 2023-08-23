@@ -18,7 +18,7 @@ _Win_: [Get Coq](https://coq.inria.fr/download) fül alatt a Win verzió letölt
 
 _Linux_: Ubuntu alatt az alap vagy Synaptic csomagkezelőben elérhető a Coq-ra rákeresve. Akinek nem Ubuntuja van, az meg úgy is olyan okos, hogy annak magától is menni fog. CoqIDE szintén megtalálható, amennyiben az Emacs nem szimpi.
 
-## Tartalom
+## Érintett témák
 
 <!--
 1. óra leírása: [itt](eloadas/1_bevezetes/) és a [.v file](eloadas/1_bevezetes/bizcoq_1.v). (Tanult parancsok és taktikák: Definition, Show Proof, Check, Print, SerachAbout, "match ... with |", reflexivity, unfold ..., apply ..., exact, assumption.)
@@ -36,6 +36,9 @@ Lásd  [előadás](eloadas) mappa.
 4. Curry--Howard-izomorfizmus, lambda kalkulus és funkcionális programozás
 5. matematikai elméletek beprogramozása és bizonyítások
 6. egyszerű, polimorf és függő típusok
+
+## Követelmények
+Aktív órai jelenlét: minden második alkalmomra házik készítése, két beadandó feladatcsomag a 7. és 13. héten. 
 
 ## Egyebek
 
