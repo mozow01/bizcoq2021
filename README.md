@@ -38,7 +38,7 @@ Lásd  [előadás](eloadas) mappa.
 6. egyszerű, polimorf és függő típusok
 
 ## Követelmények
-Aktív órai jelenlét: minden második alkalomra házik készítése, két beadandó feladatcsomag a 7. és 13. héten. 
+Aktív órai jelenlét, minden második alkalomra házik készítése, két beadandó feladatcsomag a 7. és 13. héten. 
 
 ## Egyebek
 
