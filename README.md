@@ -8,6 +8,16 @@ BME TTK Algebra Tsz.,
 
 mozow@math.bme.hu
 
+A kurzust az automatikus bizonyítás és a típusos-funkcionális programozás iránt érdeklődő hallgatóknak ajánljuk.
+
+A funkcionális programozási paradigma olyan megközelítést jelent az informatikában, ahol a programokra függvényekként tekintünk, amik adatokat esznek és adatokat adnak vissza. Az imperatív paradigmához képest, amely szerint a programok utasítások sorozata, a funkcionális programozás nem enged állapotparamétereket szerepeltetni (for i ...) és mellékhatásokat érvényesítani (print, non-defined), minden ilyen működést beépít vagy az inputba vagy az outputba vagy a függvénybe magába (monadizáció). Előnyei közé tartozik a kód jó olvashatósága és karbantarthatósága, a hibák könnyebben azonosíthatók, a párhuzamosíthatóság.
+
+A típusos funkcionális programozás a statikus típusrendszert ötvözi a funkcionális paradigmával, ami lehetővé teszi a kód minőségének és megbízhatóságának növelését. Az alkalmazások között megtalálhatóak a webes alkalmazások, adatfeldolgozó rendszerek és mesterséges intelligencia alkalmazások is. Például a Haskell és a Scala nyelvek funkcionális megközelítést alkalmaznak. Az adatfeldolgozásban a funkcionális programozás hasznos, mert az adattranszformációk egyszerűen leírhatók függvényekkel. Az alkalmazások erősebb típusrendszerekkel és megbízhatóbb kóddal rendelkezhetnek, ami különösen fontos kritikus rendszerek, pl. repülőgépek irányítási szoftvere vagy orvosi eszközök programozása esetén. A típusos funkcionális megközelítés lehetővé teszi a programok megbízható működését és a rendszer biztonságának biztosítását.
+
+Ebben a kontextusban találkozunk a Coq bizonyításasszisztens programnyelvvel, amely magában foglalja a funkcionális programozás és a formális bizonyítások előnyeit is. A Coq egy olyan eszköz, amely lehetővé teszi a matematikailag pontos és formálisan igazolt programok írását és helyességük bizonyítását. A programokat és bizonyításokat a Coq nyelven írjuk, ami egy funkcionális programnyelv és egy formális levezetési nyelv kombinációja.
+
+A Coq Thierry Coquand Calculus of Inductive Constructions nevű programozási nyelvének implementációja és a Curry-Howard izomorfizmust aknázza ki. Ez egy érdekes kapcsolat a számítástudomány és a matematika között: arra mutat rá, hogy a típusok állítások, a programok pedig bizonyítások. Ez az izomorfizmus praktikus alkalmazásokhoz is vezethet. Például a Coq nevű programnyelv és bizonyításasszisztens felhasználja ezt az összefüggést a formális bizonyítások készítéséhez és a megbízható szoftverfejlesztéshez. Ezenkívül a Curry-Howard izomorfizmus mélyebb betekintést nyújt abba, hogy hogyan működnek a programok és a matematikai bizonyítások, és hogyan lehet őket formálisan és rendszeresen vizsgálni.
+
 ## Telepítés
 
 Mindenféle szoftverek, manualok, modulok, stb. elérhetősége alapvetően itt:
