@@ -76,5 +76,20 @@ Leveztésfa készítő csomagok LaTeX-ben ([pdf](latex_sablon/levezetesfa.pdf), 
 
 Coq jelölés, taktika és definíció Cheat Sheet: [pdf](https://www.inf.ed.ac.uk/teaching/courses/tspl/cheatsheet.pdf).
 
+**Egy tényleg automatikus prover:**
+
 http://zenon-prover.org/
+
+**Online Coq, amelyik képes proof tree-ket is készíteni:**
+
 http://carol.dimap.ufrn.br/proofweb/
+
+**Hivatalos online Coq (Firefox)**
+
+https://coq.vercel.app/scratchpad.html
+
+**Online Lean 3** (Lean 4 a legújabb!)
+
+https://leanprover-community.github.io/lean-web-editor/
+
+
