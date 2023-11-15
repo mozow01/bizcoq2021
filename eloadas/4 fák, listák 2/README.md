@@ -276,10 +276,13 @@ Fixpoint MaxPair {X:Set} (l : list (option(X*nat))) : option (X*nat) :=
    | cons x l' => MaxPairTwo x (MaxPair l')
   end.
 
-Definition ArgMax {X:Set} (l : list (option(X*nat))) : option X := 
-  match MaxPair l  with
-    | None => None
-    | Some z => Some (fst z)
+Fixpoint MaxPair' (l : list (H*nat)) : option (H*nat) := 
+  match l with 
+   | nil => None
+   | cons x l' => match (MaxPair' l') with 
+                   | None => None
+                   | Some c => Some (MaxPairTwo x c)
+                  end
   end.
 ````
 ## A probléma megoldása
